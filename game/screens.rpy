@@ -1,6 +1,6 @@
 
-init python:
-    persistent.oscarGalleryUnlocked = False
+
+default persistent.modGalleryUnlock = False
 
 
 
@@ -120,7 +120,7 @@ init -501 screen say(who, what):
             window:
                 id "namebox"
                 style "namebox"
-                text who.upper() id "who"
+                text who id "who"
 
         text what id "what"
 
@@ -290,16 +290,16 @@ init -501 screen quick_menu():
             xalign 0.5
             yalign 1.0
 
-            textbutton _("Back").upper() action Rollback()
-            textbutton _("History").upper() action ShowMenu('history')
-            textbutton _("Skip").upper() action Skip() alternate Skip(fast=True, confirm=True)
-            textbutton _("Auto").upper() action Preference("auto-forward", "toggle")
-            textbutton _("Save").upper() action ShowMenu('save')
-            textbutton _("Q.Save").upper() action QuickSave()
-            textbutton _("Q.Load").upper() action QuickLoad()
+            textbutton _("Back") action Rollback()
+            textbutton _("History") action ShowMenu('history')
+            textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)
+            textbutton _("Auto") action Preference("auto-forward", "toggle")
+            textbutton _("Save") action ShowMenu('save')
+            textbutton _("Q.Save") action QuickSave()
+            textbutton _("Q.Load") action QuickLoad()
             if not _in_replay and 'Codex' in globals() and Codex._size_all is not 0:
-                textbutton _("Codex").upper() action ShowMenu("encyclopaedia_list", Codex) keysym "c"
-            textbutton _("Prefs").upper() action ShowMenu('preferences')
+                textbutton _("Codex") action ShowMenu("encyclopaedia_list", Codex) keysym "c"
+            textbutton _("Prefs") action ShowMenu('preferences')
 
 
 
@@ -358,41 +358,41 @@ init -501 screen navigation():
 init -501 screen navigation_buttons():
     if main_menu:
 
-        textbutton _("Start").upper() action Start()
+        textbutton _("Start") action Start()
 
     else:
 
-        textbutton _("History").upper() action ShowMenu("history")
+        textbutton _("History") action ShowMenu("history")
 
-        textbutton _("Save").upper() action ShowMenu("save")
+        textbutton _("Save") action ShowMenu("save")
 
-    textbutton _("Load").upper() action ShowMenu("load")
+    textbutton _("Load") action ShowMenu("load")
 
     if not main_menu and not _in_replay:
-        textbutton _("Codex").upper() action ShowMenu("encyclopaedia_list", Codex)
+        textbutton _("Codex") action ShowMenu("encyclopaedia_list", Codex)
 
-    textbutton _("Preferences").upper() action ShowMenu("preferences")
+    textbutton _("Preferences") action ShowMenu("preferences")
 
     if _in_replay:
 
-        textbutton _("End Replay").upper() action EndReplay(confirm=True)
+        textbutton _("End Replay") action EndReplay(confirm=True)
 
     if not _in_replay:
-        textbutton _("Scene Gallery").upper() action ShowMenu("scenes")
+        textbutton _("Scene Gallery") action ShowMenu("scenes")
 
     if not main_menu:
 
-        textbutton _("Main Menu").upper() action MainMenu()
+        textbutton _("Main Menu") action MainMenu()
 
-    textbutton _("About").upper() action ShowMenu("about")
+    textbutton _("About") action ShowMenu("about")
 
     if renpy.variant("pc"):
 
 
-        textbutton _("Help").upper() action ShowMenu("help")
+        textbutton _("Help") action ShowMenu("help")
 
 
-        textbutton _("Quit").upper() action Quit(confirm=not main_menu)
+        textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
 init -1 style navigation_button is gui_button
@@ -414,7 +414,6 @@ init -1 style navigation_button_text:
 
 init -501 screen main_menu():
     tag menu
-
 
 
 
@@ -451,14 +450,14 @@ init -501 screen main_menu():
 
         if is_patreon() and renpy.has_label("extra_scene_01"):
             if game.is_special:
-                text "v"+config.version+" • Taboo Edition, Extra Scenes".upper() size 20 color gui.selected_color
+                text "v[config.version] • Taboo Edition, Extra Scenes" size 20 color gui.selected_color
             else:
-                text "v"+config.version+" • Standard Edition, Extra Scenes".upper() size 20 color gui.selected_color
+                text "v[config.version] • Standard Edition, Extra Scenes" size 20 color gui.selected_color
         else:
             if game.is_special:
-                text "v"+config.version+" • Taboo Edition".upper() size 20 color gui.selected_color
+                text "v[config.version] • Taboo Edition" size 20 color gui.selected_color
             else:
-                text "v"+config.version+" • Standard Edition".upper() size 20 color gui.selected_color
+                text "v[config.version] • Standard Edition" size 20 color gui.selected_color
 
     button:
         style "patreon_button"
@@ -471,7 +470,7 @@ init -501 screen main_menu():
         action OpenURL('https://www.patreon.com/perverteer')
         has hbox
         add "gui/patreon.png"
-        text "Support me on  Patreon:\nwww.patreon.com/perverteer".upper() style "patreon_button_text"
+        text "Support me on  Patreon:\nwww.patreon.com/perverteer" style "patreon_button_text"
 
 
     imagebutton:
@@ -609,12 +608,12 @@ init -501 screen game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    textbutton _("Return").upper():
+    textbutton _("Return"):
         style "return_button"
 
         action Return()
 
-    label title.upper()
+    label title
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")
@@ -676,7 +675,6 @@ init -501 screen relationships():
     tag menu
     style_prefix "relationships"
 
-
     zorder 100
 
 
@@ -697,6 +695,13 @@ init -501 screen relationships():
                 'romance': "Yes" if jade_romance else "Yes {size=-5}(Submissive){/size}" if jade_submissive else "No",
                 'pregnancy': "Yes" if jade_pregnant else "No",
                 'visible': True if ("ep001_jade_hj" in globals() and ep001_jade_hj) or ("ep002_jade_talk" in globals() and ep002_jade_talk) else False,
+            },
+            {
+                'name': 'Vess',
+                'image': 'gui/portraits/portrait_vess.webp',
+                'romance': "Yes" if vess_romance else "No",
+                'pregnancy': "Yes" if vess_pregnant else "No",
+                'visible': True if ("ep002_vess_talk" in globals() and ep002_vess_talk) else False,
             },
             {
                 'name': 'Thyia',
@@ -761,13 +766,13 @@ init -501 screen relationships():
         hbox:
             xfill True
 
-            text _("Relationships").upper():
+            text _("Relationships"):
                 style "main_menu_title"
                 xalign 0
                 yoffset 40
                 xoffset 75
 
-            textbutton _("Close").upper():
+            textbutton _("Close"):
                 xalign 1.0
                 yoffset 40
                 xoffset -40
@@ -797,7 +802,7 @@ init -501 screen relationships():
                             hbox:
                                 spacing 15
 
-                                text character['name'].upper() italic True size 50 color gui.accent_color font gui.interface_text_font
+                                text character['name'] italic True size 50 color gui.accent_color font gui.interface_text_font
 
                             text _("Relationship: %s") % (character['romance'])
                             if "pregnancy" in character:
@@ -824,8 +829,10 @@ init -1 style relationships_item_text:
 
 
 
-init -1 python:
+init 9 python:
     scene_gallery_page = 0
+    if not is_patreon():
+        scene_gallery_page = 1
 
     if 'p_name' not in locals():
         p_name = "Camran"
@@ -836,8 +843,7 @@ init -501 screen scenes():
 
 
 
-    if not is_patreon():
-        $ scene_gallery_page = 1;
+
 
 
     $ episode = scene_gallery[scene_gallery_page]
@@ -852,7 +858,7 @@ init -501 screen scenes():
                 xfill True
 
 
-                text episode['title'].upper() font "fonts/Oswald-Bold.ttf" color gui.accent_color size 30
+                text episode['title'] font "fonts/Oswald-Bold.ttf" color gui.accent_color size 30
 
                 viewport:
                     scrollbars "vertical"
@@ -866,23 +872,16 @@ init -501 screen scenes():
                         xfill True
                         cols 3
                         spacing 25
-                    if persistent.oscarGalleryUnlocked:
-                        for scene_object in episode['scenes']:
-                            button:
-                                action Replay(scene_object['label'], {}, locked=False)
-                                frame:
+
+                    for scene_object in episode['scenes']:
+                        button:
+                            action Replay(scene_object['label'], {}, locked=persistent.modGalleryUnlock)
+                            frame:
+                                if renpy.seen_label(scene_object['label']) or persistent.modGalleryUnlock == False:
                                     add Frame(scene_object['image'], 0, 0)
-                                text scene_object['text']
-                    else:
-                        for scene_object in episode['scenes']:
-                            button:
-                                action Replay(scene_object['label'], {})
-                                frame:
-                                    if renpy.seen_label(scene_object['label']):
-                                        add Frame(scene_object['image'], 0, 0)
-                                    else:
-                                        add Frame("gui/locked.png", 0, 0)
-                                text scene_object['text']
+                                else:
+                                    add Frame("gui/locked.png", 0, 0)
+                            text scene_object['text']
 
             hbox:
                 style_prefix "scenes_buttons"
@@ -895,16 +894,18 @@ init -501 screen scenes():
 
 
                 for page in range(1, len(scene_gallery)+1):
-                    if page == 1 and is_patreon():
-                        textbutton __("Extras").upper() action SetVariable("scene_gallery_page", page-1)
-                    elif not page == 1:
-                        textbutton __("Ep").upper()+str(page-1) action SetVariable("scene_gallery_page", page-1)
+                    if page is 1 and is_patreon():
+                        textbutton __("Extras") action SetVariable("scene_gallery_page", page-1)
+                    elif not page is 1:
+                        textbutton __("Ep")+str(page-1) action SetVariable("scene_gallery_page", page-1)
 
-                if persistent.oscarGalleryUnlocked:
-                    textbutton "All Scenes Unlocked"
+                if persistent.modGalleryUnlock:
+                    textbutton "Unlock Scenes":
+                        action SetVariable("persistent.modGalleryUnlock", False)
                 else:
-                    textbutton "Unlock All Scenes":
-                        action SetVariable("persistent.oscarGalleryUnlocked", True)
+                    textbutton "Lock Scenes":
+                        action SetVariable("persistent.modGalleryUnlock", True)
+
 
 
 init -1 style scenes_frame:
@@ -941,21 +942,20 @@ init -501 screen about():
 
 
 
-
     use game_menu(_("About"), scroll="viewport"):
 
         style_prefix "about"
 
         vbox:
-            $ game_name = config.name.upper()
+            $ game_name = config.name
             label "[game_name!t]"
-            text _("Version ").upper() + _("[config.version!t]\n")
+            text _("Version ") + _("[config.version!t]\n")
 
 
             if gui.about:
                 text "[gui.about!t]\n" font gui.text_font size 30
 
-            label _("Music").upper()
+            label _("Music")
 
             null height 30
 
@@ -1007,7 +1007,6 @@ init -501 screen save():
     tag menu
 
 
-
     use file_slots(_("Save"))
 
 
@@ -1015,13 +1014,12 @@ init -501 screen load():
     tag menu
 
 
-
     use file_slots(_("Load"))
 
 
 init -501 screen file_slots(title):
 
-    default page_name_value = FilePageNameInputValue(pattern=_("Page {}").upper(), auto=_("Automatic saves"), quick=_("Quick saves"))
+    default page_name_value = FilePageNameInputValue(pattern=_("Page {}"), auto=_("Automatic saves"), quick=_("Quick saves"))
 
     use game_menu(title):
 
@@ -1064,7 +1062,7 @@ init -501 screen file_slots(title):
 
                         add FileScreenshot(slot) xalign 0.5
 
-                        text FileSaveName(slot).upper():
+                        text FileSaveName(slot):
                             style "slot_name_text"
 
                         hbox:
@@ -1187,7 +1185,6 @@ init -501 screen preferences():
     tag menu
 
 
-
     use game_menu(_("Preferences"), scroll="viewport"):
 
         vbox:
@@ -1198,53 +1195,53 @@ init -501 screen preferences():
                 if 'p_name' in globals():
                     vbox:
                         style_prefix "buttons"
-                        label _("Player Names").upper()
-                        textbutton _("Name: ").upper()+p_name action Show("custom_input_modal", label_text="Change name", variable_name="p_name")
-                        textbutton _("Nickname: ").upper()+p_name_short action Show("custom_input_modal", label_text="Change nickname", variable_name="p_name_short")
+                        label _("Player Names")
+                        textbutton _("Name: ")+p_name action Show("custom_input_modal", label_text="Change name", variable_name="p_name")
+                        textbutton _("Nickname: ")+p_name_short action Show("custom_input_modal", label_text="Change nickname", variable_name="p_name_short")
 
                 if renpy.variant("pc"):
 
                     vbox:
                         style_prefix "radio"
-                        label _("Display").upper()
-                        textbutton _("Window").upper() action Preference("display", "window")
-                        textbutton _("Fullscreen").upper() action Preference("display", "fullscreen")
+                        label _("Display")
+                        textbutton _("Window") action Preference("display", "window")
+                        textbutton _("Fullscreen") action Preference("display", "fullscreen")
 
                 vbox:
                     style_prefix "radio"
-                    label _("Rollback Side").upper()
-                    textbutton _("Disable").upper() action Preference("rollback side", "disable")
-                    textbutton _("Left").upper() action Preference("rollback side", "left")
-                    textbutton _("Right").upper() action Preference("rollback side", "right")
+                    label _("Rollback Side")
+                    textbutton _("Disable") action Preference("rollback side", "disable")
+                    textbutton _("Left") action Preference("rollback side", "left")
+                    textbutton _("Right") action Preference("rollback side", "right")
 
                 vbox:
                     style_prefix "check"
-                    label _("Skip").upper()
-                    textbutton _("Unseen Text").upper() action Preference("skip", "toggle")
-                    textbutton _("After Choices").upper() action Preference("after choices", "toggle")
-                    textbutton _("Transitions").upper() action InvertSelected(Preference("transitions", "toggle"))
-
-
-
-
-
-
-
+                    label _("Skip")
+                    textbutton _("Unseen Text") action Preference("skip", "toggle")
+                    textbutton _("After Choices") action Preference("after choices", "toggle")
+                    textbutton _("Transitions") action InvertSelected(Preference("transitions", "toggle"))
 
 
 
 
                 vbox:
-                    style_prefix "radio"
-                    label _("Notifications").upper()
-                    textbutton _("Show").upper() action gui.SetPreference("codex_notifications", True)
-                    textbutton _("Hide").upper() action gui.SetPreference("codex_notifications", False)
+                    style_prefix "pref"
+                    label _("Language")
+                    textbutton _("English") action Language(None)
+                    textbutton _("Russian") action Language("russian")
+
 
                 vbox:
                     style_prefix "radio"
-                    label _("Relationships").upper()
-                    textbutton _("Show").upper() action gui.SetPreference("relationship_screen", True)
-                    textbutton _("Hide").upper() action gui.SetPreference("relationship_screen", False)
+                    label _("Notifications")
+                    textbutton _("Show") action gui.SetPreference("codex_notifications", True)
+                    textbutton _("Hide") action gui.SetPreference("codex_notifications", False)
+
+                vbox:
+                    style_prefix "radio"
+                    label _("Relationships")
+                    textbutton _("Show") action gui.SetPreference("relationship_screen", True)
+                    textbutton _("Hide") action gui.SetPreference("relationship_screen", False)
 
             null height (4 * gui.pref_spacing)
 
@@ -1254,29 +1251,29 @@ init -501 screen preferences():
 
                 vbox:
 
-                    label _("Text Speed").upper()
+                    label _("Text Speed")
 
                     bar value Preference("text speed")
 
-                    label _("Auto-Forward Time").upper()
+                    label _("Auto-Forward Time")
 
                     bar value Preference("auto-forward time")
 
-                    label _("Dialog Box Visibility").upper()
+                    label _("Dialog Box Visibility")
 
                     bar value FieldValue(_preferences, "say_screen_visibility", range=100, max_is_zero=False, style="slider", step=1, action=Function(say_screen_visibility))
 
                 vbox:
 
                     if config.has_music:
-                        label _("Music Volume").upper()
+                        label _("Music Volume")
 
                         hbox:
                             bar value Preference("music volume")
 
                     if config.has_sound:
 
-                        label _("Sound Volume").upper()
+                        label _("Sound Volume")
 
                         hbox:
                             bar value Preference("sound volume")
@@ -1286,7 +1283,7 @@ init -501 screen preferences():
 
 
                     if config.has_voice:
-                        label _("Voice Volume").upper()
+                        label _("Voice Volume")
 
                         hbox:
                             bar value Preference("voice volume")
@@ -1391,7 +1388,6 @@ init -501 screen history():
 
 
 
-
     predict False
 
     use game_menu(_("History"), scroll=("vpgrid" if gui.history_height else "viewport"), yinitial=1.0):
@@ -1408,7 +1404,7 @@ init -501 screen history():
 
                 if h.who:
 
-                    label h.who.upper():
+                    label h.who:
                         style "history_name"
 
 
@@ -1479,10 +1475,9 @@ init -501 screen help():
     tag menu
 
 
-
     default device = "keyboard"
 
-    use game_menu(_("Help").upper(), scroll="viewport"):
+    use game_menu(_("Help"), scroll="viewport"):
 
         style_prefix "help"
 
@@ -1491,11 +1486,11 @@ init -501 screen help():
 
             hbox:
 
-                textbutton _("Keyboard").upper() action SetScreenVariable("device", "keyboard")
-                textbutton _("Mouse").upper() action SetScreenVariable("device", "mouse")
+                textbutton _("Keyboard") action SetScreenVariable("device", "keyboard")
+                textbutton _("Mouse") action SetScreenVariable("device", "mouse")
 
                 if GamepadExists():
-                    textbutton _("Gamepad").upper() action SetScreenVariable("device", "gamepad")
+                    textbutton _("Gamepad") action SetScreenVariable("device", "gamepad")
 
             if device == "keyboard":
                 use keyboard_help
@@ -1508,106 +1503,106 @@ init -501 screen help():
 init -501 screen keyboard_help():
 
     hbox:
-        label _("Enter").upper()
+        label _("Enter")
         text _("Advances dialogue and activates the interface.") font gui.text_font
 
     hbox:
-        label _("Space").upper()
+        label _("Space")
         text _("Advances dialogue without selecting choices.") font gui.text_font
 
     hbox:
-        label _("Arrow Keys").upper()
+        label _("Arrow Keys")
         text _("Navigate the interface.") font gui.text_font
 
     hbox:
-        label _("Escape").upper()
+        label _("Escape")
         text _("Accesses the game menu.") font gui.text_font
 
     hbox:
-        label _("Ctrl").upper()
+        label _("Ctrl")
         text _("Skips dialogue while held down.") font gui.text_font
 
     hbox:
-        label _("Tab").upper()
+        label _("Tab")
         text _("Toggles dialogue skipping.") font gui.text_font
 
     hbox:
-        label _("Page Up").upper()
+        label _("Page Up")
         text _("Rolls back to earlier dialogue.") font gui.text_font
 
     hbox:
-        label _("Page Down").upper()
+        label _("Page Down")
         text _("Rolls forward to later dialogue.") font gui.text_font
 
     hbox:
-        label "H".upper()
+        label "H"
         text _("Hides the user interface.") font gui.text_font
 
     hbox:
-        label "S".upper()
+        label "S"
         text _("Takes a screenshot.") font gui.text_font
 
     hbox:
-        label "V".upper()
+        label "V"
         text _("Toggles assistive {a=https://www.renpy.org/l/voicing}self-voicing{/a}.") font gui.text_font
 
     hbox:
-        label "R".upper()
+        label "R"
         text _("Shows the relationships screen") font gui.text_font
 
     hbox:
-        label "C".upper()
+        label "C"
         text _("Shows the codex") font gui.text_font
 
 
 init -501 screen mouse_help():
 
     hbox:
-        label _("Left Click").upper()
+        label _("Left Click")
         text _("Advances dialogue and activates the interface.") font gui.text_font
 
     hbox:
-        label _("Middle Click").upper()
+        label _("Middle Click")
         text _("Hides the user interface.") font gui.text_font
 
     hbox:
-        label _("Right Click").upper()
+        label _("Right Click")
         text _("Accesses the game menu.") font gui.text_font
 
     hbox:
-        label _("Mouse Wheel Up\nClick Rollback Side").upper()
+        label _("Mouse Wheel Up\nClick Rollback Side")
         text _("Rolls back to earlier dialogue.") font gui.text_font
 
     hbox:
-        label _("Mouse Wheel Down").upper()
+        label _("Mouse Wheel Down")
         text _("Rolls forward to later dialogue.") font gui.text_font
 
 
 init -501 screen gamepad_help():
 
     hbox:
-        label _("Right Trigger\nA/Bottom Button").upper()
+        label _("Right Trigger\nA/Bottom Button")
         text _("Advances dialogue and activates the interface.")
 
     hbox:
-        label _("Left Trigger\nLeft Shoulder").upper()
+        label _("Left Trigger\nLeft Shoulder")
         text _("Rolls back to earlier dialogue.")
 
     hbox:
-        label _("Right Shoulder").upper()
+        label _("Right Shoulder")
         text _("Rolls forward to later dialogue.")
 
 
     hbox:
-        label _("D-Pad, Sticks").upper()
+        label _("D-Pad, Sticks")
         text _("Navigate the interface.")
 
     hbox:
-        label _("Start, Guide").upper()
+        label _("Start, Guide")
         text _("Accesses the game menu.")
 
     hbox:
-        label _("Y/Top Button").upper()
+        label _("Y/Top Button")
         text _("Hides the user interface.")
 
     textbutton _("Calibrate") action GamepadCalibrate()
@@ -1675,8 +1670,8 @@ init -501 screen confirm(message, yes_action, no_action):
             xalign 0.5
             spacing 150
 
-            textbutton _("Yes").upper() action yes_action
-            textbutton _("No").upper() action no_action
+            textbutton _("Yes") action yes_action
+            textbutton _("No") action no_action
 
 
     key "game_menu" action no_action
