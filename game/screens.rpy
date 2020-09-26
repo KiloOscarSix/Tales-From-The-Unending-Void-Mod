@@ -361,6 +361,7 @@ init -501 screen navigation_buttons():
         textbutton _("Start") action Start()
 
     else:
+        textbutton _("Mod Options") action Show("modOptions")
 
         textbutton _("History") action ShowMenu("history")
 
