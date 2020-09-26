@@ -64,7 +64,7 @@ label ep004_conversations:
                 {
                     'name': 'Aven',
                     'action': 'ep004_aven_talk',
-                    'visible': True if not ep004_aven_talk else False
+                    'visible': True if not ep004_aven_talk and ep004_skarak else False
                 },
                 {
                     'name': 'Céline',
@@ -296,7 +296,7 @@ label ep004_conversations:
                 na "They did."
                 c "I have almost no memory of them being there."
                 scene expression eye_blink("images/ep004/ep004_quarters_n_serious") with dissolve
-                na "That’s because they partied all night and slept during daytime."
+                na "That’s because they partied all night and slept during the day."
                 c "Right, sounds like them."
                 na "Being in charge of all of you was hard work, but it was so nice having you all together."
                 na "And Kepler was a truly beautiful place."
@@ -425,7 +425,7 @@ label ep004_conversations:
                 scene expression eye_blink("images/ep004/ep004_quarters_av_cleavage_smile_alt") with dissolve
                 av "I can't believe I made you blush!"
                 menu:
-                    "[gr]It’s human nature":
+                    "It’s human nature [AvenPath]":
                         if game.is_special:
                             c "Well, bumping into half-naked cousins has that effect on me."
                         else:
@@ -479,7 +479,10 @@ label ep004_conversations:
                     av "It did, just not on the open sea where the currents tore the thing apart."
                     c "The coast guard rescued us, didn’t they?"
                     av "Yes, they picked us up from the wreckage."
-                    av "Mom was beyond herself with worry, she saw the whole thing happen while keeping an eye on Lilly and Eva."
+                    if game.is_special:
+                        av "Mom was beside herself with worry, she saw the whole thing happen while keeping an eye on Lilly and Eva."
+                    else:
+                        av "Nadya was beside herself with worry, she saw the whole thing happen while keeping an eye on Lilly and Eva."
                     c "Apart from the drowning I really loved those holidays on Kepler."
                     scene expression eye_blink("images/ep004/ep004_quarters_av_smile") with dissolve
                     c "We went a couple of times, didn’t we?"
@@ -495,7 +498,10 @@ label ep004_conversations:
                     else:
                         c "Sounds like them all right."
                     scene expression eye_blink("images/ep004/ep004_quarters_av_smile_alt") with dissolve
-                    av "I think mom loved it just as much as we did, despite all the responsibility of minding the children falling to her."
+                    if game.is_special:
+                        av "I think mom loved it just as much as we did, despite all the responsibility of minding the children falling to her."
+                    else:
+                        av "I think Nadya loved it just as much as we did, despite all the responsibility of minding the children falling to her."
                     if not ep002_nadya_dismissed and ep004_nadya_talk:
                         c "Yes, she told me as much."
                         c "You never went back there, after you left Tuolovi, right?"
@@ -503,7 +509,10 @@ label ep004_conversations:
                         c "Did you ever go back there, you know, after you left?"
                     scene expression eye_blink("images/ep004/ep004_quarters_av_serious") with dissolve
                     av "No, never."
-                    av "Kepler is very expensive and mom had a lot on her mind after leaving Tuolovi."
+                    if game.is_special:
+                        av "Kepler is very expensive and mom had a lot on her mind after leaving Tuolovi."
+                    else:
+                        av "Kepler is very expensive and Nadya had a lot on her mind after leaving Tuolovi."
                     if not ep002_nadya_dismissed and ep004_nadya_talk:
                         c "I already promised Nadya to go back there some time."
                     else:
@@ -513,7 +522,10 @@ label ep004_conversations:
                     av "Fat chance it’s going to happen."
                     av "Kepler is right at the edge of Sovereignty space and last I checked you were on the run from them."
                     if not ep002_nadya_dismissed and ep004_nadya_talk:
-                        c "You're just as big a spoilsport as your mom."
+                        if game.is_special:
+                            c "You're just as big a spoilsport as your mom."
+                        else:
+                            c "You're just as big a spoilsport as Nadya."
                     c "We’ll think of something."
                     c "I’m sure Thyia knows something to mask the ship’s ownership records."
                     c "And we’ll be very careful."
@@ -595,7 +607,7 @@ label ep004_conversations:
             th "Want some?"
             th "It’s pretty good stuff."
             menu:
-                "[gr]Drink with them":
+                "Drink with them [ThyiaPath] [LillyPath]":
                     $ ep004_th_l_drinks = True
                     c "Why not."
                     scene expression eye_blink("images/ep004/ep004_quarters_th") with dissolve
@@ -637,9 +649,9 @@ label ep004_conversations:
                     scene expression eye_blink("images/ep004/ep004_quarters_l_closeup_angry") with dissolve
                     l "Don’t give me that."
                     if game.is_special:
-                        l "If you’d behaved from time to time..."
+                        l "If you behaved from time to time..."
                     else:
-                        l "If you’d behaved from time to time I'm sure your dad would like you too..."
+                        l "If you behaved from time to time I'm sure your dad would like you too..."
                     c "I might have gotten a pat on the head more often. "
                     c "Still would have ended up at the Naval Academy though."
                     scene ep004_quarters_l_th_glasses with dissolve
@@ -683,7 +695,7 @@ label ep004_conversations:
                     scene expression eye_blink("images/ep004/ep004_quarters_th_serious_alt") with dissolve
                     th "Eventually I didn’t have to go on raids anymore because they became too reliant on me fixing their gear after some fight with local law enforcement."
                     th "I saved any credit I received and once I had enough, bought a ticket on the next transport out of that hell hole."
-                    th "Wandered for a good while and started working as an independant contractor."
+                    th "Wandered for a good while and started working as an independent contractor."
                     th "The workshop on Vulpes Velox was a recent thing actually, wasn’t there for longer than two years."
                     scene expression eye_blink("images/ep004/ep004_quarters_l_closeup_unsure") with dissolve
                     l "And we disturbed all of that."
@@ -728,7 +740,8 @@ label ep004_conversations:
             else:
                 "I just longed to see Eva again, but I knew Lilly would tear me a new one for loading a virtual copy of our best friend in a simulation."
             "Not that the practice was uncommon, but it was usually reserved for people to meet their deceased loved ones."
-            "It was a process requiring an inordinate amount of paperwork and consent of all the parties involved."
+            "Interacting with a virtual person was said to be very lifelike, as the memories up until the point when their brain was scanned were fully accessible to the digital version."
+            "Creating a virtual copy was a process requiring an inordinate amount of paperwork and consent of all the parties involved."
             "I had neither."
             "Ignoring the pangs of guilt, I entered the VR room."
             scene ep004_quarters_cam_sim_room with dissolve
@@ -771,7 +784,7 @@ label ep004_conversations:
             e "I can’t wait for us to join you!"
             scene expression eye_blink("images/ep004/ep004_simulation_eva_estate_closeup_serious") with dissolve
             e "Lilly has a hard time picturing herself away from Tuolovi, but I’m done with the place."
-            c "Really, I thought you weren’t overjoyed with the prospect of studying at the academy"
+            c "Really, I thought you weren’t overjoyed with the prospect of studying at the Academy"
             e "I’m not, but it beats staying here."
             c "No argument there."
             scene expression eye_blink("images/ep004/ep004_simulation_eva_estate_interior") with dissolve
@@ -824,7 +837,7 @@ label ep004_conversations:
                                 zi "Raene needs regular injections."
                                 zi "That’s all you need to know, as I’ve already made perfectly clear to you."
                                 zi "Now go away."
-                            "[gr]Accept":
+                            "Accept [RaenePath]":
                                 c "I didn’t know that."
                                 c "If she needs any medical attention, just let me know."
                                 scene ep004_quarters_zi_ra_smile with dissolve
@@ -838,7 +851,7 @@ label ep004_conversations:
                 ra "I think so...{w} Yes."
                 c "Good."
                 menu:
-                    "[gr]Say something nice":
+                    "Say something nice [RaenePath]":
                         $ ep004_ra_kind = True
                         c "Glad to have you aboard."
                     "Leave":
@@ -850,13 +863,13 @@ label ep004_conversations:
                     scene expression eye_blink("images/ep004/ep004_quarters_ra_sad") with dissolve
                     ra "I’m sorry you had to see that earlier."
                     ra "The injections, I mean."
-                    ca "Ziv isn’t forcing them on you, is she?"
+                    c "Ziv isn’t forcing them on you, is she?"
                     ra "Oh no, not at all!"
                     scene expression eye_blink("images/ep004/ep004_quarters_ra_shock") with dissolve
                     ra "You don’t think Ziv is...{w} I’m not her captive, or anything."
                     ra "I’d hate for you to think ill of her."
                     menu:
-                        "[gr]Acknowledge":
+                        "Acknowledge [RaenePath]":
                             c "Don’t worry, I don’t."
                         "Doubt":
                             $ ep004_ra_doubt = True
@@ -884,7 +897,7 @@ label ep004_conversations:
                             c "I don't-"
                             c "I'll just leave."
                             zi "You do that."
-                        "[gr]Be understanding":
+                        "Be understanding [RaenePath]":
                             c "Well, you're a guest here now, so if there's anything you need, just ask."
                             scene expression eye_blink("images/ep004/ep004_quarters_ra_smile") with dissolve
                             ra "I will, thank you [p_name]."
@@ -912,7 +925,7 @@ label ep004_conversations:
                             c "I don't-"
                             c "I'll just leave."
                             zi "You do that."
-                        "[gr]Be understanding":
+                        "Be understanding [RaenePath]":
                             c "Well, you're a guest here now, so if there's anything you need, just ask."
                             scene expression eye_blink("images/ep004/ep004_quarters_ra_smile") with dissolve
                             ra "I will, thank you [p_name]."
@@ -970,7 +983,7 @@ label ep004_conversations:
                             scene expression eye_blink("images/ep004/ep004_quarters_ziv_serious") with dissolve
                             zi "Raene needs regular shots, she’s no danger to you or any of the crew."
                             zi "And that’s all I’m going to say on the matter."
-                        "[gr]Relent":
+                        "Relent [ZivPath]":
                             c "I understand, maybe I'll ask her."
                             scene expression eye_blink("images/ep004/ep004_quarters_ziv") with dissolve
                     jump ep004_ziv_choices
@@ -986,13 +999,14 @@ label ep004_conversations:
                     zi "What do you mean?"
 
                     menu:
-                        "[gr]Ask about Rhenkoi genitals":
+                        "Ask about Rhenkoy genitals [ZivPath]":
                             c "It's just that Luzane turned to be a bit of a surprise."
                             c "Having both down below is a little uncommon, if you know what I mean."
                             scene expression eye_blink("images/ep004/ep004_quarters_ziv_smile") with dissolve
-                            zi "Ah, but it isn't among the Rhenkoi."
-                            zi "You didn't know?"
-                            c "Evidently not."
+                            zi "Ah, but it isn't among the Rhenkoy."
+                            if ep004_ziv_derisive:
+                                zi "You didn't know?"
+                                c "Evidently not."
                             scene expression eye_blink("images/ep004/ep004_quarters_ziv_serious") with dissolve
                             zi "There's no distinction between female and male in our society."
                             zi "We just use the term female to describe ourselves when dealing with other alien species."
@@ -1003,7 +1017,7 @@ label ep004_conversations:
                                 zi "I know it's a problem for some..."
 
                                 menu:
-                                    "Yes [red]\[ENDS RELATIONSHIP\]":
+                                    "Yes [EndRelationship]":
                                         $ ep004_ziv_no_romance = True
                                         c "It's a little too outlandish to wrap my head around, to be honest."
                                         c "But that doesn't mean I can't be civil about it."
@@ -1052,7 +1066,7 @@ label ep004_conversations:
                     scene expression eye_blink("images/ep004/ep004_quarters_ziv_annoyed") with dissolve
                     zi "It sure did."
                     zi "Especially if you know what the Tubloshi look like."
-                    zi "Of course you'll see them once we rendezvous with their ship, but a Rhenkoi and a Tubloshi aren't a match you see every day."
+                    zi "Of course you'll see them once we rendezvous with their ship, but a Rhenkoy and a Tubloshi aren't a match you see every day."
                     zi "In fact, most of the Tubloshi view other species as something you can hunt or conquer with violence."
                     c "So the union Kyl Tavort and Luzane was an oddity?"
                     zi "It sure was, someone with the characteristics of Luzane is normally shunned by the Tubloshi, reviled even."
@@ -1071,7 +1085,8 @@ label ep004_conversations:
             j "You rang, master?"
 
             menu:
-                "Put her in her place [gr]\[Dom\]":
+                "Put her in her place [JadeSubPath]":
+                    $ ep004_jade_sex_hard = True
                     $ ep004_jade_dom = True
                     $ ep004_jade_sex = True
                     c "Cut the bullshit Jade."
@@ -1086,7 +1101,7 @@ label ep004_conversations:
                     j "That's what I'm for, master."
                     c "Undress."
                     call ep004_jade_sex_hard from _call_ep004_jade_sex_hard
-                "Laugh [gr]\[Love\]":
+                "Laugh [JadeLovePath]":
                     c "You actually enjoy coming up with these greetings, don't you Jade?"
                     scene expression eye_blink("images/ep004/ep004_quarters_jade_smile") with dissolve
                     j "I do my best."
@@ -1104,7 +1119,7 @@ label ep004_conversations:
                     j "I know just the thing to make you feel better."
 
                     menu:
-                        "[gr]Go on":
+                        "Go on [JadePath]":
                             $ ep004_jade_sex = True
                             c "Very intriguing."
                             j "I can make this even more intriguing."
@@ -1236,7 +1251,7 @@ label ep004_jade_sex_hard:
     $ renpy.end_replay()
     j "I certainly didn’t expect you to be so bold, master."
     menu:
-        "Apologize [gr]\[Love\]":
+        "Apologize [JadeLovePath]":
             $ ep004_jade_apologize = True
             c "Sorry, I didn’t know what came over me."
             scene expression eye_blink("images/ep004/ep004_quarters_jade_behind_post_smile") with dissolve
@@ -1251,7 +1266,7 @@ label ep004_jade_sex_hard:
             c "Will you now?"
             scene expression eye_blink("images/ep004/ep004_quarters_jade_behind_post_alt") with dissolve
             "I slapped her teasingly across the buttocks and we fell asleep after that brief exchange."
-        "Don’t apologize":
+        "Don’t apologize [JadeSubPath]":
             c "You’re my slave, Jade, I can do whatever I want with you."
             scene expression eye_blink("images/ep004/ep004_quarters_jade_behind_post_serious") with dissolve
             j "So I am, master."
@@ -1271,7 +1286,7 @@ label ep004_jade_sex_soft:
         yalign 1.0
         ease 8 yalign 0.01
     $ renpy.pause()
-    "With one swift motion Jade unlaced her skirt and top and let them fall to the ground."
+    "With one swift motion Jade unlaced her skirt and top and let them fall to the floor."
     "She stood naked before me, ready for anything."
     scene ep004_quarters_jade_cock_grab with dissolve
     "I laid back and she crept on top of me, grabbing my cock in her soft hands."
@@ -1315,7 +1330,7 @@ label ep004_jade_sex_soft:
     "Jade seemed to be completely relaxed and my dick was slick with her juices so the tip slid easily inside her rectum."
     "She bit her lip as I pushed the entirety of my veined shaft slowly into her asshole."
     scene ep004_quarters_jade_behind_penetrate_ass_smile with dissolve
-    j "I f-feel s-so f-ful, [p_name_short]!"
+    j "I f-feel s-so f-full, [p_name_short]!"
     c "Do you want me to fuck your ass?"
     j "Yes!"
     j "Fuck my ass, please!"

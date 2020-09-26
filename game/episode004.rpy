@@ -37,7 +37,7 @@ label episode004:
     centered "{=chapter_heading}EPISODE 4{/=chapter_heading}"
 
     scene ep004_calista_apartment_walking with dissolve
-    call location_screen ("Proxima Centauri Orbital IV", True) from _call_location_screen_21
+    call location_screen (__("Proxima Centauri Orbital IV"), True) from _call_location_screen_22
 
     $ bl_name = "Woman"
 
@@ -81,7 +81,7 @@ label episode004:
     scene ep004_calista_apartment_ca_laugh with dissolve
     ca "When you have to run petty errands?"
     scene expression eye_blink("images/ep004/ep004_calista_apartment_bl_smile") with dissolve
-    bl "Have I told you before that the drink unleashes the worst in you?"
+    bl "Have I told you before that the alcohol unleashes the worst in you?"
     bl "I’m to find the deserters you failed to terminate."
     scene ep004_calista_apartment_ca_serious with dissolve
     ca "To finish the job?"
@@ -111,16 +111,16 @@ label episode004:
     python:
         codex_bloodhound = add_codex_entry(
             Codex,
-            "Characters",
-            "Bloodhound",
+            __("Characters"),
+            __("Bloodhound"),
             [
-                "An operative from an elite force in the Sovereignty military who comes to visit Calista Szuzume to find out more about [p_name] and his band of deserters in order to hunt them."
+                __("An operative from an elite force in the Sovereignty military who comes to visit Calista Szuzume to find out more about [p_name] and his band of deserters in order to hunt them.")
             ],
             "images/codex/Bloodhound.webp"
         )
 
     scene ep004_bastard_ship with dissolve
-    call location_screen ("Near Verdant Station", True) from _call_location_screen_22
+    call location_screen (__("Near Verdant Station"), True) from _call_location_screen_23
 
     scene ep003_bastard_av_th_alt with dissolve
     c "Well, let’s see what we can do in five minutes."
@@ -158,7 +158,7 @@ label episode004:
     av "We’re on a clock too."
 
     menu:
-        "Bargain with Ziv [gr]\[Ziv Bargain\] \[Recommended\]":
+        "[gr]Bargain with Ziv":
             $ ep004_ziv_bargain = True
             c "Tell me one good reason not to hand you over."
             scene expression eye_blink("images/ep004/ep004_bastard_zi_serious") with dissolve
@@ -200,10 +200,10 @@ label episode004:
             python:
                 codex_tubloshi = add_codex_entry(
                     Codex,
-                    "Characters",
-                    "Tubloshi",
+                    __("Species"),
+                    __("Tubloshi"),
                     [
-                        "A warrior race known for taking pride in their honor and hero worship. The Tubloshi mounted several military campaigns of which the Fifth Glorious Campaign was the last."
+                        __("A warrior race known for taking pride in their honor and hero worship. The Tubloshi mounted several military campaigns of which the Fifth Glorious Campaign was the last.")
                     ]
                 )
             scene expression eye_blink("images/ep004/ep004_bastard_zi_serious") with dissolve
@@ -280,7 +280,7 @@ label episode004:
 
     if not ep004_ziv_bargain:
         scene expression eye_blink("images/ep004/ep004_bastard_ziv") with dissolve
-        zi "Thank you, I speak for Raene to, when I say that this means a lot."
+        zi "Thank you, I speak for Raene too, when I say that this means a lot."
         zi "Hierophant Sacleus is a man not to be trifled with."
         c "He’s Raene’s father?"
         scene expression eye_blink("images/ep004/ep004_bastard_ziv_serious") with dissolve
@@ -291,7 +291,7 @@ label episode004:
         python:
             codex_sacleus = update_codex_entry(codex_sacleus, None,
                 [
-                    "Hierophant Sacleus is the highest ranking member of an unknown religious order on Verdigris V and father of Raene. He's also the owner of the vessel “His Eternal Holy Light That Graces Our Paltry Existence A Thousandfold”."
+                    __("Hierophant Sacleus is the highest ranking member of an unknown religious order on Verdigris V and father of Raene. He's also the owner of the vessel “His Eternal Holy Light That Graces Our Paltry Existence A Thousandfold”.")
                 ]
             )
         c "I asked you directly if she wasn’t a princess."
@@ -330,16 +330,16 @@ label episode004:
         zi "Your plan seems to have worked, they’ll take some time to recover from that pulse grenade Thyia set up for them."
         c "That’s the idea."
         c "Listen, we’re off to a very small asteroid base next and there’s no clear plan yet what we’re to do after."
-        c "Once we’ve finished our business at the asteroid base, we’ll might go find Kyl Tavort’s last resting place."
+        c "Once we’ve finished our business at the asteroid base, we’ll go find Kyl Tavort’s last resting place."
         zi "That works for me."
         c "Good."
-        c "In the mean time, you can and Raene take one of the empty quarters on the aft of the ship."
+        c "In the mean time, you and Raene can take one of the empty quarters on the aft of the ship."
         zi "Thanks."
 
     play music "music/ephemera.ogg" fadein 1.0 fadeout 4
 
     scene ep004_asteroid_base with dissolve
-    call location_screen ("Hreir Asteroid Base, Approach", True) from _call_location_screen_23
+    call location_screen (__("Hreir Asteroid Base, Approach"), True) from _call_location_screen_24
 
     "Using the navigational data we received from Hreir, the Iron Bastard cut it’s way through the asteroid field."
     "It wasn’t until we docked that something began to feel off."
@@ -350,7 +350,7 @@ label episode004:
     av "We’ll worry about that later."
     scene ep004_asteroid_av_na_guns with dissolve
     "Aven returned with two pistols and we made our way into the base."
-    "All automatic doors opened without fail, but we all couldn’t shrug that uncomfortable feeling, perhaps caused by the eerie quiet of the base."
+    "All automatic doors opened without fail, but I couldn’t shrug that uncomfortable feeling, perhaps caused by the eerie quiet of the base."
     scene ep004_asteroid_bots with dissolve
     "When we encountered the smoldering remnants of two of the security bots, we knew for sure something terrible had happened."
     na "Karan?"
@@ -358,7 +358,7 @@ label episode004:
     av "Fuck."
     av "He’s gone, Nadya."
     scene ep004_asteroid_ka_table with dissolve
-    "Karan had died a violent death, tied down on his own examination table."
+    "Karan had died a violent death on his own examination table."
     "The two remaining bots lay slumped against the wall, black holes of some kind of energy weapon piercing their armor."
     scene expression eye_blink("images/ep004/ep004_asteroid_na") with dissolve
     na "Who could do such a thing?"
@@ -376,7 +376,7 @@ label episode004:
     na "Such a bright mind..."
 
     menu:
-        "[gr]Hug her":
+        "Hug her [NadyaPath]":
             $ ep004_na_hug = True
             scene ep004_asteroid_hug with dissolve
             "I took Nadya in my arms and I held her in silence, until Aven returned with a sheet she found somewhere"
@@ -435,10 +435,10 @@ label episode004:
     man "Nadya, you’ve been a loyal friend, I-"
     man "*Static*"
     python:
-        codex_warrior_women = update_codex_entry(codex_warrior_women, "Acarhyn",
+        codex_warrior_women = update_codex_entry(codex_warrior_women, __("Acarhyn"),
             [
-                "First encountered on Lanan P-10 and identified by Karan Hreir just before his unfortunate demise. The Acarhyn launched a full-scale attack on TGN personnel on Lanan P-10, abducting a great many of them.",
-                "The women appear muscular and wear elaborate armor and seem to prefer fighting with relatively crude melee weapons."
+                __("First encountered on Lanan P-10 and identified by Karan Hreir just before his unfortunate demise. The Acarhyn launched a full-scale attack on TGN personnel on Lanan P-10, abducting a great many of them."),
+                __("The women appear muscular and wear elaborate armor and seem to prefer fighting with relatively crude melee weapons.")
             ]
         )
 
@@ -478,10 +478,10 @@ label episode004:
     python:
         codex_cetruvar = add_codex_entry(
             Codex,
-            "Characters",
-            "Ranimo Cetruvar",
+            __("Characters"),
+            __("Ranimo Cetruvar"),
             [
-                "Former Minister of Information in the Sovereignty turned information broker living like a king on a heavily fortified moon. Cetruvar should have more information on the possible location of the Acarhyn home planet."
+                __("Former Minister of Information in the Sovereignty turned information broker living like a king on a heavily fortified moon. Cetruvar should have more information on the possible location of the Acarhyn home planet.")
             ]
         )
 
@@ -504,7 +504,7 @@ label episode004:
     av "For all we know we expose them to the clean-up crew who killed Hreir."
 
     menu:
-        "[gr]Ask around":
+        "Ask around [NadyaPath]":
             $ ep004_n_ask = True
             c "We have to take that risk."
             c "Nadya, could you ask around, discretely?"
@@ -530,7 +530,7 @@ label episode004:
             scene expression eye_blink("images/ep004/ep004_cockpit_th_unsure") with dissolve
             th "And then what?"
             th "You can’t just waltz in there and demand to speak to Cetruvar."
-            th "I mean, you probably won’t be shot on sight, but there’s no way you’d even be able enter orbit."
+            th "I mean, you probably won’t be shot on sight, but there’s no way you’d even be able to enter orbit."
             th "He doesn’t like unannounced guests."
             c "Maybe he’ll just have to adjust this once, or do you have another idea?"
             scene ep004_cockpit_av with dissolve
@@ -565,7 +565,7 @@ label episode004:
             scene expression eye_blink("images/ep004/ep004_ship_th_unsure") with dissolve
             th "And then what?"
             th "You can’t just waltz in there and demand to speak to Cetruvar."
-            th "I mean, you probably won’t be shot on sight, but there’s no way you’d even be able enter orbit."
+            th "I mean, you probably won’t be shot on sight, but there’s no way you’d even be able to enter orbit."
             th "He doesn’t like unannounced guests."
             c "Maybe he’ll just have to adjust this once, or do you have another idea?"
             scene ep004_ship_av with dissolve
@@ -644,10 +644,10 @@ label episode004:
                 python:
                     codex_tubloshi = add_codex_entry(
                         Codex,
-                        "Characters",
-                        "Tubloshi",
+                        __("Species"),
+                        __("Tubloshi"),
                         [
-                            "A warrior race known for taking pride in their honor and hero worship. The Tubloshi mounted several military campaigns of which the Fifth Glorious Campaign was the last."
+                            __("A warrior race known for taking pride in their honor and hero worship. The Tubloshi mounted several military campaigns of which the Fifth Glorious Campaign was the last.")
                         ]
                     )
 
@@ -706,10 +706,10 @@ label episode004:
         python:
             codex_tubloshi = add_codex_entry(
                     Codex,
-                    "Characters",
-                    "Tubloshi",
+                    __("Species"),
+                    __("Tubloshi"),
                     [
-                        "A warrior race known for taking pride in their honor and hero worship. The Tubloshi mounted several military campaigns of which the Fifth Glorious Campaign was the last."
+                        __("A warrior race known for taking pride in their honor and hero worship. The Tubloshi mounted several military campaigns of which the Fifth Glorious Campaign was the last.")
                     ]
                 )
     else:
@@ -753,7 +753,7 @@ label episode004:
     th "He's well-connected and he should be able to get us the credentials we need to impress Cetruvar."
 
     scene ep004_barranthis with dissolve
-    call location_screen ("Barranthis, Approach", True) from _call_location_screen_24
+    call location_screen (__("Barranthis, Orbit"), True) from _call_location_screen_25
 
     "Only after haggling a fair amount were we able to land our ship in one of the many commercial docks of Barranthular, the largest city on the planet."
     scene ep004_barranthis_docks with dissolve
@@ -817,7 +817,7 @@ label episode004:
     scene ep004_barranthis_apartment_interior_shot with vpunch
     "Seconds later, the sound of a gunshot rung in my ears."
 
-    call credits from _call_credits
+    jump episode005
     return
 
     label ep004_skarak:
@@ -825,9 +825,9 @@ label episode004:
 
         play music "music/signal-to-noise.ogg" fadein 1.0 fadeout 4
 
-        call location_screen ("Unknown, En Route to Skarak", False) from _call_location_screen_25
+        call location_screen ("Unknown, En Route to Skarak", False) from _call_location_screen_26
         "Ziv’s coordinates took us through several jump gates and star systems before we reached the planet where Tavort’s body was supposed to be."
-        "When were nearly in orbit of the planet, I asked Ziv to join me on the bridge."
+        "When we were nearly in orbit of the planet, I asked Ziv to join me on the bridge."
         scene expression eye_blink("images/ep004/ep004_cockpit_ziv") with dissolve
         c "Is this going to be another inhospitable rock?"
         zi "No, this a lush and green planet."
@@ -846,13 +846,13 @@ label episode004:
                 "Céline broke the silence between Ziv and me by announcing we were arriving."
                 scene expression eye_blink("images/ep004/ep004_cockpit_ce") with dissolve
                 ce "Prepare for landing in two minutes."
-            "[gr]Curious":
+            "Curious [ZivPath]":
                 c "Is she okay with us disturbing his corpse?"
                 scene expression eye_blink("images/ep004/ep004_cockpit_ziv_angry") with dissolve
                 zi "Frankly, I don’t care."
                 zi "Luzane was my Premier and I hated her guts."
                 zi "The only reason I know of Tavort is because we came here frequently and she had us gather resources while she visited him in the mountains."
-                zi "One day, curiosity go the better of me and I just followed her to see what she was up to."
+                zi "One day, curiosity got the better of me and I just followed her to see what she was up to."
                 zi "I found her praying at a grave."
                 scene expression eye_blink("images/ep004/ep004_cockpit_ziv_angry_alt") with dissolve
                 zi "Her fling with Tavort was public knowledge, but nobody knew what happened to him at the end of the Fifth Glorious Campaign."
@@ -878,7 +878,7 @@ label episode004:
                 zi "I’m sure they will be."
                 zi "Tavort is mainly remembered for his deeds in the early years of the Fifth Glorious Campaign, before he met Luzane."
                 c "How did they meet?"
-                zi "Our Cohort, led by Luzane, was staying at a planet that was just conquered by the Tubloshi."
+                zi "Our Cohort, led by Luzane, was staying on a planet that was just conquered by the Tubloshi."
                 zi "Or liberated is a better term, it was a very nasty place."
                 scene expression eye_blink("images/ep004/ep004_cockpit_ziv") with dissolve
                 c "Cohort?"
@@ -899,26 +899,26 @@ label episode004:
                 python:
                     codex_luzane = add_codex_entry(
                         Codex,
-                        "Characters",
-                        "Luzane",
+                        __("Characters"),
+                        __("Luzane"),
                         [
-                            "Ziv's former squad leader (Premier) and former lover of the Tubloshi hero Kyl Tavort."
+                            __("Ziv's former squad leader (Premier) and former lover of the Tubloshi hero Kyl Tavort.")
                         ]
                     )
 
                 "My conversation with Ziv was cut short when the Bastard broke atmosphere."
 
         scene ep004_skarak with dissolve
-        call location_screen ("Skarak, Surface", True) from _call_location_screen_26
-        "We touched down in a clearing and made a decision who was to go and find Tavort's tomb."
-        "Lilly didn't have the stomach to go on an expedition so soon after our adventure with the Boverin, but Aven didn't have a problem with it."
+        call location_screen (__("Skarak, Surface"), True) from _call_location_screen_27
+        "Due to atmospheric interference Céline couldn't land us close to our desired location, so we touched down in a clearing and made a decision who was to go and find Tavort's tomb."
+        "Lilly didn't have the stomach to go on an expedition so soon after our adventure with the boverin, but Aven didn't have a problem with it."
         "We stocked up on supplies and weapons and went out into the wilderness."
         scene ep004_skarak_trek with dissolve
         c "This seems like a fertile planet, how come nobody lives here?"
         c "At least, I didn't see any cities or settlements in the Bastard's computer."
         scene expression eye_blink("images/ep004/ep004_skarak_trek_ziv") with dissolve
         zi "This is a designated conservation world of the Katorr, they use this planet and others to repopulate the wildlife they decimated on their own home planet."
-        c "You could have told we just landed in a nature reserve..."
+        c "You could have told us we just landed in a nature reserve..."
         c "How long before the Katorrian come and take us in?"
         zi "Katorran..."
         c "Who gives a fuck?"
@@ -997,17 +997,31 @@ label episode004:
         scene expression eye_blink("images/ep004/ep004_skarak_woman_alt_smile") with dissolve
         lu "Sorry, but that’s not going to happen."
         c "You look an awful lot like Ziv..."
-        c "Fuck, you’re Luzane, aren’t you?"
+        if ep004_ziv_derisive:
+            c "Fuck, you’re Tavort's lover, aren’t you?"
+            lu "Yes, I am Luzane."
+        else:
+            c "Fuck, you’re Luzane, aren’t you?"
 
         $ lu_name = "Luzane"
 
         python:
-            codex_luzane = update_codex_entry(codex_luzane, None,
-                [
-                    "Ziv's former squad leader (Premier) and former lover of the Tubloshi hero Kyl Tavort. Luzane lived on Skarak near the resting place of Kyl Tavort."
-                ],
-                "images/codex/Luzane.webp"
-            )
+            if ep004_ziv_derisive:
+                codex_luzane = add_codex_entry(
+                    Codex,
+                    __("Characters"),
+                    __("Luzane"),
+                    [
+                        __("Former lover of the Tubloshi hero Kyl Tavort and an acquaintance of Ziv.")
+                    ]
+                )
+            else:
+                codex_luzane = update_codex_entry(codex_luzane, None,
+                    [
+                        __("Ziv's former squad leader (Premier) and former lover of the Tubloshi hero Kyl Tavort. Luzane lived on Skarak near the resting place of Kyl Tavort.")
+                    ],
+                    "images/codex/Luzane.webp"
+                )
 
         scene expression eye_blink("images/ep004/ep004_skarak_woman_alt_surprise") with dissolve
         lu "Yes, did Ziv tell you about me?"
@@ -1019,7 +1033,7 @@ label episode004:
         lu "Get revenge at last?"
 
         menu:
-            "[gr]Truth":
+            "Truth [LuzanePath]":
                 $ ep004_lu_truth = True
                 c "No."
                 scene expression eye_blink("images/ep004/ep004_skarak_woman_alt_surprise") with dissolve
@@ -1093,7 +1107,7 @@ label episode004:
         zi "Kyldjar also talks about manipulating the spirits by bonding with them through performing rituals."
         c "Fascinating, but what's going to happen to me?"
         scene expression eye_blink("images/ep004/ep004_skarak_ritual_zi_serious") with dissolve
-        zi "You're going to have sex with her and at your climax she'll cut your throat."
+        zi "You're going to have sex with her and at your climax she'll stab you in the heart."
         zi "She'll intone the prescribed incantations as you bleed out and that will bring Tavort back, supposedly."
         c "I must say I kinda lost you after the climax..."
         c "Fuck."
@@ -1114,7 +1128,7 @@ label episode004:
         lu "Ah, the girl is awake as well."
         lu "You'll all be present to witness the return of Tavort."
         lu "My preparations are complete."
-        lu "I'm going to untie your legs now, boy."
+        lu "I'm going to untie your hands now, boy."
         c "Call me [p_name]."
         lu "All right."
         lu "If you try to run, [p_name], I'll cut you down and then I'll do the same to your friends."
@@ -1135,7 +1149,7 @@ label episode004:
             ease 8 yalign 0.01
         $ renpy.pause()
         "The woman started to undress herself, revealing her large breasts and athletic physique."
-        "My cock began to stir and I thought to myself that the ritual wasn’t all together that bad, expect for the violent death at the end."
+        "My cock began to stir and I thought to myself that the ritual wasn’t all together that bad, except for the violent death at the end."
         scene ep004_skarak_ritual_undress_alt with vpunch:
             yalign 0.01
         "But then her dress dropped to the ground."
@@ -1168,11 +1182,11 @@ label episode004:
         scene expression eye_blink("images/ep004/ep004_skarak_ritual_av_sit") with dissolve
         av "Are you all right [p_name_short]?"
         if ep004_lu_lick or ep004_lu_suck:
-            "Yes, I think so, she's a bit heavy though..."
+            c "Yes, I think so, she's a bit heavy though..."
             scene ep004_skarak_ritual_drag with dissolve
             "Ziv and Aven dragged the woman off me and untied my legs."
         else:
-            "Yes, I think so..."
+            c "Yes, I think so..."
             scene ep004_skarak_ritual_drag with dissolve
             "Ziv and Aven dragged the woman away and untied my legs."
         "Neither of them mentioned the uneasy spectacle they just witnessed and let me dress without saying anything."
@@ -1183,7 +1197,7 @@ label episode004:
         zi "The Tubloshi will probably do a quick genetic scan to verify the remains with the ones on file in their database."
         c "Let's pack up those bones then."
         scene ep004_skarak_container with dissolve
-        "Ziv and I retrieved the large collapsable container we dumped back in the fields and we began to work on moving the bones of Kyl Tavort to it. "
+        "Ziv and I retrieved the large collapsable container we dropped back in the fields and we began to work on moving the bones of Kyl Tavort to it. "
         "We tried to be as careful as possible to preserve the remains for the Tubloshi and luckily the skeleton of Tavort was in rather good shape, all things considering."
         "Aven kept watch over the unconscious Luzane, holding her gun which she found amongst the woman's possessions."
 
@@ -1287,7 +1301,7 @@ label episode004:
         "As her moans became hoarser, I grabbed hold of her veined shaft and began to jerk her cock."
         "Luzane's penis was covered in precum and responded instantly to my touch by releasing more from her slit."
         show ep004_lu_ca_fuck_jerk_alt with dissolve
-        "I couldn't hold out much longer and brought Luzane right at the edge of her climax in seconds, her cock still firmly in my fist."
+        "I couldn't hold out much longer and brought Luzane right to edge of her climax in seconds, her cock still firmly in my fist."
         show ep004_lu_ca_penetrate_face with dissolve
         "With my penis deep inside her, I felt the woman on top of me twitch."
         scene ep004_lu_ca_fuck_jerk_closeup with dissolve
@@ -1304,9 +1318,7 @@ label episode004:
         return
 
     label ep004_tubloshi:
-        play music "music/tears-in-rain.ogg" fadein 1.0 fadeout 4
-
-        call location_screen ("Unknown, En-route to Tubloshi rendezvous point", False) from _call_location_screen_27
+        call location_screen (__("Unknown, En-route to Tubloshi rendezvous point"), False) from _call_location_screen_28
         "The Bastard took off with some haste after Céline punched in the coordinates that would take us to the location of the Tubloshi."
         scene ep004_tubloshi with dissolve
         "A large warship appeared on our scanners when Céline disengaged the SL-Drive."
@@ -1331,10 +1343,10 @@ label episode004:
 
         $ ha_name = "Translator"
 
-        ha "Greetings, Ziv of the Rhenkoi and [p_name] of the Humans."
+        ha "Greetings, Ziv of the Rhenkoy and [p_name] of the Humans."
 
         menu:
-            "[gr]Be polite":
+            "Be polite [HannahPath]":
                 $ ep004_tu_polite = True
                 c "Greetings, noble warriors of the Tubloshi, we have brought home the hero Kyl Tavort."
             "Be brash":
@@ -1347,7 +1359,7 @@ label episode004:
         ha "Please follow us."
         "The woman and the warriors led us through several corridors to a section that contained the ship's lab."
         scene ep004_tubloshi_ship_door with dissolve
-        ha "We ask you to remain outside until the test have been completed."
+        ha "We ask you to remain outside until the tests have been completed."
 
         menu:
             "Contest":
@@ -1367,7 +1379,7 @@ label episode004:
                 scene expression eye_blink("images/ep004/ep004_tubloshi_ship_door_ha") with dissolve
                 "They seemed to accept her apology and took the remains inside the laboratory."
                 ha "Wait here."
-            "[gr]Accept":
+            "Accept [HannahPath]":
                 c "Of course."
                 scene expression eye_blink("images/ep004/ep004_tubloshi_ship_door_ha") with dissolve
                 "The Tubloshi took the remains inside the laboratory and the door shut behind them, leaving us with the translator."
@@ -1390,7 +1402,7 @@ label episode004:
         c "A fellow human, no less?"
         scene expression eye_blink("images/ep004/ep004_tubloshi_ship_mess_smile") with dissolve
         ha "Yes, I am."
-        c "Just making sure, but you're here out of your own free wil?"
+        c "Just making sure, but you're here out of your own free will?"
         ha "Haha, of course."
         ha "You haven't figured out the Tubloshi for the honorable people they are?"
         c "I guess so, are they really so zealously righteous?"
@@ -1484,7 +1496,7 @@ label episode004:
             ha "To catch up on things, maybe?"
 
             menu:
-                "[gr]Accept":
+                "Accept [HannahPath]":
                     c "Only if you have better liquor than whatever the Tubloshi like to drink."
                     scene expression eye_blink("images/ep004/ep004_tubloshi_ship_corridor_smile") with dissolve
                     ha "I promise."
@@ -1514,10 +1526,10 @@ label episode004:
         python:
             codex_hannah = add_codex_entry(
                 Codex,
-                "Characters",
-                "Hannah",
+                __("Characters"),
+                __("Hannah"),
                 [
-                    "Hannah is a translator in the employ of the Tubloshi and acted as a guide on their warship when [p_name] and Ziv brought the body of the warrior Kyl Tavort back home."
+                    __("Hannah is a translator in the employ of the Tubloshi and acted as a guide on their warship when [p_name] and Ziv brought the body of the warrior Kyl Tavort back home.")
                 ],
                 "images/codex/Hannah.webp"
             )
@@ -1534,12 +1546,12 @@ label episode004:
         "I followed the woman to the crew quarters of the ship."
         scene expression eye_blink("images/ep004/ep004_ha_quarters") with dissolve
         ha "Well, here we are."
-        c "Cosy, considering we're on a warship."
+        c "Cozy, considering we're on a warship."
         ha "I did my best."
         ha "Drink?"
         c "Yes please."
         scene ep004_ha_quarters_alt with dissolve
-        c "Let's make a toast then."
+        ha "Let's make a toast then."
         c "Not to Kyl Tavort again, surely?"
         scene expression eye_blink("images/ep004/ep004_ha_quarters_drink") with dissolve
         ha "Nah, to chance encounters?"
@@ -1579,7 +1591,7 @@ label episode004:
     label ep004_hannah_sex:
         scene ep004_ha_quarters_kissing with dissolve
         "The sexual preferences of the Tubloshi forgotten in an instant, we embraced on the couch and kissed."
-        "As our passion become more heated, we rose from the couch, still kissing and nearly toppling over the drinks on the floor before moving to the bed."
+        "As our passion became more heated, we rose from the couch, still kissing and nearly toppling over the drinks on the floor before moving to the bed."
         scene ep004_ha_quarters_kissing_bed with dissolve:
             yalign 1.0
             ease 8 yalign 0.01
@@ -1590,10 +1602,10 @@ label episode004:
         "Her fingers tousled my hair, directing me to her gorgeously shaped breasts and the nipples that stood proudly erect."
         ha "Make love to me, [p_name]!"
         scene ep004_ha_quarters_breasts with dissolve
-        "I took one of her hard nipples in my mouth and circled her aureolas with my tongue."
+        "I took one of her hard nipples in my mouth and circled her areolas with my tongue."
         "Hannah began to sigh heavily and slowly rubbed her thighs against each other as I kneaded her full breasts."
         show ep004_ha_quarters_breasts_alt with dissolve
-        "While she trashed and turned, I slipped a hand between her legs."
+        "While she thrashed and turned, I slipped a hand between her legs."
         "She welcomed me by opening her legs and twisting her lower body towards my eager fingers."
         "Her pussy was warm and wet to the touch."
         scene ep004_ha_quarters_finger with dissolve
@@ -1605,7 +1617,7 @@ label episode004:
         scene ep004_ha_quarters_finger_mouth with dissolve
         "She breathed heavily and moaned pleadingly when I paused to take my fingers off her clit to wet them in her own juices."
         "Wanting to taste her, I let my tongue take over from my fingers."
-        "She tasted of salt and I gorged myself on her earthly smell."
+        "She tasted of salt and I gorged myself on her earthy smell."
         scene ep004_ha_quarters_licking with dissolve
         "Suddenly I felt her hands on my head, pushing me down and I knew I had her close to a climax."
         "Using my tongue and my fingers, I treated her pussy to an intense volley of attention."

@@ -119,7 +119,7 @@ label ep002_conversations:
         c "I'm sure that will change."
         c "You're new here and everybody has been through hell lately."
         menu:
-            "[gr]You can confide in me":
+            "You can confide in me [VessPath]":
                 $ ep002_vess_reassure = True
                 c "If you need someone to speak to, I'll be there for you."
                 scene expression eye_blink("images/ep002/ep002_quarters_vess_smile") with dissolve
@@ -159,7 +159,7 @@ label ep002_conversations:
                     ki "And a captain has certain responsibilities, if you know what I mean."
 
                     menu:
-                        "[gr]Agree":
+                        "Agree [KitPath]":
                             c "I get what you're saying..."
                             c "It's just, I never asked to be captain, let alone all those new responsibilities."
                             c "But I made a choice for all of us, so maybe I should accept those responsibilities."
@@ -231,7 +231,7 @@ label ep002_conversations:
                 scene expression eye_blink("images/ep002/ep002_quarters_lilly_angry") with vpunch
                 l "Fuck you, you always think about yourself."
                 l "Just leave."
-            "[gr]Of course":
+            "Of course [LillyPath]":
                 $ ep002_lilly_respect = True
                 c "Of course."
         jump ep002_conversation_choices
@@ -251,13 +251,13 @@ label ep002_conversations:
         j "There are many things we never ask for in life and they still happen."
 
         menu:
-            "[gr]Sorry":
+            "Sorry [JadeLovePath]":
                 $ ep002_jade_empathize = True
                 c "Shit, I didn't mean to be insensitive."
                 j "Oh, you mean because of my past?"
                 j "If I'd still dwelt on the cards I've been dealt in life, I'd be a very bitter Tw'ill indeed."
                 j "So don't worry about that, master."
-            "Agree":
+            "Agree [JadeSubPath]":
                 c "I guess you're right..."
         scene expression eye_blink("images/ep002/ep002_quarters_jade_smile_sexy") with dissolve
         j "Maybe we should celebrate your new captainship?"
@@ -310,7 +310,7 @@ label ep002_conversations:
             ce "Oh..."
 
             menu:
-                "[gr]Invite her":
+                "Invite her [CelinePath]":
                     $ ep002_celine_sex = True
                     c "But she doesn't mind sleeping somewhere else."
                     scene expression eye_blink("images/ep002/ep002_quarters_celine_sexy") with dissolve
@@ -343,7 +343,7 @@ label ep002_conversations:
             t "And don’t worry, I’ll give her privacy if she needs it."
 
             menu:
-                "[gr]Wasn't worried":
+                "Wasn't worried [ThimPath]":
                     c "I wasn’t worried about that."
                     scene expression eye_blink("images/ep002/ep002_quarters_thim_smile") with dissolve
                     t "Oh..."
@@ -411,7 +411,7 @@ label ep002_conversations:
             c "I think she'll be very happy to see you too."
         na "When we're together, we should talk some more about the past, relive a couple of those happy memories."
         menu:
-            "[gr]I'd like that":
+            "I'd like that [NadyaPath]":
                 c "I'd like that."
                 na "Good!"
             "I'd rather not":
@@ -432,13 +432,19 @@ label ep002_conversations:
                 c "Are you okay here in these quarters?"
                 av "I'll manage."
                 av "I've slept under worse conditions."
-                c "On those expeditions with aunt Nadya?"
+                if game.is_special:
+                    c "On those expeditions with aunt Nadya?"
+                else:
+                    c "On those expeditions with Nadya?"
                 av "Yup."
                 av "There's never enough funding from the University, so we mostly had to make ends meet."
                 c "Ever been in dangerous situations?"
                 scene expression eye_blink("images/ep002/ep002_quarters_aven_smile") with dissolve
                 av "Plenty!"
-                av "Mom has successfully contacted several hostile races and profiled them."
+                if game.is_special:
+                    av "Mom has successfully contacted several hostile races and profiled them."
+                else:
+                    av "Nadya has successfully contacted several hostile races and profiled them."
                 av "The initial contact is always a little scary, but so is staying among an alien race you know would eat you for breakfast normally."
                 c "My guess is that in those cases your combat skills aren't any good."
                 scene expression eye_blink("images/ep002/ep002_quarters_aven") with dissolve
@@ -453,7 +459,7 @@ label ep002_conversations:
                     "Say nothing":
                         "I just looked at her, trying to determine if she was acting all tough or if she was being genuine."
                 jump ep002_aven_dialogue
-            "[gr]About the past" if not ep002_aven_past:
+            "About the past [AvenPath]" if not ep002_aven_past:
                 $ ep002_aven_past = True
                 c "I don't remember much about our time together on Tuolovi."
                 av "I remember some things."
@@ -469,7 +475,10 @@ label ep002_conversations:
                 av "We did, but I was close with Lilly and Eva too, just liked to mess with them from time to time."
                 c "Do you know why it went all wrong?"
                 scene expression eye_blink("images/ep002/ep002_quarters_aven") with dissolve
-                av "No...{w} Mom never talks about it."
+                if game.is_special:
+                    av "No...{w} Mom never talks about it."
+                else:
+                    av "No...{w} Nadya never talks about it."
                 av "I'm pretty sure it's something between her and your mom and dad."
                 if game.is_special:
                     av "She obviously still loves you and your sisters."
@@ -480,7 +489,10 @@ label ep002_conversations:
                 c "Glad she doesn't hate me."
                 scene expression eye_blink("images/ep002/ep002_quarters_aven_smile") with dissolve
                 av "Why would she?"
-                av "You were always her favorite nephew."
+                if game.is_special:
+                    av "You were always her favorite nephew."
+                else:
+                    av "You were always her favorite."
                 scene expression eye_blink("images/ep002/ep002_quarters_aven") with dissolve
                 if game.is_special:
                     av "If there's anybody she hates, it's her brother, or should I say uncle Agust..."
@@ -512,7 +524,7 @@ label ep002_conversations:
         th "Are you always this selfish and untrustworthy?"
 
         menu:
-            "[gr]Apologize":
+            "Apologize [ThyiaPath]":
                 $ ep002_thyia_apology = True
                 c "If I'd known beforehand everything would turn into a world of shit for you, I'd have done that cargo run first."
                 if game.is_special:
@@ -599,7 +611,7 @@ label ep002_celine_sex:
     scene expression eye_blink("images/ep002/ep002_celine_fuck_post") with dissolve
 
     menu:
-        "[gr]Love you too":
+        "Love you too [CelinePath]":
             $ ep002_celine_love = True
             c "I love you too, Céline!"
             "Incapable of saying anything else, I pulled her on the bed and hugged her firmly."

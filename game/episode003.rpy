@@ -65,7 +65,7 @@ label episode003:
     centered "{=chapter_heading}EPISODE 3{/=chapter_heading}"
 
     scene ep002_iron_bastard_cockpit_asteroids with dissolve
-    call location_screen ("Hreir Asteroid Base, Approach", True) from _call_location_screen_18
+    call location_screen (__("Hreir Asteroid Base, Approach"), True) from _call_location_screen_18
 
     "For some time, we floated just outside the asteroid field, our armor pelted by small debris coming from the field."
 
@@ -232,10 +232,10 @@ label episode003:
     python:
         codex_karan_hreir = add_codex_entry(
             Codex,
-            "Characters",
-            "Karan Hreir",
+            __("Characters"),
+            __("Karan Hreir"),
             [
-                "Scientist specializing in genetics and living a solitary live inside a well-protected asteroid base. Knows more about the warrior women that abducted Eva."
+                __("Scientist specializing in genetics and living a solitary live inside a well-protected asteroid base. Knows more about the warrior women that abducted Eva.")
             ],
             "images/codex/Karan.webp"
         )
@@ -293,7 +293,7 @@ label episode003:
     ka "If you want my help I'd like you to find me a healthy specimen of boverine."
     c "We are to transport some unknown alien creature aboard our ship?"
     c "We're not equipped for that."
-    ka "Don't worry, I just need an larvae."
+    ka "Don't worry, I just need a larvae."
     ka "I'll provide you with a storage container for safe transport."
     if game.is_special:
         c "Aunt?"
@@ -310,10 +310,10 @@ label episode003:
     python:
         codex_boverin = add_codex_entry(
             Codex,
-            "Species",
-            "Boverine",
+            __("Species"),
+            __("Boverine"),
             [
-                "Boverine are native to the planet Sagueliath and extremely dangerous predators. The crew was tasked with retrieving an larvae of a boverin for Karan Hreir."
+                __("Boverine are native to the planet Sagueliath and extremely dangerous predators. The crew was tasked with retrieving an larvae of a boverin for Karan Hreir.")
             ]
         )
 
@@ -409,17 +409,17 @@ label episode003:
         play music [ "music/horizons.ogg", "music/floating-cities.ogg", "music/a-new-year.ogg" ] fadeout 4 fadein 1.0
 
         scene ep003_verdant_approach with dissolve
-        call location_screen ("Verdant Station, Approach", True) from _call_location_screen_19
+        call location_screen (__("Verdant Station, Approach"), True) from _call_location_screen_19
         "Verdant Station turned out to be a rather busy port, so we had to wait for several hours until a docking bay was available for our ship."
 
         python:
             codex_verdant_station = add_codex_entry(
                 Codex,
-                "Places",
-                "Verdant Station",
+                __("Places"),
+                __("Verdant Station"),
                 [
-                    "A medium-sized commercial spaceport where the crew of the Iron Bastard touched down to repair the ship.",
-                    "Several intergalactic companies have an office on the station, including ConVitæ.",
+                    __("A medium-sized commercial spaceport where the crew of the Iron Bastard touched down to repair the ship."),
+                    __("Several intergalactic companies have an office on the station, including ConVitæ."),
                 ]
             )
 
@@ -523,10 +523,10 @@ label episode003:
                     python:
                         codex_ziv = add_codex_entry(
                             Codex,
-                            "Characters",
-                            "Ziv",
+                            __("Characters"),
+                            __("Ziv"),
                             [
-                                "A woman on Verdant Station who contacted the crew about a taxi mission to Verdigris V."
+                                __("A woman on Verdant Station who contacted the crew about a taxi mission to Verdigris V.")
                             ],
                             "images/codex/Ziv.webp"
                         )
@@ -735,7 +735,7 @@ label episode003:
         "Another roar and the scratching of nails on stone, signified the boverin was close by."
         c "Two!"
         c "Three!"
-        "The creature was extremely close, it’s scrambling movements clearly audible and interpuncted by enraged screams."
+        "The creature was extremely close, its scrambling movements clearly audible and interpuncted by enraged screams."
         "Lilly let one hand go of the ledge and latched onto my hand and the lower part of my arm."
         scene ep003_sagueliath_cave_run_l_c_ledge with vpunch
         "I pulled her upwards with all the strength I had and we nearly tumbled on top of each other."
@@ -759,7 +759,7 @@ label episode003:
         scene ep003_sagueliath_cave_run_boverin_closeup with dissolve
         "It almost seemed as if the animal was laughing at us for pelting it with rocks, its face contorted in a rictus grin."
         "A larger stalactite fell down and grazed the beast’s hide, blood leaking from the wound into the void below."
-        "Still, the distraction didn’t prove large enough and the boverin resumed it’s jump towards us."
+        "Still, the distraction didn’t prove large enough and the boverin resumed its jump towards us."
         scene ep003_sagueliath_cave_run_boverin_jump with dissolve
         "As it set off and lifted itself into the air, I fired several shots into the ceiling and a gigantic pointy rock fell down."
         "The stalactie landed squarely on the beasts back and slammed it down towards the ledge."
@@ -814,7 +814,7 @@ label episode003:
                 l "You don’t need to rub it in or anything."
                 na "Please, stop it you two."
                 na "Let’s just be grateful all ended well."
-            "[gr]Be supportive":
+            "Be supportive [LillyPath]":
                 c "It sure was."
                 c "They don’t teach you that at the academy."
                 l "You skipped Ledge Hanging 101?"
@@ -983,10 +983,10 @@ label episode003:
                         python:
                             codex_ziv = add_codex_entry(
                                 Codex,
-                                "Characters",
-                                "Ziv",
+                                __("Characters"),
+                                __("Ziv"),
                                 [
-                                    "A woman on Verdant Station who contacted the crew about a taxi mission to Verdigris V."
+                                    __("A woman on Verdant Station who contacted the crew about a taxi mission to Verdigris V.")
                                 ],
                                 "images/codex/Ziv.webp"
                             )
@@ -1141,7 +1141,7 @@ label episode003:
                         ve "Don’t be like that, boys."
 
                         menu:
-                            "[gr]Leave them":
+                            "Leave them [ThimPath]":
                                 c "All right, I’ll leave you two alone."
                                 scene expression eye_blink("images/ep003/ep003_verdant_bar_vess_smile") with dissolve
                                 ve "See you later."
@@ -1187,7 +1187,7 @@ label episode003:
                         t "You have to admit, there are a lot of those..."
 
                         menu:
-                            "[gr]Leave them":
+                            "Leave them [ThimPath]":
                                 c "Right..."
                                 c "Well Vess, if you ever want the true version of anything he tells you, you know where to find me."
                                 scene expression eye_blink("images/ep003/ep003_verdant_bar_vess_smile") with dissolve
@@ -1235,7 +1235,7 @@ label episode003:
         play music "music/mirage.ogg" fadeout 4 fadein 1.0
 
         scene ep003_verdigris_approach with dissolve
-        call location_screen ("Verdigris V, Approach", True) from _call_location_screen_20
+        call location_screen (__("Verdigris V, Approach"), True) from _call_location_screen_20
 
         "After entering the atmosphere Céline flew us to a small spaceport near one of the cities of Verdigris."
         scene expression eye_blink("images/ep003/ep003_bastard_zi_hatch") with dissolve
@@ -1308,16 +1308,16 @@ label episode003:
         python:
             codex_ziv = update_codex_entry(codex_ziv, None,
                 [
-                    "A woman on Verdant Station who contacted the crew about a taxi mission to Verdigris V, where you collected Raene, her ward."
+                    __("A woman on Verdant Station who contacted the crew about a taxi mission to Verdigris V, where you collected Raene, her ward.")
                 ]
             )
 
             codex_raene = add_codex_entry(
                 Codex,
-                "Characters",
-                "Raene",
+                __("Characters"),
+                __("Raene"),
                 [
-                    "A shy girl from Verdigris V. You helped Ziv get her off the planet to Verdant Station."
+                    __("A shy girl from Verdigris V. You helped Ziv get her off the planet to Verdant Station.")
                 ],
                 "images/codex/Raene.webp"
             )
@@ -1354,7 +1354,7 @@ label episode003:
                 "The participant would be subjected to a test in one of ConVitæ’s simulators and the responses in the simulation would be recorded."
                 "The contract didn’t stipulate any requirements regarding the age of the test subject, but would be required to pass a simple health scan."
                 "The results of the scan would be destroyed after completion of the simulated test."
-                "The last paragraphs of the contract dealt with a waver of any risks voluntarily incurred by the participant."
+                "The last paragraphs of the contract dealt with a waiver of any risks voluntarily incurred by the participant."
                 "It seemed a straightforward contract, just like the secretary had told me."
                 jump ep003_verdant_con_vitae_choices
             "Sign the contract" if not ep003_verdant_con_vitae_accepted or ep003_verdant_con_vitae_declined:
@@ -1437,7 +1437,7 @@ label episode003:
             "An edge of panic was noticeable when the girl called out for her mistress, who appeared not long after."
         scene ep003_sim_farm_woman with dissolve
         le "Please sir, we’ve done all we can."
-        le "The harvest was poor this year, we’ll be able to pay coming season."
+        le "The harvest was poor this year, we’ll be able to pay in the coming season."
         le "Please let the Duke have mercy on us!"
         "Just my luck to be thrust into a poor man’s fantasy of what life in the Middle Ages must have been like."
 
@@ -1496,20 +1496,20 @@ label episode003:
                         le "Why don’t you rest for a while?"
 
                         menu:
-                            "Accept":
+                            "Accept [ThreesomeSoft]":
                                 $ ep003_sim_farm_sex_threesome_soft = True
                                 "I had a feeling I was going to be treated to some wholesome and very special rural hospitality, so I accepted the woman’s invitation."
                                 "When I entered the farm again, my suspicions were confirmed."
 
                                 call ep003_sim_farm_sex_threesome_soft from _call_ep003_sim_farm_sex_threesome_soft
-                            "Decline":
+                            "[red]Decline":
                                 "I did my best impression of a noble knight and declined her offer."
                                 scene expression eye_blink("images/ep003/ep003_sim_farm_leaving_le_closeup") with dissolve
                                 c "I’m sorry, good woman, but I must venture forth."
                                 le "I understand, sir, bless you."
                                 scene expression eye_blink("images/ep003/ep003_sim_farm_leaving_le_wave") with dissolve
                                 "After crossing the fence again the simulation suddenly ended."
-                    "Come to a deal":
+                    "Come to a deal [ThreesomeSoft]":
                         $ ep003_sim_farm_sex_deal = True
                         c "I’m not an unreasonable man, so if there’s anything you can think of to pay me with?"
                         c "I might be able to give you a few months respite, if we can reach an agreement."
@@ -1609,7 +1609,7 @@ label episode003:
                                 scene expression eye_blink("images/ep003/ep003_sim_farm_interior_le_shock") with dissolve
                                 le "Milord?!"
                                 call ep003_sim_farm_knockout from _call_ep003_sim_farm_knockout_1
-                            "Turn away":
+                            "[red]Turn away":
                                 call ep003_sim_farm_turn_away from _call_ep003_sim_farm_turn_away
             "Force entry":
                 $ ep003_sim_farm_force = True
@@ -1644,7 +1644,7 @@ label episode003:
                         le "Sir!"
 
                 menu:
-                    "Fuck them":
+                    "Fuck them [ThreesomeHard]":
                         scene ep003_sim_farm_interior_le_hold with dissolve
                         if game.is_special:
                             c "You and your daughter could undress before me and let me have my way with you both."
@@ -1736,9 +1736,9 @@ label episode003:
                         else:
                             "Ignoring her maid's pleas, the farmer’s wife went outside, leaving me alone with the girl."
                         call ep003_sim_farm_sex_be_hard from _call_ep003_sim_farm_sex_be_hard
-                    "Turn away":
+                    "[red]Turn away":
                         call ep003_sim_farm_turn_away from _call_ep003_sim_farm_turn_away_1
-            "Turn away":
+            "[red]Turn away":
                 call ep003_sim_farm_turn_away from _call_ep003_sim_farm_turn_away_2
         return
 
@@ -2538,7 +2538,7 @@ label episode003:
                     ease 8 yalign 0.01
                 $ renpy.pause()
                 "She let her skirt drop and offered me a view of her tight ass."
-                "I took the invitation and entered her pussy from behind, holding her tightly as my cock slipped passed her wet lips."
+                "I took the invitation and entered her pussy from behind, holding her tightly as my cock slipped past her wet lips."
                 scene ep003_club_girl_fucking with dissolve
                 "Our love-making took a violent turn as I fucked her with measured strokes, digging my fingers into her breasts and pinching her nipples."
                 show ep003_club_girl_fucking_alt with dissolve
@@ -2596,7 +2596,7 @@ label episode003:
         ce "I’m going to bring it aboard."
 
         menu:
-            "[gr]All right":
+            "All right [CelinePath]":
                 c "Good idea."
                 c "But what if it’s a trap, or something?"
                 scene expression eye_blink("images/ep003/ep003_bastard_ce_serious") with dissolve
@@ -2635,10 +2635,10 @@ label episode003:
         python:
             codex_sacleus = add_codex_entry(
                 Codex,
-                "Characters",
-                "Sacleus",
+                __("Characters"),
+                __("Sacleus"),
                 [
-                    "Hierophant Sacleus is the highest ranking member of an unknown religious order and owner of the vessel “His Eternal Holy Light That Graces Our Paltry Existence A Thousandfold”."
+                    __("Hierophant Sacleus is the highest ranking member of an unknown religious order and owner of the vessel “His Eternal Holy Light That Graces Our Paltry Existence A Thousandfold”.")
                 ]
             )
 

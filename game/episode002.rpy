@@ -34,7 +34,7 @@ label episode002:
     centered "{=chapter_heading}EPISODE 2{/=chapter_heading}"
 
     scene ep002_missile_approach with dissolve
-    call location_screen ("Unknown, TGN Ypotryll in pursuit of TGN Enfield", True) from _call_location_screen_4
+    call location_screen (__("Unknown, TGN Ypotryll in pursuit of TGN Enfield"), True) from _call_location_screen_4
 
     scene ep002_cockpit_camran with dissolve
     c "How long until impact?"
@@ -66,11 +66,11 @@ label episode002:
     python:
         codex_sk_drive = add_codex_entry(
             Codex,
-            "Technology",
-            "The Sylas-Karzen Drive",
+            __("Technology"),
+            __("The Sylas-Karzen Drive"),
             [
-                "Enables Faster Than Light Travel, allowing mankind to explore and conquer the stars. The development of the Sylas-Karzen Drive by Professor Hermann Sylas and Dr. Josephine Karzen is the result of several centuries of research, primarily based on the theories of Burkhard Heim and Miguel Alcubierre.",
-                "'Bursting' a drive allows for hyperspace travel, but without a clear destination and is deemed extremely dangerous."
+                __("Enables Faster Than Light Travel, allowing mankind to explore and conquer the stars. The development of the Sylas-Karzen Drive by Professor Hermann Sylas and Dr. Josephine Karzen is the result of several centuries of research, primarily based on the theories of Burkhard Heim and Miguel Alcubierre."),
+                __("'Bursting' a drive allows for hyperspace travel, but without a clear destination and is deemed extremely dangerous.")
             ]
         )
 
@@ -106,7 +106,7 @@ label episode002:
     "Everything went black."
 
     scene ep002_ship_drift with dissolve
-    call location_screen ("Unknown, drifting", True) from _call_location_screen_5
+    call location_screen (__("Unknown, drifting"), True) from _call_location_screen_5
 
     "I was the first to regain consciousness."
     "Céline still sat slumped in her seat and Lilly and Kit lay on the ground, but the ship showed seven lifeforms present."
@@ -227,7 +227,7 @@ label episode002:
     "Not sure what to do, I held her tight while sobs wracked her body."
 
     menu:
-        "[gr]Comfort her":
+        "Comfort her [LillyPath]":
             $ ep002_lilly_comfort = True
             c "I'm sorry, Lilly."
             c "I didn't mean for this to happen."
@@ -272,7 +272,7 @@ label episode002:
     l "Now we're just going to fucking float to the nearest planet and just see where we go from there?"
 
     menu:
-        "[gr]Be understanding":
+        "Be understanding [LillyPath]":
             $ ep002_lilly_understanding = True
             c "I get why you're angry, but that's exactly what we're going to do, because it's the only thing we can do right now."
             if game.is_special:
@@ -299,7 +299,7 @@ label episode002:
     "Céline conjured up the necessary calculations using the ship's computer and after a few minutes we were crawling towards our destination using only our secondary thrusters."
 
     scene ep002_vulpes_velox with dissolve
-    call location_screen ("Vulpes Velox, near Alpha Vulpeculae, Orbit", True) from _call_location_screen_6
+    call location_screen (__("Vulpes Velox, near Alpha Vulpeculae, Orbit"), True) from _call_location_screen_6
 
     "After what seemed like an eternity, the Enfield finally pierced the atmosphere of the planet we were hoping to land on."
     "The descent was rough, which might have had something to do with our inexperience piloting ships."
@@ -339,7 +339,7 @@ label episode002:
             scene expression eye_blink("images/ep002/ep002_ship_thim") with dissolve
             "So Thim went with me, something we both enjoyed so very much."
             "At least he kept silent about the head injury he got from Jade..."
-        "[gr]Ask Thim":
+        "Ask Thim [ThimPath]":
             scene expression eye_blink("images/ep002/ep002_ship_thim") with dissolve
             c "Thim, are you feeling well enough to come with me?"
             t "Your attendant hit me on the fucking head with a wrench."
@@ -381,7 +381,7 @@ label episode002:
     play music [ "music/reparateur.ogg", "music/eastminster.ogg" ] fadeout 4 fadein 1.0
 
     scene ep002_vulpes_velox_landed with dissolve
-    call location_screen ("Vulpes Velox, near Alpha Vulpeculae, Surface", True) from _call_location_screen_7
+    call location_screen (__("Vulpes Velox, near Alpha Vulpeculae, Surface"), True) from _call_location_screen_7
 
     "After we landed, Thim and I headed out."
 
@@ -405,12 +405,12 @@ label episode002:
     python:
         codex_vulpes = add_codex_entry(
             Codex,
-            "Planets",
-            "Vulpes Velox",
+            __("Planets"),
+            __("Vulpes Velox"),
             [
-                "Location: Somewhere near Alpha Vulpeculae",
-                "The first planet visited by [p_name] and friends after their escape from the TGN Ypotryll.",
-                "Most of the world is covered by desert, though there are several larger settlements. Thyia's workshop is located in one of the smaller towns on Vulpes Velox."
+                __("Location: Somewhere near Alpha Vulpeculae"),
+                __("The first planet visited by [p_name] and friends after their escape from the TGN Ypotryll."),
+                __("Most of the world is covered by desert, though there are several larger settlements. Thyia's workshop is located in one of the smaller towns on Vulpes Velox.")
             ]
         )
 
@@ -441,10 +441,10 @@ label episode002:
     python:
         codex_thyia = add_codex_entry(
             Codex,
-            "Characters",
-            "Thyia",
+            __("Characters"),
+            __("Thyia"),
             [
-                "Thyia is a salvager and engineer working out of her workshop on Vulpes Velox."
+                __("Thyia is a salvager and engineer working out of her workshop on Vulpes Velox.")
             ],
             "images/codex/Thyia.webp"
         )
@@ -484,7 +484,7 @@ label episode002:
     scene expression eye_blink("images/ep002/ep002_vulpes_workshop_thyia_angry") with vpunch
     th "Get the fuck of out of here, this instant."
     th "My shop isn’t available to Sovereignty-fucks."
-    t "Nice goings, [p_name]..."
+    t "Nice going, [p_name]..."
     t "Hey lady, we deserted, all right?"
     t "We’re not part of any fucking Navy any longer, our boy here made sure of that."
     c "Our superiors didn’t seem interested in rescuing anyone and we were headed back to the Naval Academy, leaving all those people to die."
@@ -506,7 +506,7 @@ label episode002:
     th "Didn’t they teach you anything useful at the academy?"
     th "Fighters of that class can’t support that many passengers on extended flights."
     th "You’re better off leaving the damn thing in whatever bog you landed it and boarding the next transport freighter out of here."
-    c "Leaving you with a abandoned TGN aircraft to sell to the highest bidder?"
+    c "Leaving you with an abandoned TGN aircraft to sell to the highest bidder?"
     scene expression eye_blink("images/ep002/ep002_vulpes_workshop_thyia_smile") with dissolve
     th "I see you’re not that stupid, after all."
     th "All right, I’m willing to buy it from you."
@@ -534,7 +534,7 @@ label episode002:
     scene expression eye_blink("images/ep002/ep002_vulpes_workshop_thyia_serious") with dissolve
     th "It’s better if you don’t know too much about the cargo."
     th "I’ve been sitting on it for quite a while now and there’s nobody in the area who wants to do a transport run."
-    th "I guess they have their own interests to take care off."
+    th "I guess they have their own interests to take care of."
     th "But the R’o tribe that contacted me is still waiting for it."
     c "What’s stopping us from just flying away with our new ship and keeping the cargo for ourselves?"
     th "Ah yes, I thought about that."
@@ -551,7 +551,7 @@ label episode002:
     th "Like what?"
 
     menu:
-        "[gr]Propose to talk some more":
+        "Propose to talk some more [ThyiaPath]":
             $ ep002_thyia_talk = True
             c "Let’s discuss that over a couple of drinks."
             c "You and I."
@@ -598,7 +598,7 @@ label episode002:
             th "What your angle is?"
 
             menu:
-                "[gr]Propose sex":
+                "Propose sex [ThyiaPath]":
                     $ ep002_thyia_sex = True
                     c "Well, you're an attractive woman for starters."
                     scene expression eye_blink("images/ep002/ep002_thyia_talk_sexy") with dissolve
@@ -671,11 +671,11 @@ label episode002:
     python:
         codex_iron_bastard = add_codex_entry(
             Codex,
-            "Technology",
-            "Iron Bastard",
+            __("Technology"),
+            __("Iron Bastard"),
                 [
-                    "An aging cargo hauler outfitted with extra armored plating and guns by a string of owners. Part of the name stems from the alloy used in the armored plating, containing metals from Earth.",
-                    "The Iron Bastard is offered as a replacement for the TGN Enfield by Thyia after [p_name] and friends have escaped from the TGN Ypotryll."
+                    __("An aging cargo hauler outfitted with extra armored plating and guns by a string of owners. Part of the name stems from the alloy used in the armored plating, containing metals from Earth."),
+                    __("The Iron Bastard is offered as a replacement for the TGN Enfield by Thyia after [p_name] and friends have escaped from the TGN Ypotryll.")
                 ]
             )
 
@@ -778,9 +778,9 @@ label episode002:
     scene black with fade
 
     if ep002_cargo:
-        call location_screen ("Unknown, En route to Nyiruan 12-Beta", False) from _call_location_screen_8
+        call location_screen (__("Unknown, En route to Nyiruan 12-Beta"), False) from _call_location_screen_8
     else:
-        call location_screen ("Unknown, En route to Ryūjin Prime", False) from _call_location_screen_9
+        call location_screen (__("Unknown, En route to Ryūjin Prime"), False) from _call_location_screen_9
 
     call ep002_conversations from _call_ep002_conversations
 
@@ -790,7 +790,7 @@ label episode002:
         play music [ "music/eastminster.ogg", "music/reparateur.ogg" ] fadeout 4 fadein 1.0
 
         scene ep002_vulpes_workshop_enfield with dissolve
-        call location_screen ("Vulpes Velox, Thyia's Workshop", True) from _call_location_screen_10
+        call location_screen (__("Vulpes Velox, Thyia's Workshop"), True) from _call_location_screen_10
 
         call ep002_cargo_run_positive from _call_ep002_cargo_run_positive
     else:
@@ -802,7 +802,7 @@ label episode002:
     if not ep002_university_completed:
         play music [ "music/a-new-year.ogg", "music/floating-cities.ogg" ] fadeout 4 fadein 1.0
 
-        call location_screen ("Unknown, En route to Ryūjin Prime", False) from _call_location_screen_11
+        call location_screen (__("Unknown, En route to Ryūjin Prime"), False) from _call_location_screen_11
 
         if game.is_special:
             "We immediately took off to find my aunt at the university on Ryūjin Prime."
@@ -911,7 +911,7 @@ label episode002:
         th "So what?"
 
         menu:
-            "[gr]Accept her":
+            "Accept her [ThyiaPath] [LillyPath]":
                 $ ep002_thyia_acceptance = True
                 c "Nothing, just appreciating the irony."
                 c "You're more than welcome on the Bastard."
@@ -940,8 +940,8 @@ label episode002:
         python:
             codex_thyia = update_codex_entry(codex_thyia, None,
                 [
-                    "Thyia is a salvager and engineer originally working out of her workshop on Vulpes Velox. She was born outside the Sovereignty on a space station and values her independence.",
-                    "After a run-in with Glixken and his crew, she's forced to flee and join the crew on the Iron Bastard."
+                    __("Thyia is a salvager and engineer originally working out of her workshop on Vulpes Velox. She was born outside the Sovereignty on a space station and values her independence."),
+                    __("After a run-in with Glixken and his crew, she's forced to flee and join the crew on the Iron Bastard.")
                 ]
             )
 
@@ -1024,7 +1024,7 @@ label episode002:
         th "So what?"
 
         menu:
-            "[gr]Accept her":
+            "Accept her [ThyiaPath] [LillyPath]":
                 $ ep002_thyia_acceptance = True
                 c "Nothing, just appreciating the irony."
                 c "You're more than welcome on the Bastard."
@@ -1053,8 +1053,8 @@ label episode002:
     python:
         codex_thyia = update_codex_entry(codex_thyia, None,
             [
-                "Thyia is a salvager and engineer originally working out of her workshop on Vulpes Velox. She was born outside the Sovereignty on a space station and values her independence.",
-                "After a run-in with Glixken and his crew, she's forced to flee and join the crew on the Iron Bastard."
+                __("Thyia is a salvager and engineer originally working out of her workshop on Vulpes Velox. She was born outside the Sovereignty on a space station and values her independence."),
+                __("After a run-in with Glixken and his crew, she's forced to flee and join the crew on the Iron Bastard.")
             ]
         )
 
@@ -1128,7 +1128,7 @@ label episode002:
     label ep002_cargo_run:
         scene ep002_nyiruan with dissolve
         play music [ "music/black-bird.ogg", "music/firesong.ogg" ] fadeout 4 fadein 1.0
-        call location_screen ("Nyiruan 12-Beta, Approach", True) from _call_location_screen_12
+        call location_screen (__("Nyiruan 12-Beta, Approach"), True) from _call_location_screen_12
 
         "After we punched in the coordinates we received from Thyia we were ready for anything."
         if not ep002_university_completed:
@@ -1140,10 +1140,10 @@ label episode002:
         python:
             codex_nyiruan = add_codex_entry(
                 Codex,
-                "Planets",
-                "Nyiruan 12-Beta",
+                __("Planets"),
+                __("Nyiruan 12-Beta"),
                 [
-                    "Homeworld of the R'o, a tribal species of humanoids. The planet has a moderate climate and is very green and fertile, allowing for the lifestyle the R'o tribes still practice - farming, hunting and gathering."
+                    __("Homeworld of the R'o, a tribal species of humanoids. The planet has a moderate climate and is very green and fertile, allowing for the lifestyle the R'o tribes still practice - farming, hunting and gathering.")
                 ]
             )
 
@@ -1164,11 +1164,11 @@ label episode002:
         python:
             codex_ro = add_codex_entry(
                 Codex,
-                "Species",
-                "R'o",
+                __("Species"),
+                __("R'o"),
                 [
-                    "The R’o are a tribal race without much interest in outer space. A few of them can be encountered on space stations, as can be expected. Most of the R’o live and die on their home planet, Nyiruan 12-Beta, after a hard life of farming or hunting and gathering.",
-                    "[p_name] and crew encounter a tribe of R'o during their cargo delivery run on Nyiruan."
+                    __("The R’o are a tribal race without much interest in outer space. A few of them can be encountered on space stations, as can be expected. Most of the R’o live and die on their home planet, Nyiruan 12-Beta, after a hard life of farming or hunting and gathering."),
+                    __("[p_name] and crew encounter a tribe of R'o during their cargo delivery run on Nyiruan.")
                 ],
                 "images/codex/Ro.webp"
             )
@@ -1274,14 +1274,14 @@ label episode002:
             c "Damn..."
             c "Surely this isn't sustainable in the long run, if there are no children being born?"
             scene expression eye_blink("images/ep002/ep002_nyiruan_cave_dee") with dissolve
-            dee "Sometimes one of the males is send down to do penance."
+            dee "Sometimes one of the males is sent down to do penance."
             dee "We then do what we can to keep the tribe alive."
             dee "The men have already come for any boys that have been born here and taken them topside when they're at a certain age."
             scene expression eye_blink("images/ep002/ep002_nyiruan_cave_dee_sad") with dissolve
             dee "But it isn't sustainable, I agree."
 
             menu:
-                "[gr]Offer to help them":
+                "Offer to help them [DeeRoPath]":
                     $ ep002_ro_help = True
                     c "Is there anything I could do to help?"
                     c "Couldn't you escape?"
@@ -1311,7 +1311,7 @@ label episode002:
                     dee "You seem sexually compatible with us...{w} we could all have...{w} a good time..."
 
                     menu:
-                        "[gr]Have sex with them":
+                        "Have sex with them [DeeRoPath]":
                             $ ep002_ro_orgy = True
                             c "It would be an honor."
 
@@ -1365,7 +1365,7 @@ label episode002:
                     dee "You seem sexually compatible with us...{w} Would you..."
 
                     menu:
-                        "[gr]Have sex with them":
+                        "Have sex with them [DeeRoPath]":
                             $ ep002_ro_orgy = True
                             c "It would be an honor."
 
@@ -1387,23 +1387,23 @@ label episode002:
 
             python:
                 entry = [
-                    "R'o woman encountered by [p_name] in the Pit of Despair when he does penance."
+                    __("R'o woman encountered by [p_name] in the Pit of Despair when he does penance.")
                 ]
 
                 if ep002_ro_help:
-                    entry.append("With the help of [p_name] she escapes the Pit in order for her to contact her uncle and possibly save the tribe from the male-centric ideology that's slowly destroying it.")
+                    entry.append(__("With the help of [p_name] she escapes the Pit in order for her to contact her uncle and possibly save the tribe from the male-centric ideology that's slowly destroying it."))
 
                 codex_dee = add_codex_entry(
                     Codex,
-                    "Characters",
-                    "D'ee",
+                    __("Characters"),
+                    __("D'ee"),
                     entry,
                     "images/codex/Dee.webp"
                 )
 
         scene black with fade
 
-        call location_screen ("Unknown, En route to Nyiruan 12-Beta", False) from _call_location_screen_13
+        call location_screen (__("Unknown, En route to Nyiruan 12-Beta"), False) from _call_location_screen_13
 
         $ ep002_cargo_completed = True
 
@@ -1500,7 +1500,7 @@ label episode002:
                 "While releasing volleys of cum on her belly, D'ee's gash released a splash of her ejaculate, mixing it with mine."
         scene ep002_nyiruan_cave_fuck_post with dissolve
         "Thoroughly exhausted, I lay a while with D'ee in my arms, the other women looking a little jealous at us."
-        "After an hour of laying with D'ee, a murmur started, several women were conferring amount themselves."
+        "After an hour of laying with D'ee, a murmur started, several women were conferring among themselves."
         scene ep002_nyiruan_cave_line with dissolve
         "From the corner of my eye I saw several women lining themselves up, getting on all fours, asses in the air."
         "One R'o woman came up to D'ee and me and looked at us inquisitively."
@@ -1585,7 +1585,7 @@ label episode002:
 
     label ep002_university:
         scene ep002_ryujin_docks with dissolve
-        call location_screen ("Ryūjin Prime, Docks", True) from _call_location_screen_14
+        call location_screen (__("Ryūjin Prime, Docks"), True) from _call_location_screen_14
 
         if not ep002_cargo_completed:
             if game.is_special:
@@ -1605,25 +1605,25 @@ label episode002:
             if game.is_special:
                 codex_ryujin_prime = add_codex_entry(
                     Codex,
-                    "Planets",
-                    "Ryūjin Prime",
+                    __("Planets"),
+                    __("Ryūjin Prime"),
                     [
-                        "Location: Cat’s Eye Nebula",
-                        "The majority of Ryūjin Prime is covered in a large metropolis, while the rest of the planet is virtually uninhabitable. The weather is artificially controlled and the climate is therefore very moderate, unless that control slips and the heavy rains start to fall.",
-                        "The most important feature of Ryūjin Prime is the university, home to an incredible amount of aliens, all devoted to the pursuit of science.",
-                        "Ryūjin Prime is also the home of [p_name]'s aunt and cousin after they were forced to leave Tuolovi."
+                        __("Location: Cat’s Eye Nebula"),
+                        __("The majority of Ryūjin Prime is covered in a large metropolis, while the rest of the planet is virtually uninhabitable. The weather is artificially controlled and the climate is therefore very moderate, unless that control slips and the heavy rains start to fall."),
+                        __("The most important feature of Ryūjin Prime is the university, home to an incredible amount of aliens, all devoted to the pursuit of science."),
+                        __("Ryūjin Prime is also the home of [p_name]'s aunt and cousin after they were forced to leave Tuolovi.")
                     ]
                 )
             else:
                 codex_ryujin_prime = add_codex_entry(
                     Codex,
-                    "Planets",
-                    "Ryūjin Prime",
+                    __("Planets"),
+                    __("Ryūjin Prime"),
                     [
-                        "Location: Cat’s Eye Nebula",
-                        "The majority of Ryūjin Prime is covered in a large metropolis, while the rest of the planet is virtually uninhabitable. The weather is artificially controlled and the climate is therefore very moderate, unless that control slips and the heavy rains start to fall.",
-                        "The most important feature of Ryūjin Prime is the university, home to an incredible amount of aliens, all devoted to the pursuit of science.",
-                        "Ryūjin Prime is also the home of Eva and Lily's mother after she was forced to leave Tuolovi."
+                        __("Location: Cat’s Eye Nebula"),
+                        __("The majority of Ryūjin Prime is covered in a large metropolis, while the rest of the planet is virtually uninhabitable. The weather is artificially controlled and the climate is therefore very moderate, unless that control slips and the heavy rains start to fall."),
+                        __("The most important feature of Ryūjin Prime is the university, home to an incredible amount of aliens, all devoted to the pursuit of science."),
+                        __("Ryūjin Prime is also the home of Eva and Lily's mother after she was forced to leave Tuolovi.")
                     ]
                 )
         "Céline waded through all the offers about entertainment, ship repairs, jobs to find the address of the university."
@@ -1663,7 +1663,10 @@ label episode002:
         scene expression eye_blink("images/ep002/ep002_ryujin_university_residences_door") with dissolve
         $ av_name = "Woman"
         av "Hmm?"
-        c "Hi, we're looking for Professor Valenmann de Lonval."
+        if game.is_special:
+            c "Hi, we're looking for Professor Valenmann de Lonval."
+        else:
+            c "Hi, we're looking for Professor Valenmann de Lonval."
         av "Are you her students?"
         c "No, we're not, we have a question for her."
         av "She isn't here, try again later."
@@ -1673,7 +1676,10 @@ label episode002:
         av "Coffee?"
         scene ep002_ryujin_university_apartment with dissolve
         "After we shuffled into the small apartment, the terse woman got busy making coffee for us."
-        "Something about her was familiar, she looked vaguely like a raven-haired mix between Eva and Lilly."
+        if game.is_special:
+            "Something about her was familiar, she looked vaguely like a raven-haired mix between Eva and Lilly."
+        else:
+            "Something about her was familiar, a distant memory, long forgotten."
         av "Here you go."
         av "Nadya is teaching at the moment, she'll be back in a few hours."
         scene expression eye_blink("images/ep002/ep002_ryujin_university_apartment_kitchen") with dissolve
@@ -1681,19 +1687,26 @@ label episode002:
         c "[p_name]."
         ce "Céline, pleased to meet you."
         ve "I'm Vess."
-        av "I'm Aven, Nadya's daughter."
+        if game.is_special:
+            av "I'm Aven, Nadya's daughter."
+        else:
+            av "I'm Aven, a friend of Nadya's."
         $ av_name = "Aven"
-        av "Hello cousin [p_name_short]..."
+
+        if game.is_special:
+            av "Hello cousin [p_name_short]..."
+        else:
+            av "Hello [p_name_short]..."
         c "Aven! It's been a while!"
 
         if game.is_special:
             python:
                 codex_aven = add_codex_entry(
                     Codex,
-                    "Characters",
-                    "Aven",
+                    __("Characters"),
+                    __("Aven"),
                     [
-                        "Raven-haired cousin of [p_name] and the daughter of Nadya. A skilled fighter and diplomat, Aven often accompanies her mother on scientific expeditions."
+                        __("Raven-haired cousin of [p_name] and the daughter of Nadya. A skilled fighter and diplomat, Aven often accompanies her mother on scientific expeditions.")
                     ],
                     "images/codex/Aven.webp"
                 )
@@ -1701,7 +1714,7 @@ label episode002:
             python:
                 codex_aven = update_codex_entry(codex_aven, None,
                     [
-                        "Childhood friend of [p_name]. Was taken away from Tuolovi by Nadya as a child. A skilled fighter and diplomat, Aven often accompanies her mother on scientific expeditions."
+                        __("Childhood friend of [p_name]. Was taken away from Tuolovi by Nadya as a child. A skilled fighter and diplomat, Aven often accompanies her mother on scientific expeditions.")
                     ]
                 )
 
@@ -1713,17 +1726,26 @@ label episode002:
         scene expression eye_blink("images/ep002/ep002_ryujin_university_apartment_aven") with dissolve
         av "Yeah, that was...{w} sudden..."
         c "How have you been all these years?"
-        av "Good, mom quickly established herself as a teacher here at the academy, eventually obtaining a professorship."
+        if game.is_special:
+            av "Good, mom quickly established herself as a teacher here at the academy, eventually obtaining a professorship."
+        else:
+            av "Good, Nadya quickly established herself as a teacher here at the academy, eventually obtaining a professorship."
         av "So I was raised here mostly."
         c "You're a xenologist too?"
         av "Hah, not really."
-        av "I know a little about it, because of mom."
+        if game.is_special:
+            av "I know a little about it, because of mom."
+        else:
+            av "I know a little about it, because of Nadya."
         av "I accompany her on her travels, to keep her safe."
         ve "You're like...{w} her bodyguard?"
         scene expression eye_blink("images/ep002/ep002_ryujin_university_apartment_aven_smile") with dissolve
         av "Something like that."
         av "I know how to handle myself in a fight, but I get to play the diplomat often too."
-        av "Diplomacy is not one of my mother's strong suits."
+        if game.is_special:
+            av "Diplomacy is not one of my mother's strong suits."
+        else:
+            av "Diplomacy is not one of her strong suits."
         c "I don't remember her as being impatient."
         av "She isn't, except when it comes to her work, she can be very demanding..."
         scene expression eye_blink("images/ep002/ep002_ryujin_university_apartment_aven_sit") with dissolve
@@ -1761,20 +1783,20 @@ label episode002:
             if game.is_special:
                 codex_nadya = add_codex_entry(
                     Codex,
-                    "Characters",
-                    "Nadya",
+                    __("Characters"),
+                    __("Nadya"),
                     [
-                        "Mother of Aven and sister to Agust. After her unwilling departure from Tuolovi she settled as a professor in Xenoanthropology at the university on Ryūjin Prime, where she lives with her daughter."
+                        __("Mother of Aven and sister to Agust. After her unwilling departure from Tuolovi she settled as a professor in Xenoanthropology at the university on Ryūjin Prime, where she lives with her daughter.")
                     ],
                     "images/codex/Nadya.webp"
                 )
             else:
                 codex_nadya = add_codex_entry(
                     Codex,
-                    "Characters",
-                    "Nadya",
+                    __("Characters"),
+                    __("Nadya"),
                     [
-                        "Family friend who left Tuolovi together with Aven under mysterious circumstances. After her unwilling departure from Tuolovi she settled as a professor in Xenoanthropology at the university on Ryūjin Prime, where she lives with her daughter."
+                        __("Family friend who left Tuolovi together with Aven under mysterious circumstances. After her unwilling departure from Tuolovi she settled as a professor in Xenoanthropology at the university on Ryūjin Prime, where she lives with Aven.")
                     ],
                     "images/codex/Nadya.webp"
                 )
@@ -1840,7 +1862,10 @@ label episode002:
         na "That's the spirit!"
         c "Aven, you're looking a little doubtful."
         av "No, it's fine."
-        av "I'm just a little overwhelmed by the suddenness of mom's decision."
+        if game.is_special:
+            av "I'm just a little overwhelmed by the suddenness of mom's decision."
+        else:
+            av "I'm just a little overwhelmed by the suddenness of Nadya's decision."
         av "But I'm sticking with her, no matter what."
         c "In that case, welcome aboard!"
 
@@ -1848,10 +1873,10 @@ label episode002:
 
         scene black with fade
         if not ep002_cargo:
-            call location_screen ("Unknown, En route to Nyiruan 12-Beta", False) from _call_location_screen_15
+            call location_screen (__("Unknown, En route to Nyiruan 12-Beta"), False) from _call_location_screen_15
         else:
             scene ep002_ryujin with dissolve
-            call location_screen ("Unknown, En route to Ryūjin Prime", True) from _call_location_screen_16
+            call location_screen (__("Unknown, En route to Ryūjin Prime"), True) from _call_location_screen_16
 
         call ep002_conversations from _call_ep002_conversations_2
 
@@ -1899,7 +1924,7 @@ label episode002:
 
         "We set course to the asteroid field, ready to meet Karan Hreir."
         scene ep002_iron_bastard_exterior with dissolve
-        call location_screen ("Hreir Asteroid Base, Approach", True) from _call_location_screen_17
+        call location_screen (__("Hreir Asteroid Base, Approach"), True) from _call_location_screen_17
 
         "As we made the final jump to our location, the ship suddenly shuddered and alarms started to go off."
         scene ep002_iron_bastard_cockpit_alarm with vpunch

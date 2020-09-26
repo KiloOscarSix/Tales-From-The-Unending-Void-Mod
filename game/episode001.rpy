@@ -1,6 +1,3 @@
-init python:
-    gr = "{color=#0f0}"
-    red = "{color=#f00}"
 
 image ep001_camran_barracks_jade_hj = Movie(play="movies/ep001/ep001_camran_barracks_jade_hj.webm")
 image ep001_camran_barracks_jade_hj_closeup = Movie(play="movies/ep001/ep001_camran_barracks_jade_hj_closeup.webm")
@@ -38,7 +35,7 @@ label episode001:
 
     scene ep001_floating with fade:
         yalign 0
-    call location_screen ("Unknown", True) from _call_location_screen
+    call location_screen (__("Unknown"), True) from _call_location_screen
     "Space is a vast, cold place..."
     "Space is a fucking lonely place..."
     scene ep001_floating:
@@ -65,11 +62,11 @@ label episode001:
     python:
         codex_tuolovi = add_codex_entry(
             Codex,
-            "Planets",
-            "Tuolovi",
+            __("Planets"),
+            __("Tuolovi"),
             [
-                "Location: Orbitting Typhon, Hydrus constellation",
-                "A small green planet orbiting Typhon - once poetically called HD 10180 b. Birthplace of [p_name]. His mother Yve still lives in the family mansion on the surface of Tuolovi."
+                __("Location: Orbitting Typhon, Hydrus constellation"),
+                __("A small green planet orbiting Typhon - once poetically called HD 10180 b. Birthplace of [p_name]. His mother Yve still lives in the family mansion on the surface of Tuolovi.")
             ]
         )
     "The mansion was what you would call ‘grand’, a vision of what an 18th century European rococo palace should look like in the modern age."
@@ -82,33 +79,33 @@ label episode001:
         if game.is_special:
             codex_agust = add_codex_entry(
                 Codex,
-                "Characters",
-                "Agust Valenmann de Lonval",
+                __("Characters"),
+                __("Agust Valenmann de Lonval"),
                 [
 
-                    "Agust Algerone Arlington Valenmann de Lonval, wealthy CEO of the trading and manufacturing company VLCo, father to [p_name], Lilly and Eva."
+                    __("Agust Algerone Arlington Valenmann de Lonval, wealthy CEO of the trading and manufacturing company VLCo, father to [p_name], Lilly and Eva.")
                 ],
                 "images/codex/Agust.webp"
             )
         else:
             codex_agust = add_codex_entry(
                 Codex,
-                "Characters",
-                "Agust Valenmann de Lonval",
+                __("Characters"),
+                __("Agust Valenmann de Lonval"),
                 [
 
-                    "Agust Algerone Arlington Valenmann de Lonval, wealthy CEO of the trading and manufacturing company VLCo, father to [p_name]."
+                    __("Agust Algerone Arlington Valenmann de Lonval, wealthy CEO of the trading and manufacturing company VLCo, father to [p_name].")
                 ],
                 "images/codex/Agust.webp"
             )
 
         codex_vlco = add_codex_entry(
             Codex,
-            "Organizations",
-            "VLCo.",
+            __("Organizations"),
+            __("VLCo."),
             [
-                "Location: Tooles Folly (HD 154857 c), Ara Constellation",
-                "An intergalactic trading and manufacturing company founded by the Valenmann family and operated by them for centuries. The company has a murky past and regularly engages in questionable activity, though most of it is sanctioned by the Terran government. Activities range from trading rare minerals, ship parts to slaves and grey-market biotics."
+                __("Location: Tooles Folly (HD 154857 c), Ara Constellation"),
+                __("An intergalactic trading and manufacturing company founded by the Valenmann family and operated by them for centuries. The company has a murky past and regularly engages in questionable activity, though most of it is sanctioned by the Terran government. Activities range from trading rare minerals, ship parts to slaves and grey-market biotics.")
             ]
         )
     "The company has been in the family for ages, a successful venture, passing from father to son."
@@ -128,20 +125,20 @@ label episode001:
         if game.is_special:
             codex_yve = add_codex_entry(
                 Codex,
-                "Characters",
-                "Yve Valenmann de Lonval",
+                __("Characters"),
+                __("Yve Valenmann de Lonval"),
                 [
-                    "Yve Valenmann de Lonval, former pop-star who married Agust at a very young age. Mother of [p_name], Lilly and Eva. She spends her days living in the mansion on Tuolovi entertaining a host of extramarital lovers."
+                    __("Yve Valenmann de Lonval, former pop-star who married Agust at a very young age. Mother of [p_name], Lilly and Eva. She spends her days living in the mansion on Tuolovi entertaining a host of extramarital lovers.")
                 ],
             "images/codex/Yve.webp"
             )
         else:
             codex_yve = add_codex_entry(
                 Codex,
-                "Characters",
-                "Yve Valenmann de Lonval",
+                __("Characters"),
+                __("Yve Valenmann de Lonval"),
                 [
-                    "Yve Valenmann de Lonval, former pop-star who married Agust at a very young age. Mother of [p_name]. She spends her days living in the mansion on Tuolovi entertaining a host of extramarital lovers."
+                    __("Yve Valenmann de Lonval, former pop-star who married Agust at a very young age. Mother of [p_name]. She spends her days living in the mansion on Tuolovi entertaining a host of extramarital lovers.")
                 ],
             "images/codex/Yve.webp"
             )
@@ -164,10 +161,10 @@ label episode001:
         python:
             codex_aven = add_codex_entry(
                 Codex,
-                "Characters",
-                "Aven",
+                __("Characters"),
+                __("Aven"),
                 [
-                    "Aven, childhood friend of [p_name]. Was taken away by Nadya."
+                    __("Aven, childhood friend of [p_name]. Was taken away by Nadya.")
 
                 ],
                 "images/codex/Aven-Young.webp"
@@ -183,20 +180,20 @@ label episode001:
         if game.is_special:
             codex_eva = add_codex_entry(
                 Codex,
-                "Characters",
-                "Eva",
+                __("Characters"),
+                __("Eva"),
                 [
-                    "Eva Valenmann de Lonval, sister of Lilly and [p_name]."
+                    __("Eva Valenmann de Lonval, sister of Lilly and [p_name].")
                 ],
                 "images/codex/Eva.webp"
             )
         else:
             codex_eva = add_codex_entry(
                 Codex,
-                "Characters",
-                "Eva",
+                __("Characters"),
+                __("Eva"),
                 [
-                    "Eva Arderne, childhood friend of [p_name]."
+                    __("Eva Arderne, childhood friend of [p_name].")
                 ],
                 "images/codex/Eva.webp"
             )
@@ -216,20 +213,20 @@ label episode001:
         if game.is_special:
             codex_lilly = add_codex_entry(
                 Codex,
-                "Characters",
-                "Lilly",
+                __("Characters"),
+                __("Lilly"),
                 [
-                    "Lilly Valenmann de Lonval, sister of Eva and [p_name]."
+                    __("Lilly Valenmann de Lonval, sister of Eva and [p_name].")
                 ],
                 "images/codex/Lilly.webp"
             )
         else:
             codex_lilly = add_codex_entry(
                 Codex,
-                "Characters",
-                "Lilly",
+                __("Characters"),
+                __("Lilly"),
                 [
-                    "Lilly Elyot, childhood friend of [p_name]."
+                    __("Lilly Elyot, childhood friend of [p_name].")
                 ],
                 "images/codex/Lilly.webp"
             )
@@ -251,10 +248,10 @@ label episode001:
     python:
         codex_tgn = add_codex_entry(
             Codex,
-            "Organizations",
-            "Terran Galactic Navy",
+            __("Organizations"),
+            __("Terran Galactic Navy"),
             [
-                "The Terran Galactic Navy (TGN) is the name for the intergalactic fleet that keeps the peace in the human territories, collectively called the Sovereignty. Special divisions of the TGN are also occupied with conquering of new worlds, though the expansion of the Sovereignty has stagnated in recent years."
+                __("The Terran Galactic Navy (TGN) is the name for the intergalactic fleet that keeps the peace in the human territories, collectively called the Sovereignty. Special divisions of the TGN are also occupied with conquering of new worlds, though the expansion of the Sovereignty has stagnated in recent years.")
             ]
         )
     scene ep001_ypotrill with dissolve
@@ -267,7 +264,7 @@ label episode001:
 
     scene ep001_ypotrill_lanan with fade:
         yalign 0
-    call location_screen ("Lanan P-10, Beta Centauri, Orbit", True) from _call_location_screen_1
+    call location_screen (__("Lanan P-10, Beta Centauri, Orbit"), True) from _call_location_screen_1
     "It all started innocently enough."
     "As soon as the Ypotryll was in orbit of Lanan, commander Szuzume ordered all recruits to the shuttle bay where transport to the surface of the moon was already waiting for us."
     scene expression eye_blink("images/ep001/ep001_calista") with dissolve
@@ -290,10 +287,10 @@ label episode001:
     python:
         codex_calista = add_codex_entry(
             Codex,
-            "Characters",
-            "Calista Szuzume",
+            __("Characters"),
+            __("Calista Szuzume"),
             [
-                "Commander Calista Szuzume is the captain of the Battle Cruiser TGN Ypotryll and the mother of Céline and Kit. She has a particular dislike for [p_name]."
+                __("Commander Calista Szuzume is the captain of the Battle Cruiser TGN Ypotryll and the mother of Céline and Kit. She has a particular dislike for [p_name].")
             ],
             "images/codex/Calista.webp"
         )
@@ -324,7 +321,7 @@ label episode001:
     "The shuttle brought us swiftly to the surface and left us in a clearing where we were supposed to set up our tents."
     scene ep001_tents with fade:
         yalign 0
-    call location_screen ("Basecamp Kappa, Lanan P-10", True) from _call_location_screen_2
+    call location_screen (__("Basecamp Kappa, Lanan P-10"), True) from _call_location_screen_2
 
     label ep001_basecamp_conversation:
         scene ep001_tents with dissolve
@@ -337,17 +334,17 @@ label episode001:
                 python:
                     codex_celine = add_codex_entry(
                         Codex,
-                        "Characters",
-                        "Céline Szuzume",
+                        __("Characters"),
+                        __("Céline Szuzume"),
                         [
-                            "Céline is the daughter of Calista Szuzume, sister of Kit and a potential love interest of [p_name]."
+                            __("Céline is the daughter of Calista Szuzume, sister of Kit and a potential love interest of [p_name].")
                         ],
                         "images/codex/Celine.webp"
                     )
                 ce "Hey [p_name]."
                 ce "I understood from Kit you got us all together on this mission?"
                 menu:
-                    "[gr]I did it for you":
+                    "I did it for you [CélinePath]":
                         $ celine_romance = True
                         c "I wanted a nice holiday on a romantic moon, together with you."
                         scene expression eye_blink("images/ep001/ep001_tents_celine_happy") with dissolve
@@ -438,10 +435,10 @@ label episode001:
                 python:
                     codex_kit = add_codex_entry(
                         Codex,
-                        "Characters",
-                        "Kit Szuzume",
+                        __("Characters"),
+                        __("Kit Szuzume"),
                         [
-                            "Kit is the son of Calista Szuzume, brother of Céline and one of [p_name]'s best friends. Partly due to his interest in the more extreme sports he was considered for advanced training at the TGN Academy."
+                            __("Kit is the son of Calista Szuzume, brother of Céline and one of [p_name]'s best friends. Partly due to his interest in the more extreme sports he was considered for advanced training at the TGN Academy.")
                         ],
                         "images/codex/Kit.webp"
                     )
@@ -459,10 +456,10 @@ label episode001:
                 python:
                     codex_thim = add_codex_entry(
                         Codex,
-                        "Characters",
-                        "Thim von Skandersfelt",
+                        __("Characters"),
+                        __("Thim von Skandersfelt"),
                         [
-                            "Thim is a fellow student at the TGN Academy. His family can trace its lineage all the way back to a Nordic royal family dating back to the Middle Ages."
+                            __("Thim is a fellow student at the TGN Academy. His family can trace its lineage all the way back to a Nordic royal family dating back to the Middle Ages.")
                         ],
                         "images/codex/Thim.webp"
                     )
@@ -534,7 +531,7 @@ label episode001:
                         ce "I can scream too, be warned!"
                         "I kissed Céline goodnight and hurried back to my tent."
                         "Lucky for me, Thim was still asleep."
-                    "Better not [red]\[END RELATIONSHIP\]":
+                    "Better not [EndRelationship]":
                         $ celine_romance = False
                         $ celine_rejected = True
                         c "This was a one-time only deal for me."
@@ -723,10 +720,10 @@ label episode001:
     python:
         codex_warrior_women = add_codex_entry(
             Codex,
-            "Species",
-            "The Warrior Women",
+            __("Species"),
+            __("The Warrior Women"),
             [
-                "First encountered on Lanan P-10 during a full-scale attack on TGN personnel, abducting a great many of them. The women appear muscular and wear elaborate armor and seem to prefer fighting with relatively crude melee weapons."
+                __("First encountered on Lanan P-10 during a full-scale attack on TGN personnel, abducting a great many of them. The women appear muscular and wear elaborate armor and seem to prefer fighting with relatively crude melee weapons.")
             ],
             "images/codex/WarriorWomen.webp"
         )
@@ -734,7 +731,7 @@ label episode001:
     play music "music/echoes-of-time.ogg" fadeout 4 fadein 1.0
 
     scene ep001_ypotrill_transport_alt with fade
-    call location_screen ("TGN Ypotryll", True) from _call_location_screen_3
+    call location_screen (__("TGN Ypotryll"), True) from _call_location_screen_3
     "Everyone was silent during our return trip, except for the moans of the badly injured."
     "As soon as we landed in the belly of the Ypotryll and the doors of the transport opened, medical personnel streamed in."
     "They began to take care of the many wounded, concentrating on the most critical first."
@@ -754,10 +751,10 @@ label episode001:
     python:
         codex_jade = add_codex_entry(
             Codex,
-            "Characters",
-            "Jade",
+            __("Characters"),
+            __("Jade"),
             [
-                "Short for Jade'anna N'ec L'ordann va T'olnec. [p_name]'s personal Twi'll attendant, given to him on his sixteenth birthday."
+                __("Short for Jade'anna N'ec L'ordann va T'olnec. [p_name]'s personal Twi'll attendant, given to him on his sixteenth birthday.")
             ],
             "images/codex/Jade.webp"
         )
@@ -777,11 +774,11 @@ label episode001:
     python:
         codex_twill = add_codex_entry(
             Codex,
-            "Species",
-            "Twi'll",
+            __("Species"),
+            __("Twi'll"),
             [
-                "Tw’ill were the first alien species the human race encountered on their initial explorations outside the known galaxy. The intelligent, benign race of humanoids were promptly enslaved by the Terran invaders and their homeworld Luclite orbiting Xut Thanaili was destroyed. 80% of the populace were wiped out and the rest of them (male and female) are commonly held as sex slaves by wealthy Terran individuals.",
-                "The race was named Tw’ill due to their likeness of a certain species in a movie trilogy that has waned in popularity over the centuries."
+                __("Tw’ill were the first alien species the human race encountered on their initial explorations outside the known galaxy. The intelligent, benign race of humanoids were promptly enslaved by the Terran invaders and their homeworld Luclite orbiting Xut Thanaili was destroyed. 80% of the populace were wiped out and the rest of them (male and female) are commonly held as sex slaves by wealthy Terran individuals."),
+                __("The race was named Tw’ill due to their likeness of a certain species in a movie trilogy that has waned in popularity over the centuries.")
             ],
             "images/codex/Twill.webp"
         )
@@ -812,7 +809,7 @@ label episode001:
     j "Can I do something to make it easier?"
 
     menu:
-        "[gr]Massage me":
+        "Massage me [JadePath]":
             c "I’d like a massage, to alleviate the tension a little."
             j "Certainly."
             scene ep001_camran_barracks_jade_massage with dissolve
@@ -822,7 +819,7 @@ label episode001:
             j "Do you want me to go further?"
 
             menu:
-                "[gr]Yes":
+                "Yes [JadePath]":
                     $ ep001_j_hj = True
 
                     scene ep001_camran_barracks_jade_massage_naked with dissolve
@@ -830,7 +827,7 @@ label episode001:
                     call ep001_jade_hj from _call_ep001_jade_hj
 
                     menu:
-                        "Tease her":
+                        "Tease her [JadeLovePath]":
                             c "You can be very arrogant, you know that?"
                             scene ep001_camran_barracks_jade_hj_post_smile with dissolve
                             j "I know where my strengths lie and the proof of it coats my chest in abundance."
@@ -844,7 +841,7 @@ label episode001:
                             c "Go clean yourself up, I have some things to take care of."
                             j "Thank you, master."
                             c "Thank you, Jade."
-                        "Scold her":
+                        "Scold her [JadeSubPath]":
                             $ ep001_jade_scold = True
                             scene ep001_camran_barracks_jade_hj_post_fear with dissolve
                             c "Don’t take that tone with me, Jade. I’m not in the mood."
@@ -917,7 +914,7 @@ label episode001:
                 c "We’re going to shoot those deer or climb some stupid rock you’re always going on about."
                 c "Just don’t die on me!"
                 jump ep001_medbay
-            "[gr]Talk to Thim" if not ep001_medbay_thim_talk and not ep001_medbay_thim_ignored:
+            "Talk to Thim [ThimPath]" if not ep001_medbay_thim_talk and not ep001_medbay_thim_ignored:
                 $ ep001_medbay_thim_talk = True
                 scene expression eye_blink("images/ep001/ep001_thim_medbay") with dissolve
                 c "Hey Thim, how are you?"
@@ -1009,10 +1006,10 @@ label episode001:
                 python:
                     codex_vess = add_codex_entry(
                         Codex,
-                        "Characters",
-                        "Vess",
+                        __("Characters"),
+                        __("Vess"),
                         [
-                            "Vess is a girl [p_name] encountered during the botched operation on Lanan P-10, helping her escape on a transport to the TGN Ypotryll. Her family was taken when the Warrior Women invaded the moon."
+                            __("Vess is a girl [p_name] encountered during the botched operation on Lanan P-10, helping her escape on a transport to the TGN Ypotryll. Her family was taken when the Warrior Women invaded the moon.")
                         ],
                         "images/codex/Vess.webp"
                     )
@@ -1111,7 +1108,7 @@ label episode001:
     ve "It isn't fair!"
 
     menu:
-        "[gr]Tell her about your plan":
+        "Tell her about your plan [VessPath]":
             $ ep001_vess_truth = True
             "When she burst into tears like that, I just couldn't leave her there."
             "Some say that women are a man's greatest weakness, I was no exception in that regard."

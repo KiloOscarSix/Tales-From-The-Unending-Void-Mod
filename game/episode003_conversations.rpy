@@ -89,7 +89,7 @@ label ep003_conversations:
                     c "Just stay on the ship and wait until we come back."
 
             menu:
-                "[gr]Be understanding":
+                "Be understanding [VessPath]":
                     $ ep003_vess_understanding = True
                     c "To be honest, I feel bad for dragging you along across all those worlds."
                     c "Must be hard, coming from that quiet rural life and being thrust into all this."
@@ -133,7 +133,7 @@ label ep003_conversations:
                     ve "I was so scared."
 
                     menu:
-                        "[gr]Hold her":
+                        "Hold her [VessPath]":
                             $ ep003_vess_hug = True
                             scene ep003_quarters_vess_hug with dissolve
                             "Vess started crying and I just held her while she sobbed."
@@ -219,7 +219,7 @@ label ep003_conversations:
                     c "What options?"
                     scene expression eye_blink("images/ep003/ep003_quarters_lilly_doubt") with dissolve
                     l "Letting the Sovereignty deal with it, for example."
-                    c "The Sovereignty don’t give a shit about a few recruits, their actions made that pretty clear."
+                    c "The Sovereignty doesn’t give a shit about a few recruits, their actions made that pretty clear."
                     l "I guess you’re right."
                     l "Maybe you see these things clearer than I do, or maybe I’m just too careful..."
 
@@ -228,7 +228,7 @@ label ep003_conversations:
                             c "Maybe you are."
                             scene expression eye_blink("images/ep003/ep003_quarters_lilly_serious") with dissolve
                             l "I just don’t want to lose you too."
-                        "[gr]Reassure her":
+                        "Reassure her [LillyPath]":
                             $ ep003_lilly_kind = True
                             c "Diving headfirst into things isn’t always the best approach."
                             c "So please, tell me your doubts when I’m about to do something stupid and rash again."
@@ -244,7 +244,7 @@ label ep003_conversations:
                     l "Why do you ask?"
 
                     menu:
-                        "[gr]No reason":
+                        "No reason [LillyPath]":
                             c "No reason, just glad to have you along."
                             scene expression eye_blink("images/ep003/ep003_quarters_lilly_smile") with dissolve
                             l "Might as well see the sights while we’re at it."
@@ -349,7 +349,10 @@ label ep003_conversations:
             c "Would that army of robots protect him?"
             av "Not sure, but if it makes him feel better."
             scene expression eye_blink("images/ep003/ep003_quarters_aven") with dissolve
-            av "Mom is staying on the ship once we touch down on Sagueliath."
+            if game.is_special:
+                av "Mom is staying on the ship once we touch down on Sagueliath."
+            else:
+                av "Nadya is staying on the ship once we touch down on Sagueliath."
             c "She’s not coming with us?"
             av "I told her not to."
             av "We’ve done these things often enough together, so I know what to do."
@@ -368,7 +371,7 @@ label ep003_conversations:
                     scene expression eye_blink("images/ep003/ep003_quarters_aven_doubt_alt") with dissolve
                     av "Wow...{w} Errr...{w} Really?"
                     av "You all have the same training, [p_name_short]...{w} I don’t see the problem here."
-                "[gr]No":
+                "No [LillyPath] [AvenPath]":
                     c "No, of course not."
                     scene expression eye_blink("images/ep003/ep003_quarters_aven_smile") with dissolve
                     c "It’s just that I didn’t think she’d venture into the wild again after what happened on Lanan..."
@@ -398,7 +401,7 @@ label ep003_celine_talk:
     ki "Being the children of a commanding officer never did us any favors, but I didn’t expect her to be that ruthless."
     ki "Coldhearted bitch."
     scene expression eye_blink("images/ep003/ep003_quarters_celine_sad") with dissolve
-    ce "Come one Kit, maybe she-"
+    ce "Come on Kit, maybe she-"
     scene expression eye_blink("images/ep003/ep003_quarters_kit_angry") with vpunch
     ki "She tried to fucking murder us, Cé!"
     ki "I know what you’re going to say and I don’t fucking care if she was conflicted when she gave the kill order."
@@ -416,12 +419,12 @@ label ep003_celine_talk:
     ce "Do you think it would be possible, [p_name_short]?"
 
     menu:
-        "Too dangerous":
+        "[gr]Too dangerous":
             c "It’s too dangerous."
             c "They might trace that message back to us, we can’t take that risk."
             scene expression eye_blink("images/ep003/ep003_quarters_celine_sad") with dissolve
             ce "I understand."
-        "[gr]Maybe":
+        "Maybe":
             $ ep003_celine_message = True
             c "Maybe, but we should be very careful."
             c "We can’t have them tracing that message back to us."
@@ -440,7 +443,7 @@ label ep003_thyia_talk:
     scene expression eye_blink("images/ep003/ep003_quarters_th_tools_smile") with dissolve
     th "The Bastard is an old beast, but with a little care she can keep running forever."
     menu:
-        "[gr]Propose a break":
+        "Propose a break [ThyiaPath]":
             c "Why don’t you take a break?"
             scene expression eye_blink("images/ep003/ep003_quarters_th_tools_doubt") with dissolve
             th "I like tinkering, why would I need a break?"
@@ -451,7 +454,7 @@ label ep003_thyia_talk:
                     th "Wow, what a romantic proposal..."
                     th "No thanks."
                     th "And don’t bother asking in the future."
-                "[gr]Be coy":
+                "Be coy [ThyiaPath]":
                     $ ep003_thyia_coy = True
                     c "I have a feeling that maybe we left a couple of things unexplored back on Vulpes."
                     scene expression eye_blink("images/ep003/ep003_quarters_th_tools_serious") with dissolve
