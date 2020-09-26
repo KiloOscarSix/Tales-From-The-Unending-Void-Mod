@@ -23,6 +23,8 @@ init python:
     HannahPath = "{color=#0f0}[Hannah Path]"
     TrellkaPath = "{color=#0f0}[Trellka Path]"
 
+    EndRelationship = "{color=#f00}[End Relationship]"
+
 screen modOptions():
     tag menu
     modal True
