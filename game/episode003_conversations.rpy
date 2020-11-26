@@ -500,6 +500,7 @@ label ep003_dream:
     e "Just a little further."
     c "Eva! Look out!"
     scene ep003_e_dream_04 with vpunch
+    image side woman_portrait = "gui/side-images/side_warrior_woman.webp"
     woman "Don’t try anything stupid."
     c "Eva!"
     c "No!"

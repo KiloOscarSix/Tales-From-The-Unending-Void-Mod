@@ -344,7 +344,7 @@ label episode001:
                 ce "Hey [p_name]."
                 ce "I understood from Kit you got us all together on this mission?"
                 menu:
-                    "I did it for you [CélinePath]":
+                    "I did it for you [CelinePath]":
                         $ celine_romance = True
                         c "I wanted a nice holiday on a romantic moon, together with you."
                         scene expression eye_blink("images/ep001/ep001_tents_celine_happy") with dissolve
@@ -655,6 +655,7 @@ label episode001:
 
     $ woman_name = "Warrior"
     scene ep001_warrior_closeup with dissolve
+    image side woman_portrait = "gui/side-images/side_warrior_woman.webp"
     woman "Don’t try anything stupid."
     "Her accent was thick, but I understood her well enough."
     c "Let her go!"
@@ -767,9 +768,6 @@ label episode001:
     scene ep001_twill with dissolve
     "The Twi'll were the first species mankind encountered, during the first intergalactic space explorations."
     "They’re a peaceful race, not accustomed to warfare, so naturally we laid waste to their planet, killed nearly eighty percent of their population and enslaved the rest."
-    "I’m not sure if that Lucas-guy, who envisioned the Tw'ills hundreds of years before we encountered them, would appreciate what we did and that we named our newly enslaved species in honor of his little-known series of science-fiction movies."
-    "His epic about a duck named Howard is more popular anyway."
-    "There's really no accounting for taste..."
     "Most people treat their Tw'ill slaves like shit. I try not to be an asshole to Jade and show her some respect, that seems to have worked out for us so far."
     python:
         codex_twill = add_codex_entry(
@@ -778,7 +776,6 @@ label episode001:
             __("Twi'll"),
             [
                 __("Tw’ill were the first alien species the human race encountered on their initial explorations outside the known galaxy. The intelligent, benign race of humanoids were promptly enslaved by the Terran invaders and their homeworld Luclite orbiting Xut Thanaili was destroyed. 80% of the populace were wiped out and the rest of them (male and female) are commonly held as sex slaves by wealthy Terran individuals."),
-                __("The race was named Tw’ill due to their likeness of a certain species in a movie trilogy that has waned in popularity over the centuries.")
             ],
             "images/codex/Twill.webp"
         )

@@ -1505,6 +1505,7 @@ label episode002:
         "From the corner of my eye I saw several women lining themselves up, getting on all fours, asses in the air."
         "One R'o woman came up to D'ee and me and looked at us inquisitively."
         $ woman_name = "R'o Woman"
+        image side woman_portrait = "gui/side-images/side_woman.webp"
         woman "We know it's selfish, but we want you too, [p_name]..."
         "Something about that display of asses and the way she phrased the question made me forget all exhaustion."
         scene ep002_nyiruan_cave_line_kiss with dissolve

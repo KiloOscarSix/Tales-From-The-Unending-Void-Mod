@@ -626,9 +626,9 @@ label ep002_jade_sex:
         yalign 1.0
         ease 8 yalign 0.01
     $ renpy.pause()
-    "She undid her top, revealing her supple breasts and using her head-tails to great effect by accentuating the curves of her body."
-    "I'm not sure how it works, but those tails always did a number on me."
-    "For some reason, they made Jade an even more sensual being than she already was."
+    "She undid her top, revealing her supple breasts and using her poise to great effect by accentuating the curves of her body."
+    "I'm not sure how it works, but her body language always did a number on me."
+    "For some reason, it made Jade an even more sensual being than she already was."
     scene ep002_jade_undress with dissolve
     "My Tw'ill girl proceeded to undress me, her cool fingers caressing my skin wherever she uncovered it."
     "I shivered."

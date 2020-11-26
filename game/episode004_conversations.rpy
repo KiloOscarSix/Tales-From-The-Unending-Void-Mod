@@ -1155,7 +1155,7 @@ label ep004_jade_sex_hard:
     c "Lie on the bed."
     "Jade did as she was told while I removed my shorts."
     scene ep004_quarters_jade_cock with dissolve
-    "I slapped my cock against her cheek and janked her by her tails towards my crotch."
+    "I slapped my cock against her cheek and janked her by the head towards my crotch."
     c "Open your mouth."
     j "Yes, master."
     show ep004_quarters_jade_cock_mouth with dissolve

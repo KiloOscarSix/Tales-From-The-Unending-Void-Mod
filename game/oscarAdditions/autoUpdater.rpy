@@ -20,12 +20,13 @@ init python:
             else:
                 return False
 
-            modConfigPath = os.path.join(os.getcwd(), "game", "oscarAdditions", "modConfig.txt")
+    modConfigPath = os.path.join(config.basedir, "game", "modAdditions", "modConfig.txt")
 
-        def updateChecker():
-            try:
-                if not isUpToDate(modConfigPath, "https://raw.githubusercontent.com/KiloOscarSix/Tales-From-The-Unending-Void-Mod/master/game/oscarAdditions/modConfig.txt"):
-                    return True
-            except:
-                pass
+    def updateChecker():
+        try:
+            if not isUpToDate(modConfigPath, "https://raw.githubusercontent.com/KiloOscarSix/Tales-From-The-Unending-Void-Mod/master/game/oscarAdditions/modConfig.txt"):
+                return True
+            else:
+                return False
+        except:
             return False

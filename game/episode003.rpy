@@ -1269,6 +1269,7 @@ label episode003:
         "As they came closer, I noticed that one of them was of the same species as Ziv, whereas the other one looked decidedly human."
         scene ep003_port_wo_ra with dissolve
         $ woman_name = "Woman"
+        image side woman_portrait = "gui/side-images/side_woman.webp"
         woman "This is the transport you arranged, Ziv?"
         zi "It is."
         zi "This is [p_name], the captain of the vessel."
@@ -1326,6 +1327,7 @@ label episode003:
 
     label ep003_verdant_con_vitae:
         $ woman_name = "Receptionist"
+        image side woman_portrait = "gui/side-images/side_secretary.webp"
 
         scene ep003_verdant_corridor with dissolve
         "The offices turned out to be located in a perfectly nondescript corridor, its presence only denoted by an equally nondescript sign bearing the company’s logo."

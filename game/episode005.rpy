@@ -11,6 +11,7 @@ image ep005_cargo_women_doggy_jenne_fuck_alt_closeup = Movie(play="movies/ep005/
 image ep005_cargo_women_doggy_jenne_fuck_alt_closeup_pregnant = Movie(play="movies/ep005/ep005_cargo_women_doggy_jenne_fuck_alt_closeup_pregnant.webm")
 image ep005_casino_room_finger = Movie(play="movies/ep005/ep005_casino_room__finger.webm")
 image ep005_casino_room_finger_alt_closeup = Movie(play="movies/ep005/ep005_casino_room__finger_alt.webm")
+image ep005_casino_room_table_fuck_closeup = Movie(play="movies/ep005/ep005_casino_room_table_fucking_alt.webm")
 image ep005_casino_room_table_fucking_wide = Movie(play="movies/ep005/ep005_casino_room_table_fuck_alt.webm")
 image ep005_doarn_girl_naked_pussy_alt = Movie(play="movies/ep005/ep005_doarn_girl_naked_pussy_alt.webm")
 image ep005_taera_pussy_fuck = Movie(play="movies/ep005/ep005_taera_pussy_fuck.webm")
@@ -303,7 +304,7 @@ label episode005:
 
     call ep005_departure from _call_ep005_departure
 
-    call credits from _call_credits
+    jump episode006
     return
 
 label ep005_lilly:
@@ -345,7 +346,10 @@ label ep005_lilly:
             l "Nothing, just something that flashed through my head, about you being all heroic."
             l "Do you remember that one time in the gardens back on Tuolovi?"
             scene expression eye_blink("images/ep005/ep005_docks_l_embrace_smile") with dissolve
-            l "Dad had just bought that herd of Drukets?"
+            if game.is_special:
+                l "Dad had just bought that herd of Drukets?"
+            else:
+                l "Your dad had just bought that herd of Drukets?"
             c "I remember."
             c "He thought he'd make the news if he had those endangered animals locked up in a pen at the estate."
             scene expression eye_blink("images/ep005/ep005_docks_l_embrace_smile_alt") with dissolve
@@ -353,7 +357,10 @@ label ep005_lilly:
             c "That's right."
             c "Eva was so furious when the Drukets were brought in, kept yelling at dad that they should have remained on their home planet in freedom."
             scene expression eye_blink("images/ep005/ep005_docks_l_embrace_smile") with dissolve
-            l "I never saw her that mad at someone, or speak up to dad like that before."
+            if game.is_special:
+                l "I never saw her that mad at someone, or speak up to dad like that before."
+            else:
+                l "I never saw her that mad at someone, or speak up to your dad like that before."
             c "She was livid."
             c "So I tried to do something about it."
             l "Oh yes you did..."
@@ -371,21 +378,37 @@ label ep005_lilly:
             l "No?{w} Why wouldn't I?"
             c "It's just...{w} Forget about it."
             l "No, say it."
-            c "I always thought you looked up to mom and dad, wanted to be their perfect daughter."
+            if game.is_special:
+                c "I always thought you looked up to mom and dad, wanted to be their perfect daughter."
+            else:
+                c "I always thought you looked up to my mom and dad, wanted to be perfect in everything."
             scene expression eye_blink("images/ep005/ep005_docks_l_embrace_sad") with dissolve
             l "I know you think that."
-            l "And I admit I really wanted their approval for a long time when I was younger."
+            if game.is_special:
+                l "And I admit I really wanted their approval for a long time when I was younger."
+            else:
+                l "And I admit I really wanted their approval, anyone's approval really, for a long time when I was younger."
             l "But I'm not a little girl anymore, [p_name_short]."
-            l "I've known for some time mom and dad weren't really interested in us."
+            if game.is_special:
+                l "I've known for some time mom and dad weren't really interested in us."
+            else:
+                l "I've known for some time our parents weren't really interested in us."
             scene expression eye_blink("images/ep005/ep005_docks_l_embrace_sad_alt") with dissolve
-            l "I started with music lessons because I thought it would please mom."
-            l "But they only attended my recitals when there was press involved or when there was an event with important people afterwards."
+            if game.is_special:
+                l "I started with music lessons because I thought it would please mom."
+                l "But they only attended my recitals when there was press involved or when there was an event with important people afterwards."
+            else:
+                l "I started with music lessons because I thought it would please my mom."
+                l "But never attend my recitals, because they were too busy."
             l "You and Eva may not have noticed, but I stopped trying to be little miss perfect well before you went to the academy."
             menu:
                 "Apologize [LillyPath]":
                     $ ep005_lilly_apology = True
                     c "Fuck. I'm sorry, Lilly."
-                    c "I know we were always joking about you being the apple of their eye..."
+                    if game.is_special:
+                        c "I know we were always joking about you being the apple of their eye..."
+                    else:
+                        c "I know we were always joking about you being the favorite..."
                     scene expression eye_blink("images/ep005/ep005_docks_l_embrace_smile") with dissolve
                     l "Yes, you did."
                     l "And I didn't mind, mostly."
@@ -414,7 +437,10 @@ label ep005_lilly:
                     scene ep005_docks_l_embrace_sleep_carry with dissolve
                     "I carried her in my arms to the Iron Bastard and laid her on her bunk in her quarters, before going back to my cabin."
                 "Dismiss":
-                    c "You know we were mostly joking about being the apple of their eye, don't you?"
+                    if game.is_special:
+                        c "You know we were mostly joking about being the apple of their eye, don't you?"
+                    else:
+                        c "You know we were mostly joking about being the favorite, don't you?"
                     scene expression eye_blink("images/ep005/ep005_docks_l_embrace_serious") with dissolve
                     l "Maybe..."
                     l "There's a point where you say something jokingly often enough and start believing it."
@@ -425,7 +451,7 @@ label ep005_lilly:
                     l "Good night, [p_name_short]."
                     c "Good night."
                     scene ep005_docks_alone with dissolve
-                    l "I sat in silence looking out over the city, listening to the nighttime noises of a bustling metropolis before retiring to my bunk as well."
+                    "I sat in silence looking out over the city, listening to the nighttime noises of a bustling metropolis before retiring to my bunk as well."
         "Be dismissive":
             c "Why do you always focus on the negative, Lilly?"
             scene expression eye_blink("images/ep005/ep005_docks_closeup_l_angry") with dissolve
@@ -926,7 +952,7 @@ label ep005_vess:
     c "Yeah, it’s probably not the urban oasis it was supposed to be."
     scene ep005_docks_ve_park_walk_stumble with dissolve
     "At that moment, Vess took a bad step in a pothole and lost her balance."
-    "She bumped heavily into me and despide my alcohol-addled senses I was able to steady her."
+    "She bumped heavily into me and despite my alcohol-addled senses I was able to steady her."
     "Vess was so close to me I could feel the warmth of her body as she looked up to me in shock."
     scene expression eye_blink("images/ep005/ep005_docks_ve_park_walk_stumble_closeup") with dissolve
     c "I didn’t know you were so drunk."
@@ -981,6 +1007,8 @@ label ep005_workshop_visit:
     play music "music/arabic.ogg" fadeout 4 fadein 1.0
 
     $ woman_name = "Mechanic"
+    image side woman_portrait = "gui/side-images/side_mechanic.webp"
+
     scene expression eye_blink("images/ep005/ep005_docks_th") with dissolve
     th "Are you ready?"
     c "Let's do this."
@@ -1213,7 +1241,7 @@ label ep005_workshop_visit:
     ia "Follow us."
     scene ep005_casino_elevator_access with dissolve
     "One of the Twi'll pressed the palm of her hand on a scanner and looked into another device that registered her iris."
-    "The elevator doors slid open en the other Twi'll waved her gun to motion us inside."
+    "The elevator doors slid open and the other Twi'll waved her gun to motion us inside."
     scene ep005_casino_elevator_interior with dissolve
     "They both accompanied us in the elevator, one of them pressing the button to go up."
     "Moments later, we arrived on one of the higher levels of the casino."
@@ -1298,7 +1326,7 @@ label ep005_workshop_visit:
             else:
                 "The Twi'll women set their weapons against the wall and undressed."
             "I was intimately familiar with the soft curves of Jade's naked body, so the athletic physique of Iana and Sill surprised me a little."
-            "Of course, being employed as guards for a crime lord is a somewhat different live compared to that of an attendant."
+            "Of course, being employed as guards for a crime lord is a somewhat different life compared to that of an attendant."
             if game.is_special:
                 "The naked bodies of the sisters still possessed many charms and my body responded immediately."
             else:
@@ -1349,7 +1377,7 @@ label ep005_workshop_visit:
     "A little hesitant we approached the entrance."
     "Before we could touch the door handles the door swung open automatically, revealing a dimly lit room."
     "A single person sat behind a very large desk in a lavishly decorated office."
-    "The door began closing as we stepped in and the man behind the desk flashed a toothy smile"
+    "The door began closing as we stepped in and the man behind the desk flashed a toothy smile."
     scene expression eye_blink("images/ep005/ep005_doarn_office") with dissolve
     do "Welcome, mister Idaho."
     do "What brings you to my humble establishment?"
@@ -1465,6 +1493,8 @@ label ep005_workshop_visit:
             "Go after the girl [blue]\[WatersportsFetish\]":
                 $ ep005_doarn_girl = True
                 $ woman_name = "Mistress"
+                image side woman_portrait = "gui/side-images/side_mistress.webp"
+
                 c "Something isn't sitting right with me about that girl."
                 c "I'm going to see if she's alright."
                 th "Ever the valiant knight."
@@ -1587,7 +1617,7 @@ label ep005_eva:
     e "I don't know...{w} I guess?"
     e "She really likes living on the estate."
     e "I'm not sure she has that same drive to explore and see more of the galaxy."
-    c "Yeah, Lilly just wants live out her days as an old spinster on a vast estate attended by servants."
+    c "Yeah, Lilly just wants to live out her days as an old spinster on a vast estate attended by servants."
     scene ep005_sim_mansion_garden_closeup_laugh with dissolve
     e "Haha, you know it's not like that."
     c "In any case, she's not getting her wish."
@@ -1704,7 +1734,7 @@ label ep005_thim:
         t "So maybe I could take up medicine again."
         c "Become a doctor?"
         t "Yes."
-        c "How far does you medical expertise stretch at the moment?"
+        c "How far does your medical expertise stretch at the moment?"
         scene expression eye_blink("images/ep005/ep005_docks_thim_unsure") with dissolve
         t "I'm not sure."
         t "I know I'm more skilled than the ship's autodoc, but a lot of it is from books and articles like the ones I'm reading right now."
@@ -1885,13 +1915,13 @@ label ep005_jade:
         c "Just do it."
         scene expression eye_blink("images/ep005/ep005_quarters_jade_sad") with dissolve
         j "Yes master."
-        j "I'll make sure you can use the feature when you enter the sim next time"
+        j "I'll make sure you can use the feature when you enter the sim next time."
         c "Good."
     else:
         c "Please Jade, nobody has to know."
         scene expression eye_blink("images/ep005/ep005_quarters_jade_serious") with dissolve
         j "All right."
-        j "I'll make sure you can use the feature when you enter the sim next time"
+        j "I'll make sure you can use the feature when you enter the sim next time."
         c "Thank you."
 
     return
@@ -1923,7 +1953,7 @@ label ep005_celine_sex:
     "The promise of her bare feet touching my veined shaft took away any doubts I had."
     scene ep005_barranthis_restaurant_ce_foot_cock with dissolve
     "Nobody was paying attention to us and the table provided ample cover."
-    "As soon as my cock was free I felt Céline’s delicate foot softly touch my my member."
+    "As soon as my cock was free I felt Céline’s delicate foot softly touch my member."
     scene ep005_barranthis_restaurant_ce_foot_cock_alt with dissolve
     ce "Have you decided on a dessert yet?"
     "The wicked look in her eyes intensified when she noticed I was barely able to speak."
@@ -2111,19 +2141,20 @@ label ep005_twill_sex:
     "Sill looked at us with thinly veiled envy."
     scene ep005_casino_room_table_fuck_alt with dissolve
     if game.is_special:
-        "Suddenly her sister grabbed her head by the tails and pulled Sill towards her pussy."
+        "Suddenly her sister grabbed her head by the head and pulled Sill towards her pussy."
         scene ep005_casino_room_table_fuck_alt_closeup with dissolve
         "Her surprised cry was muffled by her sister's pussy and despite the shock I saw her tongue dart out and she began to lick Iana eagerly."
     else:
-        "Suddenly her friend grabbed her head by the tails and pulled Sill towards her pussy."
+        "Suddenly her friend grabbed her head by the head and pulled Sill towards her pussy."
         scene ep005_casino_room_table_fuck_alt_closeup with dissolve
         "Her surprised cry was muffled by Iana's pussy and despite the shock I saw her tongue dart out and she began to lick Iana eagerly."
+    show ep005_casino_room_table_fuck_closeup with dissolve
     if game.is_special:
         "Feasting my eyes on the two sisters I kept using Iana's tight cunt, fucking her mercilessly."
     else:
         "Feasting my eyes on the two women I kept using Iana's tight cunt, fucking her mercilessly."
     scene ep005_casino_room_table_fuck_orgasm with dissolve
-    "Iana shuddered and let out a hoarse moan the woman orgasmed right as my cock plunged deep inside her, ejaculate gushing out her slit to be lapped up by Sill with relish."
+    "Iana shuddered and let out a moan as the woman orgasmed right as my cock plunged deep inside her, ejaculate gushing out her slit to be lapped up by Sill with relish."
     if game.is_special:
         "As Sill was treating her sister so well, I longed to have my way with her."
     else:
@@ -2237,6 +2268,7 @@ label ep005_doarn_finger:
 label ep005_factory_visit:
     $ man_name = "Guard"
     $ woman_name = "Guard"
+    image side woman_portrait = "gui/side-images/side_woman.webp"
     $ ta_name = "Girl"
 
     play music [ "music/satiate-only-percussion.ogg" ] fadeout 4 fadein 1.0
@@ -2317,7 +2349,7 @@ label ep005_factory_visit:
     woman "I'm about to tell you your assignment."
     woman "Just do the work and you'll get paid at the end of the day."
     c "What about my friends?"
-    woman "No more questions, just do as your told."
+    woman "No more questions, just do as you're told."
     woman "We don't get many human recruits, so most of them are assigned to this duty."
     woman "You're to go in, wake one of the girls and have sex with her."
     c "What?!"
@@ -2326,11 +2358,11 @@ label ep005_factory_visit:
     c "What good will that do?!"
     c "Oh..."
     woman "Yes, don't pull out, that's all I'm saying."
-    woman "We want these girls lactating again as soon as possible again."
+    woman "We want these girls lactating again as soon as possible."
     woman "So, in you go and do your duty."
     scene ep005_factory_room with dissolve
     "The woman opened the door and shoved me inside."
-    "Several beds were lined up against the walls, three of them occupied."
+    "Several beds were lined up against the walls, four of them occupied."
     "The girls that were lying on the beds looked like they were sleeping peacefully."
     "Not sure what to do next, I approached one of the beds."
     scene ep005_factory_room_girl with dissolve
@@ -2358,7 +2390,7 @@ label ep005_factory_visit:
                     ta "I can't speak for the others though."
                     c "So they're forcing women to become cattle?"
                     scene expression eye_blink("images/ep005/ep005_factory_room_girl_awake") with dissolve
-                    ta "Not all of them, but they don't care if you're sold as a slave or came her at your own free will."
+                    ta "Not all of them, but they don't care if you're sold as a slave or came here at your own free will."
                     menu:
                         "Fuck her":
                             $ ep005_taera_sex = True
@@ -2382,7 +2414,7 @@ label ep005_factory_visit:
                             scene expression eye_blink("images/ep005/ep005_factory_room_girl_awake_smile") with dissolve
                             ta "The milking doesn't bother me, it's all a blur."
                             ta "They prepare you before they put you on a rack, make you really horny, and then it's just orgasm after orgasm."
-                            "I stared at her in disbelief, but the girl just shrugged at those words and moved closer to me."
+                            "I stared at her in disbelief, but the girl just shrugged at those words and nudged closer to me, as far as her bonds allowed her."
                             scene expression eye_blink("images/ep005/ep005_factory_room_girl_awake_doubt") with dissolve
                             ta "Are we going to fuck or not?"
 
@@ -3035,7 +3067,7 @@ label ep005_taera_sex:
     "I decided to do something unexpected, to see if a fire still burned inside of her."
     scene ep005_taera_legs_alt with dissolve
     "So I undressed and approached her as she closed her eyes and waited for my cock to penetrate her."
-    "When she felt my hips brush agains her thighs, she angled her body up to allow me even better access to her bald pussy."
+    "When she felt my hips brush against her thighs, she angled her body up, to allow me even better access to her bald pussy."
     scene ep005_taera_breasts with dissolve
     "Instead of taking her up on her offer, I lowered my head towards her upper body and brushed the skin of her breastbone with my lips."
     "Taera frowned, but kept her eyes closed, still waiting for my cock."
@@ -3068,7 +3100,7 @@ label ep005_taera_sex:
     "With her pussy covered in her own juices, I decided it was time to give her what she initially wanted."
     scene ep005_taera_pussy_cock with dissolve
     "Biting her lower lip, her fevered gaze was cast at my throbbing cock, ready to probe her tight entrance."
-    ta "Breed me, [p_name_short]!"
+    ta "Breed me, [p_name]!"
     "Nobody had ever said that to me, but Taera's comment awakened something, a sexual fury burning deep inside."
     scene ep005_taera_pussy_penetrate with vpunch
     "I grabbed her legs and slammed my cock deep inside her cunt."
@@ -3078,10 +3110,10 @@ label ep005_taera_sex:
     ta "I want everything inside me, all of your cum, please remember that."
     scene ep005_taera_pussy_fuck_alt with dissolve
     "In a frenzy I started fucking the girl, her legs wrapped around my lower body, urging me to go deep."
-    ta "Fuck me harder, [p_name_short], don't hold back."
+    ta "Fuck me harder, [p_name], don't hold back."
     "I sucked her nipples again, as my cock slipped in and out of her wet cunt."
     scene ep005_taera_pussy_fuck_closeup with dissolve
-    ta "Put a baby inside me, [p_name_short]!"
+    ta "Put a baby inside me, [p_name]!"
     ta "I'm yours, breed me!"
     menu:
         "Creampie [gr]\[TaeraCreampie\]":
@@ -3298,7 +3330,7 @@ label ep005_women_sex:
     scene ep005_cargo_women_chair_naked_closeup with dissolve
     "Raisha scooped her perky breasts up with her hands and played with the girl’s nipples."
     "Jenne gasped and looked at me for the first time, a glint of desire reflecting in her eyes."
-    "Her athletic thighs flanked her juicy young pussy and all I could think off was fucking her right that instant."
+    "Her athletic thighs flanked her juicy young pussy and all I could think of was fucking her right that instant."
     if ep005_woman_pregnant:
         scene ep005_cargo_women_chair_lynna_pregnant with dissolve
     else:
@@ -3320,7 +3352,7 @@ label ep005_women_sex:
     else:
         "The woman walked from behind the chair and sat on top of me."
     scene ep005_cargo_women_chair_lap with dissolve
-    "Lyna sat a little askew, so I still had a view of Jenne and Raisha’s carresses."
+    "Lyna sat a little askew, so I still had a view of Jenne and Raisha’s caresses."
     "The older woman was now sucking Jenne’s nipples and one of her hands parted the girl’s legs."
     if ep005_woman_pregnant:
         scene ep005_cargo_women_chair_lap_finger_pregnant with dissolve
@@ -3377,7 +3409,7 @@ label ep005_women_sex:
     else:
         scene ep005_cargo_women_kneel with dissolve
     "Both Jenne and Raisha obliged, their asses in the air, their wet cunts glistening in the artificial light that bathed the bridge."
-    lyn "Who are you going to fuck first, Cam?"
+    lyn "Who are you going to fuck first, [p_name]?"
 
     menu ep005_cargo_women_fucking:
         "Choose Raisha" if not ep005_women_raisha_fucked:
@@ -3388,18 +3420,19 @@ label ep005_women_sex:
                 lyn "Ah, the older girl, you want to play with those large tits, don’t you?"
             "I grabbed Raisha from behind and pulled her closer towards me, my cock slapping against her pussy."
             scene ep005_cargo_women_doggy_raisha_fuck with dissolve
-            "She let out a surprised cry which was muffled by Lyna’s cunt."
+            "She let out a surprised cry."
             show ep005_cargo_women_doggy_raisha_fucking with dissolve
             "My cock slipped easily inside Raisha’s ribbed tunnel as it had been lubricated thoroughly by Jenne just before."
             show ep005_cargo_women_doggy_raisha_closeup with dissolve
             "Holding her by the middle, I rode the woman from behind, her ass slapping hard against my body as my cock buried itself deeply inside her vagina."
+            show ep005_cargo_women_doggy_raisha_closeup with dissolve
             "Lyna released Raisha and took Jenne’s head in her hands, pushing it against her cunt."
             scene ep005_cargo_women_doggy_raisha_fuck_alt with dissolve
             "The young girl responded immediately and I saw her tongue dart out, lapping up the pussy juices that Raisha had tapped before."
             if is_patreon() and renpy.has_label("extra_scene_09"):
                 call extra_scene_09 from _call_extra_scene_09
                 show ep005_cargo_women_doggy_raisha_closeup with dissolve
-                "Emboldened by what just happend Raisha moaned freely as I fucked her hard."
+                "Emboldened by what just happened Raisha moaned freely as I fucked her hard."
             else:
                 "Raisha was now able to moan freely and she did so as I fucked her hard."
             "Her breasts bounced back and forth as I fucked her like rapid-fire."
