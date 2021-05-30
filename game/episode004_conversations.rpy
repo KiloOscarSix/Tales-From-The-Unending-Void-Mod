@@ -292,7 +292,7 @@ label ep004_conversations:
                 scene expression eye_blink("images/ep004/ep004_quarters_n_smile") with dissolve
                 na "They were."
                 na "One of the rare times Agust allowed us to use the family ship for transport as well."
-                c "Mom and dad came too, right?"
+                c "Mom and Dad came too, right?"
                 na "They did."
                 c "I have almost no memory of them being there."
                 scene expression eye_blink("images/ep004/ep004_quarters_n_serious") with dissolve
@@ -499,7 +499,7 @@ label ep004_conversations:
                         c "Sounds like them all right."
                     scene expression eye_blink("images/ep004/ep004_quarters_av_smile_alt") with dissolve
                     if game.is_special:
-                        av "I think mom loved it just as much as we did, despite all the responsibility of minding the children falling to her."
+                        av "I think Mom loved it just as much as we did, despite all the responsibility of minding the children falling to her."
                     else:
                         av "I think Nadya loved it just as much as we did, despite all the responsibility of minding the children falling to her."
                     if not ep002_nadya_dismissed and ep004_nadya_talk:
@@ -510,7 +510,7 @@ label ep004_conversations:
                     scene expression eye_blink("images/ep004/ep004_quarters_av_serious") with dissolve
                     av "No, never."
                     if game.is_special:
-                        av "Kepler is very expensive and mom had a lot on her mind after leaving Tuolovi."
+                        av "Kepler is very expensive and Mom had a lot on her mind after leaving Tuolovi."
                     else:
                         av "Kepler is very expensive and Nadya had a lot on her mind after leaving Tuolovi."
                     if not ep002_nadya_dismissed and ep004_nadya_talk:
@@ -538,7 +538,7 @@ label ep004_conversations:
                         c "Lying on a beach in the warm sun, sipping cocktails..."
                     scene expression eye_blink("images/ep004/ep004_quarters_av_smile") with dissolve
                     av "Getting caught by the police, spending years in a jail cell until you get executed for desertion..."
-                    c "Minor details...{w} You’ve got to admit the first parts sounds good, no?"
+                    c "Minor details...{w} You’ve got to admit the first part sounds good, no?"
                     scene expression eye_blink("images/ep004/ep004_quarters_av_smile_alt") with dissolve
                     av "All right, I’ll give you that."
                     c "See!"
@@ -634,7 +634,7 @@ label ep004_conversations:
                     scene ep004_quarters_l_th_glasses with dissolve
                     l "I never got the chance really, they picked the Naval Academy for me and that was that."
                     if game.is_special:
-                        c "Mom and dad weren’t big on the whole upbringing thing."
+                        c "Mom and Dad weren’t big on the whole upbringing thing."
                     else:
                         c "Both our parents weren’t big on the whole upbringing thing."
                     scene expression eye_blink("images/ep004/ep004_quarters_th_serious") with dissolve
@@ -652,7 +652,7 @@ label ep004_conversations:
                         l "If you behaved from time to time..."
                     else:
                         l "If you behaved from time to time I'm sure your dad would like you too..."
-                    c "I might have gotten a pat on the head more often. "
+                    c "I might have gotten a pat on the head more often."
                     c "Still would have ended up at the Naval Academy though."
                     scene ep004_quarters_l_th_glasses with dissolve
                     th "How did you manage in such a place?"
@@ -776,7 +776,7 @@ label ep004_conversations:
             scene ep004_simulation_eva_estate with dissolve
             "We trudged through the virtual emptiness for a while, until we passed the gates of our estate."
             "Eva didn’t seem perturbed by the weird transition between the flat nothingness and the vibrancy of the estate’s grounds."
-            "Instead, she held my hand firmly in hers and chatted about what had happened on Tuolovi during my first semester at the academy."
+            "Instead, she held my hand firmly in hers and chatted about what had happened on Tuolovi during my first semester at the Academy."
             "Of course, I heard it all before, but I was just so happy to hear Eva’s voice again."
             scene expression eye_blink("images/ep004/ep004_simulation_eva_estate_closeup") with dissolve
             e "So, have you made any friends already?"
@@ -784,7 +784,7 @@ label ep004_conversations:
             e "I can’t wait for us to join you!"
             scene expression eye_blink("images/ep004/ep004_simulation_eva_estate_closeup_serious") with dissolve
             e "Lilly has a hard time picturing herself away from Tuolovi, but I’m done with the place."
-            c "Really, I thought you weren’t overjoyed with the prospect of studying at the Academy"
+            c "Really, I thought you weren’t overjoyed with the prospect of studying at the Academy."
             e "I’m not, but it beats staying here."
             c "No argument there."
             scene expression eye_blink("images/ep004/ep004_simulation_eva_estate_interior") with dissolve
@@ -1146,7 +1146,7 @@ label ep004_jade_sex_hard:
         yalign 1.0
         ease 8 yalign 0.01
     $ renpy.pause()
-    "Her top and skirt quickly fell to the ground and the Tw'ill stood meekly before me, waiting on my command."
+    "Her top and skirt quickly fell to the ground and the Twi'll stood meekly before me, waiting on my command."
     c "Go lie on the bed, head towards me."
     scene expression eye_blink("images/ep004/ep004_quarters_jade_naked_closeup") with dissolve
     j "Yes, master."
@@ -1182,7 +1182,7 @@ label ep004_jade_sex_hard:
     c "Do you like being slapped, Jade?"
     j "I do, master."
     scene ep004_quarters_jade_behind_penetrate with dissolve
-    c "I grabbed her ass and pulled her towards me."
+    "I grabbed her ass and pulled her towards me."
     "Her pussy glistened wet as I pushed the head of my dick against her lips."
     "She was ready for me, waiting for me to fuck her hard."
     scene ep004_quarters_jade_behind_penetrate_ass with dissolve
@@ -1244,7 +1244,7 @@ label ep004_jade_sex_hard:
             "Roaring, I withdrew my cock and pulled her head towards me."
             scene ep004_quarters_jade_behind_facial with dissolve
             "She gasped and I directed my veined shaft at her face, promptly coating her with warm sticky cum."
-            "After plastering my face with semen, I allowed her to collapse on top of me."
+            "After plastering her face with semen, I allowed her to collapse on top of me."
     scene ep004_quarters_jade_behind_post with dissolve
     j "Did I satisfy you, master?"
     c "Yes, Jade, you did."

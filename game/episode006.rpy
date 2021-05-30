@@ -54,7 +54,7 @@ label episode006:
     call location_screen (__("Unknown"), True) from _call_location_screen_29
 
     $ woman_name = "Woman"
-    image side woman_portrait = "gui/side-images/side_bodyguard.webp"
+    $ woman_portrait = "side_bodyguard"
 
     scene expression eye_blink("images/ep006/ep006_bridge") with dissolve
     co "Where's the boy now?"
@@ -70,7 +70,10 @@ label episode006:
     woman "I do, milord."
     woman "I will strive to do better."
     co "I'm sure you will."
-    co "Because of his determination to find his sister, the boy is still our best source of information."
+    if game.is_special:
+        co "Because of his determination to find his sister, the boy is still our best source of information."
+    elif True:
+        co "Because of his determination to find his friend, the boy is still our best source of information."
     co "But if our informant among his crew has gone dark we need to find other ways to find the girl."
     woman "Yes, milord."
     scene expression eye_blink("images/ep006/ep006_bridge_alt_closeup") with dissolve
@@ -133,7 +136,7 @@ label episode006:
     "The room was evenly lit by glowing panels worked into the ceiling, emitting a cold light."
     scene ep006_cell_walk with dissolve
     "My bare feet touched the floor, which was surprisingly warm to the touch."
-    "The door had no discernible handle or locking mechanism, but couldn't be opened despite my fruitless attempts."
+    "The door couldn't be opened despite my fruitless attempts."
     "A small window allowed me to view the area just beyond, a corridor, just as nondescript as my cell."
     "Only then did I notice that I was wearing a coverall, which fit my body perfectly."
     "The garment didn't have any identifying marks."
@@ -373,7 +376,7 @@ label episode006:
     scene expression eye_blink("images/ep006/ep006_cell_l_sit_closeup_smile") with dissolve
     l "Haha, right."
     scene expression eye_blink("images/ep006/ep006_cell_l_sleep") with dissolve
-    "We both lay on the mattress and I pulled the covers over us both."
+    "We both lay on the mattress and I pulled the covers over us."
     c "Good night, Lilly."
     scene expression eye_blink("images/ep006/ep006_cell_l_sleep_closeup") with dissolve
     l "Good night, [p_name]."
@@ -425,7 +428,7 @@ label episode006:
             l "I..."
     scene ep006_cell_l_awake_blush with dissolve
     "Visibly flustered, she wormed herself from the embrace and rolled to her side of the mattress."
-    "Good morning."
+    c "Good morning."
     "Lilly managed a mumbled greeting and her cheeks flushed."
     l "I'm going to take a shower, if you don't mind."
     c "Not at all."
@@ -643,7 +646,7 @@ label episode006:
             "Lilly sobbed and trembled, now fully awake, but still unable to speak."
             c "Don't be afraid, I'm here for you."
             c "There's nothing to be afraid of."
-            "It took quite a while for the trembling subside and her breathing to steady."
+            "It took quite a while for the trembling to subside and her breathing to steady."
             scene expression eye_blink("images/ep006/ep006_cell_l_scream_embrace_closeup") with dissolve
             l "I saw it again, [p_name]."
             l "The house.{w} The buzzing..."
@@ -861,7 +864,7 @@ label episode006:
             "I had just returned when Aven emerged from the shower."
             "She hid her shock well when she noticed me looking at her."
         "Remain in bed":
-            "In understood the urge to relieve the tension all too well and decided to leave Aven be for the moment."
+            "I understood the urge to relieve the tension all too well and decided to leave Aven be for the moment."
             scene ep006_new_cell_shower_av with dissolve
             "She must have brought herself to a very restrained climax quickly, because her return from the shower surprised me."
             "Aven hid her shock well when she noticed me looking at her."
@@ -944,7 +947,7 @@ label episode006:
             av "Same here."
             av "With me they’re feeding me images of myself and a man."
             av "We’re both naked and I’m lying down and he’s kissing me all over."
-            av "The scene plays out with some variations, but right at the moment were things start to get good everything stops."
+            av "The scene plays out with some variations, but right at the moment where things start to get good everything stops."
             c "Bummer."
             scene expression eye_blink("images/ep006/ep006_new_cell_shower_av_smile") with dissolve
             av "Yeah."
@@ -1119,9 +1122,9 @@ label episode006:
     scene expression eye_blink("images/ep006/ep006_office_chair_woman_closeup") with dissolve
     chrone "Now. Question 1."
     chrone "Do you enjoy sex?"
+    mod "You need 4 points to achieve the sex scene, however you also don't want to give too much infomation away, the choices in green are my suggestions."
 
     menu:
-        mod "You need 4 points to achieve the sex scene, however you also don't want to give too much infomation away, the choices in green are my suggestions."
         "[gr]Evade":
             $ ep006_inverview_result += 1
             c "Who doesn't?"
@@ -1204,7 +1207,6 @@ label episode006:
     chrone "Are you sexually attracted to me?"
 
     menu:
-        mod "Choose 'Yes' if you want sex scene with Dr. Moora"
         "[gr]Yes":
             $ ep006_inverview_result += 1
             $ ep006_chrone_attraction = True
@@ -1395,7 +1397,7 @@ label episode006:
     c "Try anyway."
     c "And if you try anything stupid, Aven will fry your brain with that shiny gun she's holding."
     scene ep006_escape_office_c_broadcast with dissolve
-    "The doctor moved to the comm console and pressed on of the speaker buttons."
+    "The doctor moved to the comm console and pressed one of the speaker buttons."
     chrone "Guards in Sector Gamma, stand down at once."
     chrone "Prisoner escape drill has been completed."
     chrone "Stand down at once."
@@ -1410,12 +1412,22 @@ label episode006:
     c "You heard the lady."
     c "Which research station?"
     scene expression eye_blink("images/ep006/ep006_escape_office_c_alt") with dissolve
-    chrone "Höfel MDCL, built on an asteroid deep inside the Helluvian Belt."
+    chrone "Höfel MDCL, built on an asteroid deep inside the Heveliun Belt."
 
     python:
         codex_chrone = update_codex_entry(codex_chrone, None,
             [
                 __("A doctor at the Höfel MDCL science facility where the crew was held after flying into an asteroid field as part of their escape from Barranthis.")
+            ]
+        )
+
+        codex_hofel = add_codex_entry(
+            Codex,
+            __("Planets"),
+            __("Höfel MDCL"),
+            [
+                __("Location: Heveliun Belt"),
+                __("A science facility operated by ConVitæ where the crew was held after flying into an asteroid field as part of their escape from Barranthis.")
             ]
         )
 
@@ -1476,7 +1488,7 @@ label episode006:
     c "Aven, please stun the good doctor into unconsciousness."
     scene ep006_escape_office_c_shoot with vpunch
     "After setting the gun to stun, Aven blasted the doctor far too many times than necessary."
-    "The woman slumped in her chair and Nadya took her pulse and checked her eyes."
+    "The woman fell from the chair and Nadya took her pulse and checked her eyes."
     scene ep006_escape_office_na with dissolve
     na "She’s unconscious."
     c "Good. You and Lilly stow her in that closet, while Aven and I go get the clothing from the locker room."
@@ -1564,7 +1576,7 @@ label episode006:
     "Thankfully the keycard worked on the entrance door as well."
     scene ep006_escape_storage_pods with dissolve
     "Storage bay G-N135 wasn’t that large and held five suspension pods, one of them empty."
-    "We hit the release button on the three occupied pods and they cycled through their revivification cycles quickly."
+    "We hit the release button on the four occupied pods and they cycled through their revivification cycles quickly."
     scene expression eye_blink("images/ep006/ep006_escape_storage_pods_z") with dissolve
     "A woman with purple skin was the first to come staggering out of the pod."
     zi "Am I glad to see you all."
@@ -1587,7 +1599,7 @@ label episode006:
     zi "It seems so."
     scene ep006_escape_storage_pods_thim with dissolve
     "The two remaining persons woke up and started heaving while steadying themselves against one of the sides of the pod."
-    th "Wh-where the fuck am I?"
+    t "Wh-where the fuck am I?"
     c "We’re on a research station."
     c "You four were kept on ice, while we were used as lab animals."
     scene expression eye_blink("images/ep006/ep006_escape_storage_pods_ra") with dissolve
@@ -1683,7 +1695,10 @@ label episode006:
         else:
             "Then the realization hit me, the girl I’d loved for the past few days was my childhood friend."
         "She wouldn’t meet my eyes, but I’d gathered she went through much the same horrifying process as I was."
-        "How wrong we’d been about each other, mistaking our sibling bond for true love."
+        if game.is_special:
+            "How wrong we’d been about each other, mistaking our sibling bond for true love."
+        else:
+            "How wrong we’d been about each other, mistaking our bond of friendship for true love."
     else:
         if game.is_special:
             if ep006_lilly_friends:
@@ -1704,7 +1719,7 @@ label episode006:
     scene ep006_escape_plaza with dissolve
     "We walked unsteadily through a long corridor to find a large plaza."
     "That’s when another realization hit me square in the face."
-    "A huge wall domaniated the plaza, covered in huge lettering announcing the name of company in charge of this research station."
+    "A huge wall dominated the plaza, covered in huge lettering announcing the name of company in charge of this research station."
     scene ep006_escape_plaza_alt with dissolve
     "The doctor had already mentioned the name ConVitæ before, but I was too drugged to make any kind of mental connection."
     "With the haze of the drugs cleared, I remembered the name ConVitæ well enough."
@@ -1762,6 +1777,7 @@ label episode006:
     "Nobody paid any attention to us as we neared the elevator."
     "At least, that's what we thought."
     $ man_name = "Guard"
+    $ man_portrait = "side_man"
     scene expression eye_blink("images/ep006/ep006_escape_plaza_guard") with vpunch
     man "You there."
     man "We need you on Sublevel 11-XXXVIII."
@@ -1889,7 +1905,7 @@ label episode006:
             "Only then she seemed to notice the shooting that had just happened and her face contorted in disgust."
             av "Fuck, what a mess."
             c "Let's leave here quickly, hopefully the others are already on the Bastard."
-        "[gr]Confront the guards":
+        "Confront the guards [JadePath]":
             $ ep006_guard_confront = True
             "Much to Aven's shock I kicked the door in."
             scene ep006_escape_docks_guards_shock with vpunch
@@ -1974,16 +1990,16 @@ label episode006:
 
     call ep006_conversations from _call_ep006_conversations
 
-    call credits from _call_credits
+    jump episode007
     return
 
 label ep006_sim_01:
     if _in_replay:
         $ yve_name = "Woman"
-        image side woman_portrait = "gui/side-images/side_yve.webp"
+        $ woman_portrait = "side_yve"
 
     $ woman2_name = "Woman"
-    image side woman2_portrait = "gui/side-images/side_calista.webp"
+    $ woman2_portrait = "side_calista"
 
     scene ep006_sim_chair with dissolve
     "Suddenly I was overwhelmed by a familiar nausea."
@@ -2074,9 +2090,9 @@ label ep006_sim_01:
 label ep006_sim_02:
     if _in_replay:
         $ yve_name = "Woman"
-        image side woman_portrait = "gui/side-images/side_yve.webp"
+        $ woman_portrait = "side_yve"
         $ woman2_name = "Mistress"
-        image side woman2_portrait = "gui/side-images/side_calista.webp"
+        $ woman2_portrait = "side_calista"
 
     scene ep006_sim_standing with pixellate
     woman2 "Are you ready to be punished again, slut?"
@@ -2173,9 +2189,9 @@ label ep006_sim_02:
 label ep006_sim_03:
     if _in_replay:
         $ yve_name = "Woman"
-        image side woman_portrait = "gui/side-images/side_yve.webp"
+        $ woman_portrait = "side_yve"
         $ woman2_name = "Mistress"
-        image side woman2_portrait = "gui/side-images/side_calista.webp"
+        $ woman2_portrait = "side_calista"
 
     scene ep006_sim_spread with pixellate
     "The slave lay helpless on the floor, her arms and legs spread wide, while her captor circled her."
@@ -2198,7 +2214,7 @@ label ep006_sim_03:
     scene ep006_sim_spread_face_lick_alt with dissolve
     "The Mistress pressed her wet gash even more forceful on her slave's mouth."
     scene ep006_sim_spread_face_lick_breasts_alt with dissolve
-    "She kneaded the blonde woman's large breasts, leaving agressive marks in the luscious flesh."
+    "She kneaded the blonde woman's large breasts, leaving aggressive marks in the luscious flesh."
     "The wet sounds of the woman's tongue lapping at the Mistress' cunt were muffled now, but the slave's fervor didn't seem diminished."
     woman2 "Yes!{w} Yes!{w} Oh yes!"
     scene ep006_sim_spread_face_lick_squirt with vpunch
@@ -2375,7 +2391,7 @@ label ep006_doctor_sex:
                 "Creampie [gr]\[Dr. Moora Creampie\]":
                     $ ep006_chrone_creampie = True
                     with vpunch
-                    "Without warning I was about to cum, I held her fast and thrusted my cock deep inside her vagina and warm cum started to flow in thick waves."
+                    "Without warning I was about to cum, I held her fast and thrust my cock deep inside her vagina and warm cum started to flow in thick waves."
                     scene ep006_doctor_upright_creampie with flash
                     with flash
                     "When my cock slipped from her wet slit, a stream of cum dripped down on the chair."

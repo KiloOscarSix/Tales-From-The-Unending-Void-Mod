@@ -341,7 +341,7 @@ label episode004:
     scene ep004_asteroid_base with dissolve
     call location_screen (__("Hreir Asteroid Base, Approach"), True) from _call_location_screen_24
 
-    "Using the navigational data we received from Hreir, the Iron Bastard cut it’s way through the asteroid field."
+    "Using the navigational data we received from Hreir, the Iron Bastard cut its way through the asteroid field."
     "It wasn’t until we docked that something began to feel off."
     scene ep004_asteroid_av_na with dissolve
     c "No security bots to greet us..."
@@ -379,7 +379,7 @@ label episode004:
         "Hug her [NadyaPath]":
             $ ep004_na_hug = True
             scene ep004_asteroid_hug with dissolve
-            "I took Nadya in my arms and I held her in silence, until Aven returned with a sheet she found somewhere"
+            "I took Nadya in my arms and I held her in silence, until Aven returned with a sheet she found somewhere."
         "Wait for Aven":
             "We waited in silence, until Aven returned with a sheet she found somewhere."
 
@@ -426,6 +426,7 @@ label episode004:
     "The bot’s eyes began to glow and we heard Karan’s voice."
     ka "Nadya."
     $ man_name = "Bot"
+    $ man_portrait = "side_man"
     man "I hope this message gets to you, because they’re finally coming for me."
     man "I don’t know who it is, but they’re nearly through the security doors."
     man "Maybe it has something to do with you, or maybe it’s just my time."
@@ -555,6 +556,18 @@ label episode004:
                 c "I guess we’ll be doing cargo runs for the rest of our lives..."
             c "Could you draw up an estimation of the costs, Thyia?"
             th "On it."
+
+            python:
+                codex_almagest = add_codex_entry(
+                    Codex,
+                    __("Planets"),
+                    __("Almagest"),
+                    [
+                        __("Location: Psi1 Draconis"),
+                        __("Almagest is covered in a vast ocean. The only landmass is an island owned by Ranimo Cetruvar. His villa, built into a cliff, has been the scene of many illustrious parties."),
+
+                    ]
+                )
         "Go after Cetruvar":
             c "Agreed, it’s too dangerous to involve others."
             c "Let’s go find Cetruvar."
@@ -591,6 +604,18 @@ label episode004:
                 c "I guess we’ll be doing cargo runs for the rest of our lives..."
             c "Could you draw up an estimation of the costs, Thyia?"
             th "On it."
+
+            python:
+                codex_almagest = add_codex_entry(
+                    Codex,
+                    __("Planets"),
+                    __("Almagest"),
+                    [
+                        __("Location: Psi1 Draconis"),
+                        __("Almagest is covered in a vast ocean. The only landmass is an island owned by Ranimo Cetruvar. His villa, built into a cliff, has been the scene of many illustrious parties."),
+
+                    ]
+                )
 
             scene expression eye_blink("images/ep004/ep004_ship_ziv") with dissolve
             if ep004_ziv_bargain:
@@ -1135,7 +1160,7 @@ label episode004:
         lu "If you just follow my lead from here on out, they'll live, you have my word on that."
         scene ep004_skarak_ritual_lu_ropes with dissolve
         "She didn’t wait for my reply, dragged me to the ritual circle and proceeded to cut the rope binding my hands."
-        "With several surprisingly quick motions she was able to remove my body armor"
+        "With several surprisingly quick motions she was able to remove my body armor."
         scene ep004_skarak_ritual_naked with vpunch
         c "Wah?"
         lu "Yes, you’ll do nicely."
@@ -1197,9 +1222,9 @@ label episode004:
         zi "The Tubloshi will probably do a quick genetic scan to verify the remains with the ones on file in their database."
         c "Let's pack up those bones then."
         scene ep004_skarak_container with dissolve
-        "Ziv and I retrieved the large collapsable container we dropped back in the fields and we began to work on moving the bones of Kyl Tavort to it. "
+        "Ziv and I retrieved the large collapsable container we dropped back in the fields and we began to work on moving the bones of Kyl Tavort to it."
         "We tried to be as careful as possible to preserve the remains for the Tubloshi and luckily the skeleton of Tavort was in rather good shape, all things considering."
-        "Aven kept watch over the unconscious Luzane, holding her gun which she found amongst the woman's possessions."
+        "Aven kept watch over the unconscious Luzane, holding her gun, which she found amongst the woman's possessions."
 
         play music "music/signal-to-noise.ogg" fadein 1.0 fadeout 4
 
@@ -1654,7 +1679,7 @@ label episode004:
         "I kissed her neck and kept her close to me as I felt my orgasm building."
 
         menu:
-            "Creampie":
+            "Creampie [gr]\[Hanna Creampie\]":
                 $ ep004_ha_creampie = True
                 scene ep004_ha_quarters_doggy_up_alt with vpunch
                 "Roaring, I slammed my entire length inside her one last time, my balls hitting her pussy with a slap."

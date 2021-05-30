@@ -65,7 +65,7 @@ label episode001:
             __("Planets"),
             __("Tuolovi"),
             [
-                __("Location: Orbitting Typhon, Hydrus constellation"),
+                __("Location: Orbiting Typhon, Hydrus constellation"),
                 __("A small green planet orbiting Typhon - once poetically called HD 10180 b. Birthplace of [p_name]. His mother Yve still lives in the family mansion on the surface of Tuolovi.")
             ]
         )
@@ -118,8 +118,8 @@ label episode001:
     "Anyway, that pop singer was my mother Yve."
     "She wasn't all that talented as an artist."
     "Not like Maria Callas, Ella Fitzgerald or even Britney Spears in her post-human period."
-    "But mom had a small hit back in her heydays and her share of fans, most of whom shared her bed sooner or later."
-    "I guess wealth also has it’s share of devotees, so my father never came home to an empty bed."
+    "But Mom had a small hit back in her heydays and her share of fans, most of whom shared her bed sooner or later."
+    "I guess wealth also has its share of devotees, so my father never came home to an empty bed."
     "Yve was never in it after we were born, that’s for sure."
     python:
         if game.is_special:
@@ -142,14 +142,14 @@ label episode001:
                 ],
             "images/codex/Yve.webp"
             )
-    "Calling my mom and dad's marriage loveless is an understatement."
+    "Calling my Mom and Dad's marriage loveless is an understatement."
     if game.is_special:
         "But my sisters and I were the product of it, so I guess it wasn't all bad."
-        "I was mom and dad’s first child and my twin sisters soon followed."
+        "I was Mom and Dad’s first child and my twin sisters soon followed."
         "They’re twins, but Eva and Lilly couldn’t be more different."
     else:
         "But I was the product of it, so I guess it wasn't all bad."
-        "I was mom and dad’s only child, but that’s not to say I was lonely or anything."
+        "I was Mom and Dad’s only child, but that’s not to say I was lonely or anything."
         "Our family made use of an extensive staff, some of whom had families of their own living on the grounds of the estate."
         "Eva, Lilly and Aven, the daughters of the cook, gardener and maid respectively, were the children I spent almost my entire childhood with."
         scene ep001_aven with dissolve
@@ -255,7 +255,7 @@ label episode001:
             ]
         )
     scene ep001_ypotrill with dissolve
-    "After two years of training the Terran Galactic Navy traditionally sends its fresh recruits on a training expedition."
+    "After two years of training, the Terran Galactic Navy traditionally sends its fresh recruits on a training expedition."
     "Think of it as summer camp, but with heavy weapons training."
     "We were flown by the Battle Cruiser TGN Ypotryll to a dreary moon in a system neighboring the academy to do some humanitarian field work."
     "That’s when everything turned to total and utter shit..."
@@ -304,7 +304,7 @@ label episode001:
     ca "Get your asses to that shuttle. "
     ca "We’ll talk about this organizational fuckup later, whomever is responsible..."
     scene ep001_lilly_kit_hangar with dissolve
-    ki "I think you managed to piss my mom off...{w} again."
+    ki "I think you managed to piss my Mom off...{w} again."
     c "She didn’t seem very happy, but I really wanted to do this first assignment with you guys."
     l "What the fuck did you do, [p_name_short]?"
     c "I may have persuaded a certain someone with considerable computer skills to change the group assignments..."
@@ -359,7 +359,7 @@ label episode001:
                         c "I did."
                         c "He makes more noise than a Farixillic heavy jet engine."
                         c "Point taken. See you tonight!"
-                        "So yeah, we there was definitely something going on with me and her."
+                        "So yeah, there was definitely something going on with me and her."
                     "I wanted everyone together":
                         c "I just wanted to do this with my friends."
                         ce "That doesn’t explain Thim being here."
@@ -495,7 +495,7 @@ label episode001:
     c "I did read the entire brief."
     c "What do you want to do?"
     c "Shoot up the place in the middle of the night when the beasts arrive to hunt for some farm animals?!"
-    c "What if some dimwit from the settlement gets curious and steps into the firing line to see if Daisy the Prize-winning cow isn’t too stressed out by the whole ordeal?"
+    c "What if some dimwit from the settlement gets curious and steps into the firing line to see if Daisy the Prize-Winning Cow isn’t too stressed out by the whole ordeal?"
     scene ep001_tents_team_kit with dissolve
     ki "I vote we go in the morning and look for any tracks instead."
     scene ep001_tents_team_eva with dissolve
@@ -511,7 +511,7 @@ label episode001:
     label ep001_basecamp_night:
         scene ep001_tents_night with dissolve
         menu:
-            "Go to Céline" if celine_romance and not ep001_c_visit:
+            "Go to Céline [CelinePath]" if celine_romance and not ep001_c_visit:
                 $ ep001_c_visit = True
                 "I admit my heart was beating heavily in anticipation as I approached Kit and Céline’s tent."
                 "I’m pretty sure Kit was okay with Céline and me being an item, but actually diddling his sister in his own tent is of course another matter..."
@@ -523,7 +523,7 @@ label episode001:
                 ce "We should do this another time."
 
                 menu:
-                    "Certainly":
+                    "Certainly [CelinePath]":
                         c "That sounds like a great idea."
                         scene ep001_tents_celine_camran_fucking_post_closeup with dissolve
                         ce "Okay, when we’re back on the Ypotryll I’ll show you something."
@@ -531,7 +531,7 @@ label episode001:
                         ce "I can scream too, be warned!"
                         "I kissed Céline goodnight and hurried back to my tent."
                         "Lucky for me, Thim was still asleep."
-                    "Better not [EndRelationship]":
+                    "Better not [red]\[End Relationship\]":
                         $ celine_romance = False
                         $ celine_rejected = True
                         c "This was a one-time only deal for me."
@@ -576,7 +576,7 @@ label episode001:
                 "As soon as my body hit the bedroll I fell into a deep, dreamless sleep."
 
     scene ep001_tents_morning with dissolve
-    "We awoke early in the morning and broke up the tents, expecting that we didn’t have to spend another night on Lanan."
+    "We awoke early in the morning and broke up the tents, expecting that we wouldn't have to spend another night on Lanan."
     "After a quick breakfast of the provided rations, we headed out to the settlement."
     scene ep001_eva_celine_walking with dissolve
     e "According to the map it shouldn’t be far from here."
@@ -635,7 +635,7 @@ label episode001:
     scene ep001_settlement_running with dissolve
     "We ran towards the commotion, ready to shoot at anything."
     scene ep001_warrior with dissolve
-    "What we found, was a mixture of both horror and comedy."
+    "What we found was a mixture of both horror and comedy."
     "Lilly was being threatened by a muscular woman dressed in outrageous armor, carrying a huge sword."
     "It was as if she had walked straight out of some bad fantasy movie."
     "But the threat was very real."
@@ -655,7 +655,7 @@ label episode001:
 
     $ woman_name = "Warrior"
     scene ep001_warrior_closeup with dissolve
-    image side woman_portrait = "gui/side-images/side_warrior_woman.webp"
+    $ woman_portrait = "side_warrior_woman"
     woman "Don’t try anything stupid."
     "Her accent was thick, but I understood her well enough."
     c "Let her go!"
@@ -700,7 +700,7 @@ label episode001:
 
     scene black with fade
     "Céline and Thim moved faster than I could, dragging Kit along, who was bleeding like crazy."
-    "When I reached the settlement the man and the girls were still standing where we left them, too stunned to act on their own."
+    "When I reached the settlement, the man and the girls were still standing where we left them, too stunned to act on their own."
     scene ep001_settlement_people_radio with dissolve
     ce "The radio is working again!"
     ce "And mission control sent us coordinates."
@@ -761,14 +761,14 @@ label episode001:
         )
     "She's a Twi'll."
     "Officially she's called Jade'anna N'ec L'ordann va T'olnec, but Jade is much shorter when I cry out her name during sex."
-    "Tw'ills, females and males, are a valuable commodity in modern day society."
+    "Twi'lls, females and males, are a valuable commodity in modern day society."
     "They're commonly held as sex slaves."
-    "Despite the fact that the whole Tw'ill race is portrayed as a degenerate species by the Department of Interplanetary Exploration, people sure want to fuck them real bad."
+    "Despite the fact that the whole Twi'll race is portrayed as a degenerate species by the Department of Interplanetary Exploration, people sure want to fuck them real bad."
     "Their intelligence, well-toned humanoid bodies and fantastic skills between the bedsheets really speak volumes against any claim of degeneracy, but who am I to judge..."
     scene ep001_twill with dissolve
     "The Twi'll were the first species mankind encountered, during the first intergalactic space explorations."
     "They’re a peaceful race, not accustomed to warfare, so naturally we laid waste to their planet, killed nearly eighty percent of their population and enslaved the rest."
-    "Most people treat their Tw'ill slaves like shit. I try not to be an asshole to Jade and show her some respect, that seems to have worked out for us so far."
+    "Most people treat their Twi'll slaves like shit. I try not to be an asshole to Jade and show her some respect, that seems to have worked out for us so far."
     python:
         codex_twill = add_codex_entry(
             Codex,
@@ -782,7 +782,7 @@ label episode001:
     scene ep001_camran_barracks_jade_sit with dissolve
     c "I’m fine. I think."
     c "Hell, I don’t know."
-    c "I think she’s gone Jade..."
+    c "I think she’s gone, Jade..."
     j "Who is?"
     if game.is_special:
         c "My sister."
@@ -810,7 +810,7 @@ label episode001:
             c "I’d like a massage, to alleviate the tension a little."
             j "Certainly."
             scene ep001_camran_barracks_jade_massage with dissolve
-            "Jade received training as an attendant, but you could tell she had a skill as masseur which can’t be obtained by just learning."
+            "Jade received training as an attendant, but you could tell she had a skill as masseuse which can’t be obtained by just learning."
             "It was almost as if she could attune herself to your body."
             scene ep001_camran_barracks_jade_massage_alt with dissolve
             j "Do you want me to go further?"
@@ -911,7 +911,7 @@ label episode001:
                 c "We’re going to shoot those deer or climb some stupid rock you’re always going on about."
                 c "Just don’t die on me!"
                 jump ep001_medbay
-            "Talk to Thim [ThimPath]" if not ep001_medbay_thim_talk and not ep001_medbay_thim_ignored:
+            "Talk to Thim [ThimPath] \(friendship\)" if not ep001_medbay_thim_talk and not ep001_medbay_thim_ignored:
                 $ ep001_medbay_thim_talk = True
                 scene expression eye_blink("images/ep001/ep001_thim_medbay") with dissolve
                 c "Hey Thim, how are you?"
@@ -971,7 +971,7 @@ label episode001:
                 "I felt a soft hand on my arm as I was about to leave the infirmary, it was one of the girls we rescued from the village."
                 scene expression eye_blink("images/ep001/ep001_medbay_girl") with dissolve
                 ve "You're [p_name], right?"
-                ve "I wanted to thank you, for saving us."
+                ve "I wanted to thank you for saving us."
                 c "No problem, it was the least we could do."
                 c "How are you feeling...{w} eh...{w} miss?"
                 ve "I'm okay."
@@ -1012,6 +1012,7 @@ label episode001:
                     )
 
     $ man_name = "Guard"
+    $ man_portrait = "side_man"
     scene black with fade
     "I decided to pay Commander Szuzume a visit on the bridge, perhaps in a fool-hearted attempt to play on her emotions and convince her to help the abductees."
     scene ep001_officer with dissolve
@@ -1020,7 +1021,7 @@ label episode001:
     man "You can deliver it to me."
     c "It’s for her ears only."
     man "Commander Szuzume has explicitly forbidden any interruptions while we travel back to the academy."
-    c "We’re going back to the academy?! "
+    c "We’re going back to the academy?!"
     c "But the attack on Lanan?"
     c "Why are we not pursuing the attackers?!"
     c "You have to let me in."
@@ -1149,7 +1150,7 @@ label episode001:
     c "I'm going to commandeer a ship from this very hangar deck."
     scene ep001_hangar_lilly with dissolve
     l "You've gone mad."
-    c "Don't you want her back Lilly?"
+    c "Don't you want her back, Lilly?"
     c "Do you accept the fact that we're moving away from Lanan without even knowing what has happened?"
     l "They'll debrief us as soon as we land."
     c "That's too fucking late."
@@ -1216,7 +1217,8 @@ label episode001:
     c "Thanks to him we need to hurry."
     scene ep001_hangar_thim_carry with dissolve
     "I carried Thim's body back to the hangar where Kit and the girls were looking at me in shock."
-    "Sirens began to blare, Thim's alerted cries must have reached the guards."
+    "Sirens began to blare."
+    "Thim's cries must have reached the guards."
     c "Hurry! They'll be upon us any minute."
     c "Help me drag him to that corvette over there."
     ce "Is he alive?"
@@ -1257,7 +1259,7 @@ label episode001:
     scene ep001_cockpit_celine with dissolve
     ce "Five seconds to launch."
     man "Stop now and live."
-    man "As soon as the illegally seized ship will come into firing range of the TGN Ypotryll you will be fired upon."
+    man "As soon as the vessel you have illegally commandeered comes into firing range of the TGN Ypotryll you will be fired upon."
     man "This is not an idle threat."
     ce "All systems ready."
     c "Let's take this bucket for a ride."
@@ -1273,11 +1275,11 @@ label episode001:
     ca "Crew of the TGN Enfield, this is your commander speaking."
     ca "Power down your engines and return to the hangar deck."
     scene ep001_cockpit_camran_celine_surprise with dissolve
-    ki "Shit, it's mom!"
+    ki "Shit, it's Mom!"
     ca "If you do not comply we will be forced to shoot you down."
     ca "I repeat: power down your engines and turn the ship around."
     c "She won't shoot at us, will she?"
-    ce "It's mom, we're talking about..."
+    ce "It's Mom, we're talking about..."
     scene ep001_cockpit_lilly_kit with dissolve
     ki "She totally will."
     c "Fuck."
@@ -1296,7 +1298,7 @@ label episode001:
     ca "Céline?"
     ca "What the fuck are you doing up there?"
     scene ep001_cockpit_celine_closeup with dissolve
-    ce "I'm leaving, mom."
+    ce "I'm leaving, Mom."
     ce "We're going to look for Eva and the others."
     ce "We can't leave them behind."
     scene ep001_bridge_calista with dissolve
@@ -1307,14 +1309,14 @@ label episode001:
     ca "Is your brother with you?"
     ca "Don't tell me he is."
     scene ep001_cockpit_kit_closeup with dissolve
-    ki "Yes, mom, I'm here."
+    ki "Yes, Mom, I'm here."
     scene ep001_bridge_calista_surprise with dissolve
     ca "Not you as well?"
     ca "You didn't think up this misbegotten plan, did you?"
     scene ep001_cockpit_kit_closeup with dissolve
     ki "No, I didn't, but I believe we can make a difference."
     scene ep001_bridge_calista_surprise with dissolve
-    ca "It's that fucking, good-for-nothing boy, isn't it."
+    ca "It's that fucking good-for-nothing boy, isn't it."
     "It was rather clear to everyone the commander was talking about me."
     ca "You have two minutes to comply with my demands."
     scene ep001_cockpit_camran_celine_surprise with dissolve

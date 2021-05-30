@@ -122,7 +122,7 @@ label episode005:
     $ tr_name = "Trellka"
     tr "Few days ago, he got taken by a couple of thugs."
     tr "Turns out the stupid fuck has an enormous gambling debt at Double D's Casino and those thugs came to collect."
-    tr "Obviously he couldn't pay them off, so now they've taken him fuck know's where..."
+    tr "Obviously he couldn't pay them off, so now they've taken him fuck knows where..."
     tr "Doarn probably has him."
     c "Doarn?"
     scene expression eye_blink("images/ep005/ep005_barranthis_apartment_alien_serious_alt") with dissolve
@@ -133,7 +133,7 @@ label episode005:
     tr "He must owe them a considerable sum, because otherwise they would have just beat him up and raised the interest rate he owes them."
 
     menu:
-        "Help Vitriv [TrellkaPath]":
+        "Help Vitriv [ThyiaPath]":
             $ ep005_vitriv_help = True
             c "So, if we pay off Vitriv's debts somehow he might be able to help us?"
             scene expression eye_blink("images/ep005/ep005_barranthis_apartment_alien_neutral") with dissolve
@@ -182,7 +182,7 @@ label episode005:
     c "Noted."
     scene ep005_barranthis_ship with dissolve
     "Back on the ship we brought everyone up to speed."
-    "Thyia headed out to try some contacts of hers and get some information on Doarn and the Double D Casino."
+    "Thyia headed out to try some contacts of hers and get some information on Doarn and Double D's Casino."
     "It looked like we had some time to kill."
 
     python:
@@ -191,6 +191,7 @@ label episode005:
             __("Planets"),
             __("Barranthis"),
             [
+                __("Location: Struve's Pole"),
                 __("The planet's main feature is Barranthular, a seedy metropolis and home to several of the galaxy's worst criminals."),
                 __("Vitriv, a master-forger also lives in Barranthular, his services are needed by the crew."),
 
@@ -355,10 +356,10 @@ label ep005_lilly:
             scene expression eye_blink("images/ep005/ep005_docks_l_embrace_smile_alt") with dissolve
             l "Well, he did make the news eventually..."
             c "That's right."
-            c "Eva was so furious when the Drukets were brought in, kept yelling at dad that they should have remained on their home planet in freedom."
+            c "Eva was so furious when the Drukets were brought in, kept yelling at Dad that they should have remained on their home planet in freedom."
             scene expression eye_blink("images/ep005/ep005_docks_l_embrace_smile") with dissolve
             if game.is_special:
-                l "I never saw her that mad at someone, or speak up to dad like that before."
+                l "I never saw her that mad at someone, or speak up to Dad like that before."
             else:
                 l "I never saw her that mad at someone, or speak up to your dad like that before."
             c "She was livid."
@@ -369,7 +370,7 @@ label ep005_lilly:
             scene expression eye_blink("images/ep005/ep005_docks_l_embrace_smile_alt") with dissolve
             l "Haha, you can say that again!"
             l "Half of the estate was ruined and the herd completely destroyed the holiday cottage of the governor."
-            c "It made for a nice headline and dad had his brief moment of fame in the local papers..."
+            c "It made for a nice headline and Dad had his brief moment of fame in the local papers..."
             c "Unfortunately, he took a correct guess at who was responsible for everything."
             scene expression eye_blink("images/ep005/ep005_docks_l_embrace_serious") with dissolve
             l "He punished you pretty hard, didn't he?"
@@ -379,7 +380,7 @@ label ep005_lilly:
             c "It's just...{w} Forget about it."
             l "No, say it."
             if game.is_special:
-                c "I always thought you looked up to mom and dad, wanted to be their perfect daughter."
+                c "I always thought you looked up to Mom and Dad, wanted to be their perfect daughter."
             else:
                 c "I always thought you looked up to my mom and dad, wanted to be perfect in everything."
             scene expression eye_blink("images/ep005/ep005_docks_l_embrace_sad") with dissolve
@@ -390,12 +391,12 @@ label ep005_lilly:
                 l "And I admit I really wanted their approval, anyone's approval really, for a long time when I was younger."
             l "But I'm not a little girl anymore, [p_name_short]."
             if game.is_special:
-                l "I've known for some time mom and dad weren't really interested in us."
+                l "I've known for some time Mom and Dad weren't really interested in us."
             else:
-                l "I've known for some time our parents weren't really interested in us."
+                l "I've known for some time both our parents weren't really interested in us."
             scene expression eye_blink("images/ep005/ep005_docks_l_embrace_sad_alt") with dissolve
             if game.is_special:
-                l "I started with music lessons because I thought it would please mom."
+                l "I started with music lessons because I thought it would please Mom."
                 l "But they only attended my recitals when there was press involved or when there was an event with important people afterwards."
             else:
                 l "I started with music lessons because I thought it would please my mom."
@@ -408,7 +409,7 @@ label ep005_lilly:
                     if game.is_special:
                         c "I know we were always joking about you being the apple of their eye..."
                     else:
-                        c "I know we were always joking about you being the favorite..."
+                        c "I know we were always joking about you being their favorite..."
                     scene expression eye_blink("images/ep005/ep005_docks_l_embrace_smile") with dissolve
                     l "Yes, you did."
                     l "And I didn't mind, mostly."
@@ -440,7 +441,7 @@ label ep005_lilly:
                     if game.is_special:
                         c "You know we were mostly joking about being the apple of their eye, don't you?"
                     else:
-                        c "You know we were mostly joking about being the favorite, don't you?"
+                        c "You know we were mostly joking about being their favorite, don't you?"
                     scene expression eye_blink("images/ep005/ep005_docks_l_embrace_serious") with dissolve
                     l "Maybe..."
                     l "There's a point where you say something jokingly often enough and start believing it."
@@ -763,14 +764,14 @@ label ep005_celine_date:
     ce "We came with you voluntarily, knowing what we gave up in exchange."
     if ep003_celine_message:
         scene expression eye_blink("images/ep005/ep005_barranthis_restaurant_ce_main_fear") with dissolve
-        ce "I only hope my message reached mom."
+        ce "I only hope my message reached Mom."
         ce "She's been part of the bureaucracy of the Sovereignty for so long and I'm afraid it swallowed her whole, but she's still our mother."
         c "Right, you shouldn't forget that."
         scene expression eye_blink("images/ep005/ep005_barranthis_restaurant_ce_main_sad") with dissolve
         ce "Maybe Kit is right to be angry, but I just can't..."
-        ce "Being in command changes you for sure, but it's still mom within those iron-clad walls she has put up around herself."
+        ce "Being in command changes you for sure, but it's still Mom within those iron-clad walls she has put up around herself."
     else:
-        ce "I'm sure mom is still fuming, but we lost her to the bureaucracy of the Sovereignty long ago."
+        ce "I'm sure Mom is still fuming, but we lost her to the bureaucracy of the Sovereignty long ago."
         c "I'm still shocked by her heartlessness."
         scene expression eye_blink("images/ep005/ep005_barranthis_restaurant_ce_main_sad") with dissolve
         ce "Being in command changes you, I'm sure of it."
@@ -831,7 +832,7 @@ label ep005_celine_date:
                 scene ep005_barranthis_restaurant_waiter with dissolve
                 "I had regained some of my composure when I saw a waiter approach."
                 "In a split second I though he’d come to escort us out discreetly, because of what we just did."
-                "Instead, he presented us with a desert menu."
+                "Instead, he presented us with a dessert menu."
                 scene expression eye_blink("images/ep005/ep005_barranthis_restaurant_ce_closeup_smile") with dissolve
                 "Céline still smiled at me and blew me a kiss."
                 scene ep005_barranthis_restaurant_alt with dissolve
@@ -841,7 +842,7 @@ label ep005_celine_date:
                 "She looked at me confused and I smiled apologetically."
                 scene expression eye_blink("images/ep005/ep005_barranthis_restaurant_ce_closeup_smile") with dissolve
                 "Céline smiled, her initial disappointment melting away instantly."
-                "Any further sexual advances were interrupted by the approach of a waiter with the desert menu."
+                "Any further sexual advances were interrupted by the approach of a waiter with the dessert menu."
     "We shared a lovely desert and finished our last bottle of wine."
     scene expression eye_blink("images/ep005/ep005_barranthis_restaurant_ce_standing") with dissolve
     ce "Thank you [p_name_short], it's been a lovely evening."
@@ -1007,7 +1008,7 @@ label ep005_workshop_visit:
     play music "music/arabic.ogg" fadeout 4 fadein 1.0
 
     $ woman_name = "Mechanic"
-    image side woman_portrait = "gui/side-images/side_mechanic.webp"
+    $ woman_portrait = "side_mechanic"
 
     scene expression eye_blink("images/ep005/ep005_docks_th") with dissolve
     th "Are you ready?"
@@ -1126,7 +1127,7 @@ label ep005_workshop_visit:
             "Instead, her eyes fluttered open and she seemed to regain some of her consciousness."
             scene expression eye_blink("images/ep005/ep005_workshop_interior_woman_th_lust") with dissolve
             "She looked at me strangely though, something burning in her eyes."
-            "As she approached me I realized it wasn't anger or hatred, but pure unfiltered lust."
+            "As she approached me, I realized it wasn't anger or hatred, but pure unfiltered lust."
             "She had opened her coverall, exposing her well-toned body, ignoring Thyia who looked at her in shock."
             scene ep005_workshop_interior_woman_th_fall with vpunch
             "I backed away and the mechanic stumbled and fell."
@@ -1154,18 +1155,18 @@ label ep005_workshop_visit:
             scene ep005_workshop_bricks_throw with dissolve
             "I lobbed one of the bricks in the direction of the window and was treated by the crashing sounds of splintering glass moments later."
             with vpunch
-            "As I heard the shouting inside I ran away from the scene back towards he front of the workshop."
+            "As I heard the shouting inside I ran away from the scene back towards the front of the workshop."
             "Again, after a couple of minutes, I headed towards the entrance of the building."
             "The door wasn't locked and I silently opened it."
             scene ep005_workshop_interior_empty with dissolve
             "Neither Thyia nor the owner were anywhere to be found, but I did spot the speeder we wanted to steal."
             "The vehicle gleamed in the lights of the workshop and was obviously being worked on considering the tools scattered around it."
-            "A heavy thud and sounds of trashing from deeper inside the workshop put me on alert."
+            "A heavy thud and sounds of thrashing from deeper inside the workshop put me on alert."
             scene ep005_workshop_interior_kitchen with dissolve
             "Carefully, I headed towards the source of the noise, hoping Thyia wasn't involved in some desperate knife fight with the proprietor of the workshop."
             "The sounds came from near where I had broken the window."
             "As I approached something became very clear, there was no knife fight going on."
-            "The trashing continued, but now I heard heavy breathing and an occasional moan."
+            "The trashing continued, but then I heard heavy breathing and an occasional moan."
 
             menu:
                 "Have a look [blue]\[LesbianScene\]":
@@ -1210,7 +1211,7 @@ label ep005_workshop_visit:
 
     $ ia_name = "Twi'll"
     $ si_name = "Twi'll"
-    "The Double D Casino was located across town, but the speeder took us there in no time."
+    "Double D's Casino was located across town, but the speeder took us there in no time."
     scene ep005_casino_approach with dissolve
     "I decided on a frontal approach and we had a small audience gawking at us when we pulled up on the sidewalk near the casino's entrance."
     "Making sure the bike was secured we left it right in front of the casino and walked passed the impassive bouncers flanking the door."
@@ -1219,7 +1220,7 @@ label ep005_workshop_visit:
     "From some corner of the casino floor the telltale ringing of someone hitting jackpot could be heard."
     "Croupiers dealt cards to gamblers who sat slumped at the craps tables and a copious amount of alcohol was being served."
     "Most of the personnel consisted of female Twi'lls which wasn't an altogether unwelcome sight."
-    "While I was still taking in the slightly overwhelming sensations of the Double D Casino, Thyia pointed towards the double doors at the left side of the building."
+    "While I was still taking in the slightly overwhelming sensations of Double D's Casino, Thyia pointed towards the double doors at the left side of the building."
     scene ep005_casino_elevator with dissolve
     "The doors were guarded by two blue-skinned Twi'll carrying guns and one of the few who weren't wearing frilly outfits."
     c "Probably the elevator to the VIP area or something?"
@@ -1379,7 +1380,7 @@ label ep005_workshop_visit:
     "A single person sat behind a very large desk in a lavishly decorated office."
     "The door began closing as we stepped in and the man behind the desk flashed a toothy smile."
     scene expression eye_blink("images/ep005/ep005_doarn_office") with dissolve
-    do "Welcome, mister Idaho."
+    do "Welcome, Mister Idaho."
     do "What brings you to my humble establishment?"
     c "Vitriv is your prisoner, correct?"
     do "Right to the point, I like that."
@@ -1390,7 +1391,7 @@ label ep005_workshop_visit:
     do "Why, do you want to pay in his stead?"
     c "Maybe I'm just curious."
     scene expression eye_blink("images/ep005/ep005_doarn_office_smile") with dissolve
-    do "How very coy of you, mister Idaho."
+    do "How very coy of you, Mister Idaho."
     do "Ah, there's my lovely Melody with our drinks."
     scene expression eye_blink("images/ep005/ep005_doarn_office_girl") with dissolve
     "A beautiful human girl entered the room carrying a tray with several glasses filled with a milky white liquid."
@@ -1404,7 +1405,7 @@ label ep005_workshop_visit:
     "Neither Thyia, nor me were keen to down the sickly sweet-smelling white liquid, mixed with the girl's squirt, so we held the glasses politely in our hands."
     "Almost reverently, Doarn picked up his glass and took a sip of the juice."
     do "I admit, it's an acquired taste..."
-    do "Do you smoke, mister Idaho?"
+    do "Do you smoke, Mister Idaho?"
     scene expression eye_blink("images/ep005/ep005_doarn_office_cigar") with dissolve
     "The boss presented me with a big cigar, not even bothering to recognize Thyia's existence."
     c "No, I don't."
@@ -1415,10 +1416,10 @@ label ep005_workshop_visit:
     c "Settling the debt of Vitriv, who's in your custody."
     do "Ah yes, I'm afraid money isn't going to cut it in this case."
     c "Why not?"
-    do "Because you seem like the resourceful type, mister Idaho, not easily fazed."
+    do "Because you seem like the resourceful type, Mister Idaho, not easily fazed."
     c "So you want a favor from me?"
     do "A business transaction would be my choice of words."
-    do "Your cooperation in return for mister Vitriv's freedom."
+    do "Your cooperation in return for Mister Vitriv's freedom."
     c "Let's hear it then."
     scene expression eye_blink("images/ep005/ep005_doarn_office_smoke_alt") with dissolve
     do "You seem like a man who can handle a challenge."
@@ -1441,7 +1442,7 @@ label ep005_workshop_visit:
     do "Let me know when it's done."
     c "What if I don't want to do it?"
     do "Your loss, in that Vitriv will remain in my custody indefinitely."
-    do "Good hunting, mister Idaho."
+    do "Good hunting, Mister Idaho."
     c "Right."
     c "Thanks for the Kualtha juice..."
 
@@ -1451,7 +1452,7 @@ label ep005_workshop_visit:
             __("Characters"),
             __("Doarn"),
             [
-                __("Owner of the Double D Casino in Barranthular and criminal kingpin. Is looking to expand his business aggressively and doesn't hesitate to kill his rivals."),
+                __("Owner of Double D's Casino in Barranthular and criminal kingpin. Is looking to expand his business aggressively and doesn't hesitate to kill his rivals."),
             ],
             "images/codex/Doarn.webp"
         )
@@ -1493,7 +1494,7 @@ label ep005_workshop_visit:
             "Go after the girl [blue]\[WatersportsFetish\]":
                 $ ep005_doarn_girl = True
                 $ woman_name = "Mistress"
-                image side woman_portrait = "gui/side-images/side_mistress.webp"
+                $ woman_portrait = "side_mistress"
 
                 c "Something isn't sitting right with me about that girl."
                 c "I'm going to see if she's alright."
@@ -1514,7 +1515,7 @@ label ep005_workshop_visit:
     "Through Thyia's contacts we received the location of Doarn's rival."
     "Garomph fairly recently came into possession of a set of warehouses and factory buildings."
     "There was no business listed at either the warehouses nor the factory, but the buildings were occupied and heavily guarded."
-    "According to the information received by Thyia, Garomph coordinated his affairs mostly from the factory"
+    "According to the information received by Thyia, Garomph coordinated his affairs mostly from the factory."
     c "So, a full-on assault on Garomph and his cronies is out of the question."
     scene ep005_docks_group_th with dissolve
     th "Too many guards and the element of surprise would wear off before we even reach the fucker."
@@ -1554,7 +1555,8 @@ label ep005_eva:
     scene expression eye_blink("images/ep005/ep005_sim_mansion_e_closeup") with dissolve
     c "I came back Eva, you know I'd never leave you."
     e "But where's Lilly?"
-    e "Mom, dad?"
+    if game.is_special:
+        e "Mom, Dad?"
     "Some bullshit excuse was on the tip of my tongue, but I just couldn't bear to say it to her."
     c "This is a computer simulation, Eva."
     c "None of this is real."
@@ -1622,15 +1624,21 @@ label ep005_eva:
     e "Haha, you know it's not like that."
     c "In any case, she's not getting her wish."
     scene expression eye_blink("images/ep005/ep005_sim_mansion_garden_closeup_serious") with dissolve
-    e "No, looks like we all don't."
+    e "No, looks like none of us are."
     scene expression eye_blink("images/ep005/ep005_sim_mansion_garden_alt_closeup") with dissolve
     "Eva was silent for a while, looking wistfully at the horizon until she spoke again."
     scene expression eye_blink("images/ep005/ep005_sim_mansion_garden_closeup") with dissolve
-    e "Say [p_name_short], what would you have done if you weren't forced to go to the academy by mom and dad?"
+    if game.is_special:
+        e "Say [p_name_short], what would you have done if you weren't forced to go to the academy by Mom and Dad?"
+    else:
+        e "Say [p_name_short], what would you have done if you weren't forced to go to the academy by your parents?"
     c "I wouldn't have gone to the fucking academy, that's for sure."
     e "I think we can all agree on that."
     e "But you wouldn't still be living here on Tuolovi, would you?"
-    c "No, and I'm sure mom and dad wouldn't let me either."
+    if game.is_special:
+        c "No, and I'm sure Mom and Dad wouldn't let me either."
+    else:
+        c "No, and I'm sure my mom and dad wouldn't let me either."
     c "I think I would have gone wandering, taking on some menial job on a starship and just see where it would take me."
     scene expression eye_blink("images/ep005/ep005_sim_mansion_garden_closeup_doubt") with dissolve
     e "Really?"
@@ -1702,7 +1710,7 @@ label ep005_thim:
         c "I thought you were on track for some guaranteed spot in the higher echelons of command back at the Academy."
         scene expression eye_blink("images/ep005/ep005_docks_thim_serious") with dissolve
         t "I was, yes, probably would have gotten my first command a few years after graduation."
-        c "Funny how a certain pedigree and a bit of money can buy you in the Sovereignty."
+        c "Funny what a certain pedigree and a bit of money can buy you in the Sovereignty."
         t "Quite a lot, apparently."
         c "But why the interest in the medical stuff?"
         t "Because I wanted to become a doctor."
@@ -1968,7 +1976,7 @@ label ep005_celine_sex:
     c "Fuck...{w} Yes, I do."
     scene ep005_barranthis_restaurant_ce_foot_cock_rub with dissolve
     ce "All that sticky cum covering my toes..."
-    "While that beautiful girl brought me to a climax with her feet, conversations continued all around us, waiters passing by with trays food, as if nothing was happening."
+    "While that beautiful girl brought me to a climax with her feet, conversations continued all around us, waiters passing by with trays of food, as if nothing was happening."
     "Céline focused her attention on the head of my cock, her toes massaging all the sensitive areas."
     "I could barely contain myself from slamming a fist down on the table, a move that would surely attracted unwanted attention."
     ce "You’re close, aren’t you?"
@@ -1989,6 +1997,7 @@ label ep005_celine_sex:
 label ep005_workshop_sex:
     if _in_replay:
         $ woman_name = "Mechanic"
+        $ woman_portrait = "side_mechanic"
     scene ep005_workshop_interior_woman_naked with dissolve:
         yalign 1.0
         ease 8 yalign 0.01
@@ -2001,7 +2010,7 @@ label ep005_workshop_sex:
     scene ep005_workshop_interior_woman_suck with dissolve
     "Sighing in delight, the woman dropped to her knees and took my growing erection in her mouth."
     show ep005_workshop_interior_woman_sucking with dissolve
-    "She didn't go gentle on me and sucked my cock gingerly and without any restraint as if it were a delicious treat."
+    "She didn't go gentle on me and sucked my cock ardently and without any restraint as if it were a delicious treat."
     scene ep005_workshop_interior_woman_suck_alt with dissolve
     "I grabbed the sides of her head and thrust my cock deeper into her throat, fucking her mouth."
     "When she gasped for air, drool streamed down her chin and she looked at me intensely, the fire in her eyes undiminished."
@@ -2021,7 +2030,7 @@ label ep005_workshop_sex:
     woman "You're making me cum!"
     woman "Harder!{w} Harder!{w} Harder!"
     show ep005_workshop_interior_woman_doggy_alt with dissolve
-    "The aphrodisiac I had inadvertently given her had reached its peak by now and I heightened its effects by several deep thrusts."
+    "The aphrodisiac I had inadvertently given her had reached its peak by now and I heightened its effects with several deep thrusts."
     "My cock bore deep into her vagina and she started to shudder violently."
     show ep005_workshop_interior_woman_doggy_alt_wide with dissolve
     "She wailed in absolute pleasure, juices dripping from her contracting pussy."
@@ -2093,6 +2102,7 @@ label ep005_twill_sex:
     if _in_replay:
         $ si_name = "Sill"
         $ ia_name = "Iana"
+        $ ep005_twill_creampie = False
 
     scene ep005_casino_room_cock with dissolve
     "The Twi'll looked at my rock-hard cock appreciatively and slowly strode towards me, their hips swaying seductively."
@@ -2141,11 +2151,11 @@ label ep005_twill_sex:
     "Sill looked at us with thinly veiled envy."
     scene ep005_casino_room_table_fuck_alt with dissolve
     if game.is_special:
-        "Suddenly her sister grabbed her head by the head and pulled Sill towards her pussy."
+        "Suddenly her sister grabbed her by the head and pulled Sill towards her pussy."
         scene ep005_casino_room_table_fuck_alt_closeup with dissolve
         "Her surprised cry was muffled by her sister's pussy and despite the shock I saw her tongue dart out and she began to lick Iana eagerly."
     else:
-        "Suddenly her friend grabbed her head by the head and pulled Sill towards her pussy."
+        "Suddenly her friend grabbed her by the head and pulled Sill towards her pussy."
         scene ep005_casino_room_table_fuck_alt_closeup with dissolve
         "Her surprised cry was muffled by Iana's pussy and despite the shock I saw her tongue dart out and she began to lick Iana eagerly."
     show ep005_casino_room_table_fuck_closeup with dissolve
@@ -2210,7 +2220,7 @@ label ep005_twill_sex:
                 "Iana didn't hesitate and moved over to her friend who'd began to scoop up my cum from her belly and breasts."
 
     scene ep005_casino_room_table_finger_lick with dissolve
-    "After Sill tasted my seed she offered a finger to Iana who licked it gingerly."
+    "After Sill tasted my seed she offered a finger to Iana who licked it cravingly."
     if ep005_twill_creampie:
         scene ep005_casino_room_table_creampie_lick with dissolve
         if game.is_special:
@@ -2236,7 +2246,7 @@ label ep005_twill_sex:
 label ep005_doarn_finger:
     scene ep005_doarn_girl with dissolve
     do "Have either of you had the pleasure of tasting our famous drink?"
-    do "Kualtha juice is a delicacy among my people. "
+    do "Kualtha juice is a delicacy among my people."
     do "Melody, would you kindly provide us with the special ingredient?"
     me "Yes, master."
     "The young girl put the tray on a low side table and stood next to Doarn."
@@ -2267,15 +2277,17 @@ label ep005_doarn_finger:
 
 label ep005_factory_visit:
     $ man_name = "Guard"
+    $ man_portrait = "side_man"
     $ woman_name = "Guard"
-    image side woman_portrait = "gui/side-images/side_woman.webp"
+    $ woman_portrait = "side_woman"
     $ ta_name = "Girl"
 
     play music [ "music/satiate-only-percussion.ogg" ] fadeout 4 fadein 1.0
 
     scene ep005_docks_j_th with dissolve
     "It took a few days before Thyia brought us good news."
-    "A meeting had been set up at Garomph's factory."
+    "Garomph was actively recruiting for mercenaries to reinforce his guard force at his factory."
+    "Posing as guards, we could likely gain access to the factory grounds."
     "To look the part, Thyia had bought three suits of armor commonly used by mercs across the galaxy."
     scene expression eye_blink("images/ep005/ep005_docks_th_armor") with dissolve
     "Because of her past dealings with the underworld, it was decided that Thyia would accompany me."
@@ -2475,7 +2487,7 @@ label ep005_factory_visit:
         "Just wait":
             play music [ "music/the-encounter.ogg" ] fadeout 4 fadein 1.0
 
-            "I had no intention of having my way with any of the girls in the room, so I just sat on one of the empty beds and bided my team."
+            "I had no intention of having my way with any of the girls in the room, so I just sat on one of the empty beds and bided my time."
             woman "Are you done yet?"
             woman "What's taking you so long?"
             scene ep005_factory_room_girl_guard with dissolve
@@ -2524,7 +2536,7 @@ label ep005_factory_visit:
     j "Yes, master."
     j "What is this place?!"
     scene expression eye_blink("images/ep005/ep005_factory_j_closeup_doubt") with dissolve
-    j "Those bottles they hade me count, they’re full of some kind of white liquid."
+    j "Those bottles they made me count, they’re full of some kind of white liquid."
     c "Yes, it’s milk."
     j "Milk?"
     c "Breast milk from human women."
@@ -2585,7 +2597,7 @@ label ep005_factory_visit:
                 c "Access their systems from there and see where Garomph is holed up, Jade."
                 j "Yes, master."
             else:
-                c "Could you access their systems from there to get our bearings and see what's possible Jade?"
+                c "Could you access their systems from there to get our bearings and see what's possible, Jade?"
                 j "On it."
         "Disagree":
             c "We came here to settle things with Garomph, not to blow up a factory."
@@ -2610,7 +2622,7 @@ label ep005_factory_visit:
 
     scene ep005_factory_hallway_j_computer with dissolve
     j "The security on this thing is laughable."
-    c "They probably invested more in bodies and guns instead of tech."
+    c "They probably invested more in bodies and guns than tech."
     j "I'm in."
     if ep005_sabotage_agreed:
         j "I can access the camera feeds."
@@ -2673,7 +2685,7 @@ label ep005_factory_visit:
         c "That sounds definitive enough for me."
         c "Let’s go find Garomph."
     scene ep005_factory_hallway_th_j_walking with dissolve
-    "Jade led us to the Garomph’s office."
+    "Jade led us to Garomph’s office."
     "Weapons at the ready, we slammed the door open."
     scene ep005_factory_office_g with dissolve
     ga "I said no visi..."
@@ -2732,7 +2744,7 @@ label ep005_factory_visit:
             th "Let's signal that strike team and report back to Doarn."
             scene ep005_factory_office_g_dead_alt_leaving with dissolve
             "I followed her, with Jade right behind me, still looking at me in utter disbelief."
-        "Threaten him [JadeLovePath]":
+        "Threaten him":
             $ ep005_garomph_threaten = True
             c "Doarn is offering me more than you can ever raise, Garomph, and you're a fucking nuisance."
             ga "Well, in that case."
@@ -2790,7 +2802,7 @@ label ep005_factory_visit:
             c "I'm sure Doarn's team will be busy securing the compound."
             c "Also, they're no match against the Bastard's cannons should they try something stupid."
             scene ep005_factory_leaving_women_outside with dissolve
-            "I signaled Céline who was a little surprised by our request and sent her our location."
+            "I signaled Céline, who was a little surprised by our request, and sent her our location."
             scene ep005_factory_leaving_women_outside_bastard with dissolve
             "A quarter of an hour later, the Bastard touched down just outside the factory grounds and we guided the women towards our ship."
             scene ep005_factory_leaving_women_outside_bastard_leaving with dissolve
@@ -2995,7 +3007,7 @@ label ep005_jade_factory_talk:
                 c "Probably."
                 c "It seems too lucrative not to."
                 if ep005_sabotage_agreed:
-                    c "At least we set back their operations for several months, thanks to your sabotage. "
+                    c "At least we reset their entire operation, thanks to your sabotage. "
                 else:
                     c "At least their operations have been set back for at least several months, thanks to the chaos at the factory."
                 scene expression eye_blink("images/ep005/ep005_docks_ship_j_solo") with dissolve
@@ -3122,7 +3134,7 @@ label ep005_taera_sex:
             scene ep005_taera_pussy_fuck_creampie with vpunch
             "As the tip of my cock hit her cervix, I erupted and a wealth of cum surged inside her."
             ta "Fuck yes!{w} Don't pull out!{w} Give me everything!"
-            "She held me down with her arms, locking my lower body with her thighs and received my seed with obvious delight."
+            "She held me down with her arms, locking my lower body with her thighs, and received my seed with obvious delight."
             "Only when the last throes of my orgasm had subsided did she allow me to pull out."
             scene ep005_taera_pussy_fuck_creampie_alt with flash
             with flash
@@ -3401,7 +3413,7 @@ label ep005_women_sex:
     else:
         scene ep005_cargo_women_chair_lap_fucking_alt with dissolve
         "Ramming my cock inside Lyna, I stroked the soft skin of her thighs."
-    "She clamped her arm around my head tightly and her delighted screams cut through the abandoned ship’s silence."
+    "She clamped her arm around my head tightly and her delighted screams cut through the empty ship’s silence."
     "Raisha shuddered as Jenne brought her near a climax, she looked so hungry at me that I couldn’t deny her my cock."
     c "Why don’t you kneel before me?"
     if ep005_woman_pregnant:
@@ -3560,7 +3572,7 @@ label ep005_women_sex:
                     with flash
                 "As my cock began to twitch I pulled out of Raisha and squirted cum all over the women’s backs."
             if ep005_woman_pregnant:
-                "Lyna was on her back and to my delight received a large on her pregnant belly. "
+                "Lyna was on her back and to my delight received a large splash of cum on her pregnant belly. "
         "Swallow":
             if ep005_women_raisha_first:
                 "There was no question how the women would receive my seed so I motioned both Raisha and Lyna to be ready for me."
@@ -3591,7 +3603,7 @@ label ep005_women_sex:
 label ep005_departure:
     scene black with fade
     "During the time on which we waited for the forgeries made by Vitriv, I shopped around for appropriate party attire."
-    "Spending far too much money I'd found something appropriate for every member of the crew."
+    "Spending far too much money, I'd found something appropriate for every member of the crew."
     "After two days, Thyia returned."
     scene expression eye_blink("images/ep005/ep005_docks_th_return") with dissolve
     th "Vitriv came through, he handed me all the documents we need."
@@ -3615,9 +3627,9 @@ label ep005_departure:
         th "Of course."
         th "And [p_name_short], I really appreciate that we could save those women."
         c "Me too, I hope they get to live a better life from here on out."
-        "Thyia made one last trip into the city with a small group of the rescued women while we prepared for departure to Almaghest."
+        "Thyia made one last trip into the city with a small group of the rescued women while we prepared for departure to Almagest."
     else:
-        "Using the information from Thyia, we plotted our course towards Almaghest."
+        "Using the information from Thyia, we plotted our course towards Almagest."
     scene ep005_docks_ship with dissolve
     "A large party on the planet was to be held within a week, which would be perfect timing for us."
     scene ep005_docks_ship_depart with dissolve
@@ -3653,11 +3665,11 @@ label ep005_departure:
     "Céline engaged all thrusters and we jerked forward at full speed."
     ia "Now, now, don't run."
     si "We don't want to reduce you to slag."
-    "Doarn's private armada pursued us almost immediately, Sill and Iana contuining to pester me with quasi-witty threats over the comms."
+    "Doarn's private armada pursued us almost immediately, Sill and Iana continuing to pester me with quasi-witty threats over the comms."
     scene ep005_cockpit with dissolve
     c "Could you kill that chatter please, Céline, makes it hard to focus on an escape route."
     scene ep005_doarn_fleet_escape_fire with vpunch
-    "One of the last threats uttered by Iana concerned gunfire and sure enough our shields were pelted by fire from the enemy's PBC cannons."
+    "One of the last threats uttered by Iana concerned gunfire and sure enough our shields were pelted by fire from the enemy's PB cannons."
     scene ep005_doarn_fleet_escape_fire_alt with vpunch
     "They were too far away for the attacks to make an impact, but were likely intended to back up the seriousness of the threats voiced earlier by Doarn's bodyguards."
     ce "They're gaining on us."

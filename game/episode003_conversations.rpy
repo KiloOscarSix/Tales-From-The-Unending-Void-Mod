@@ -81,7 +81,7 @@ label ep003_conversations:
                 c "Yes, we need to get that specimen for Hreir."
                 scene expression eye_blink("images/ep003/ep003_quarters_vess_doubt") with dissolve
                 ve "Will that be dangerous?"
-                c "Probably not, Sagueliath doesn't really sound like a hospitable planet."
+                c "Probably, Sagueliath doesn't really sound like a hospitable planet."
                 ve "I guess I'll be okay if I stay with the ship..."
                 if ep002_vess_reassure:
                     c "I’ll make sure nothing happens to you."
@@ -166,7 +166,10 @@ label ep003_conversations:
                     c "You really think so?"
                     scene expression eye_blink("images/ep003/ep003_quarters_lilly_smile") with dissolve
                     l "Yes, you were right, she can help us."
-                    l "And it’s nice to have family aboard."
+                    if game.is_special:
+                        l "And it’s nice to have family aboard."
+                    else:
+                        l "And it’s nice to have old friends aboard."
                     l "Aven and me already talked for hours on end, we had so much to catch up on."
                     if game.is_special:
                         c "And Aunt Nadya doesn’t seem to hate us at all."
@@ -176,7 +179,7 @@ label ep003_conversations:
                     l "A little weird though that she never contacted or visited us after leaving."
                     scene expression eye_blink("images/ep003/ep003_quarters_lilly_serious") with dissolve
                     if game.is_special:
-                        l "But whenever I mention mom or dad she gets that look in her eyes."
+                        l "But whenever I mention Mom or Dad she gets that look in her eyes."
                         l "Something really bad happened between them, I’m sure of it."
                         c "Yeah, I think you’re right."
                         c "Maybe she’ll tell us, eventually."
@@ -308,13 +311,13 @@ label ep003_conversations:
             j "I’m assuming nobody needs to know about this?"
 
             menu:
-                "Be curt":
+                "Be curt [JadeSubPath]":
                     $ ep003_jade_curt = True
                     c "Correct."
                     c "I need to talk to her."
                     scene expression eye_blink("images/ep003/ep003_quarters_jade_serious") with dissolve
                     j "Understood, master."
-                "Be gentle":
+                "Be gentle [JadeLovePath]":
                     c "I think it’s better that way."
                     c "I just want to talk to her...{w} to see her again."
                     scene expression eye_blink("images/ep003/ep003_quarters_jade_smile") with dissolve
@@ -500,7 +503,7 @@ label ep003_dream:
     e "Just a little further."
     c "Eva! Look out!"
     scene ep003_e_dream_04 with vpunch
-    image side woman_portrait = "gui/side-images/side_warrior_woman.webp"
+    $ woman_portrait = "side_warrior_woman.webp"
     woman "Don’t try anything stupid."
     c "Eva!"
     c "No!"

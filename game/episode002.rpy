@@ -47,29 +47,29 @@ label episode002:
     ce "We could..."
     ce "No."
     c "Say it!"
-    ce "We could 'Burst' our Drive..."
+    ce "We could burst our Drive..."
     scene ep002_cockpit_kit with dissolve
     ki "That's suicide!"
     scene ep002_ship_closeup with dissolve
-    "Every Terran ship comes equipped with a so-called Sylas-Karzen Drive, named after the two scientists who build the first prototype after many centuries of development."
-    "The Sylas-Karzen Drive allowed mankind to finally travel faster than light, opening up the galaxy for exploration."
-    "The Ypotryll had powered down its S-K Drive as soon as it reached the habitable zone of Alpha Centauri, to avoid high-speed collisions with the many stations in the system."
+    "Every Terran ship comes equipped with a so-called Sylas-Karzen drive, named after the two scientists who built the first prototype after many centuries of development."
+    "The Sylas-Karzen drive allowed mankind to finally travel faster than light, opening up the galaxy for exploration."
+    "The Ypotryll had powered down its S-K drive as soon as it reached the habitable zone of Alpha Centauri, to avoid high-speed collisions with the many stations in the system."
     "It also allowed us to escape the hangar bay on the Enfield."
-    "Céline's proposal was extremely risky. By burning up the entire fuel reserve of the S-K Drive we would 'burst' away at tremendous speed towards an unknown destination."
+    "Céline's proposal was extremely risky. By burning up the entire fuel reserve of the S-K drive we would 'burst' away at tremendous speed towards an unknown destination."
     "Bursting no longer constitutes linear travel at the speed of light, but is more akin to a hyperspace jump."
     "A random hyperspace jump in total darkness, that is."
     "There's no way of knowing how far a ship will travel when it bursts its drive."
     "The chances of ending up somewhere in an uninhabited cluster without any fuel left are far too great."
     "This is the main reason why almost every species in the known galaxy uses the relatively safe jump-gates for hyperspace travel."
-    "No sane captain would consider 'bursting' their S-K Drive, but we didn't have many options."
+    "No sane captain would consider bursting their S-K drive, but we didn't have many options."
 
     python:
         codex_sk_drive = add_codex_entry(
             Codex,
             __("Technology"),
-            __("The Sylas-Karzen Drive"),
+            __("The Sylas-Karzen drive"),
             [
-                __("Enables Faster Than Light Travel, allowing mankind to explore and conquer the stars. The development of the Sylas-Karzen Drive by Professor Hermann Sylas and Dr. Josephine Karzen is the result of several centuries of research, primarily based on the theories of Burkhard Heim and Miguel Alcubierre."),
+                __("Enables Faster Than Light Travel, allowing mankind to explore and conquer the stars. The development of the Sylas-Karzen drive by Professor Hermann Sylas and Dr. Josephine Karzen is the result of several centuries of research, primarily based on the theories of Burkhard Heim and Miguel Alcubierre."),
                 __("'Bursting' a drive allows for hyperspace travel, but without a clear destination and is deemed extremely dangerous.")
             ]
         )
@@ -88,7 +88,7 @@ label episode002:
     "By that time we were shaking in our seats and the noise of the drive overload became almost too much to bear."
     scene ep002_cockpit_celine_alt with dissolve
     ce "T-ten..."
-    "The ship began to accelerate, accompanied by a heavy groan from the ship as if the weight of an enormous amount of G's threatened to tear it apart."
+    "The ship began to accelerate, accompanied by a heavy groan from the ship as the weight of an enormous amount of G's threatened to tear it apart."
     "We wouldn't have survived that amount of force if it weren't for the ship's shields and our genetically enhanced bodies."
     with vpunch
     with hpunch
@@ -140,7 +140,7 @@ label episode002:
 
     if ep001_vess_truth:
         "Vess and Jade were huddled over Thim's body."
-        "The ship's systems had already told me he was alive, but he might have received further injuries when we performed the 'Burst'."
+        "The ship's systems had already told me he was alive, but he might have received further injuries when we performed the Burst."
         scene ep002_ship_cargo_bay_vess_jade with dissolve
         c "Are you both okay?"
         j "Yes, Master [p_name]."
@@ -151,7 +151,7 @@ label episode002:
         c "Good thinking."
         scene expression eye_blink("images/ep002/ep002_ship_cargo_bay_jade") with dissolve
         j "What happened?"
-        c "We Burst our Drive."
+        c "We burst our Drive."
         scene expression eye_blink("images/ep002/ep002_ship_cargo_bay_vess") with dissolve
         ve "You did what?"
         c "Long story."
@@ -170,7 +170,7 @@ label episode002:
         c "They're all fine."
     else:
         "I found Jade huddled over Thim's body."
-        "The ship's systems had already told me he was alive, but he might have received further injuries when we performed the 'Burst'."
+        "The ship's systems had already told me he was alive, but he might have received further injuries when we performed the Burst."
         c "Are you okay?"
         scene ep002_ship_cargo_bay_jade with dissolve
         j "Yes, Master [p_name]."
@@ -179,7 +179,7 @@ label episode002:
         j "When the engines began to spin up I strapped us to storage containers."
         c "Good thinking."
         j "What happened?"
-        c "We Burst our Drive."
+        c "We burst our Drive."
         j "That's very risky, isn't it?"
         c "It sure is, but we would have died otherwise."
         scene ep002_ship_cargo_bay_jade_alt with dissolve
@@ -222,7 +222,7 @@ label episode002:
     l "You selfish fucking bastard!"
     scene ep002_ship_lilly_angry_punch with vpunch
     "She stormed at me, surprising Kit and Céline, and tried to hit me."
-    "Her fists rained blows on my chest until the grief that was clearly eating at her, finally overtook her."
+    "Her fists rained blows on my chest until the grief that was clearly eating at her finally overtook her."
     scene ep002_ship_lilly_hug with dissolve
     "Not sure what to do, I held her tight while sobs wracked her body."
 
@@ -429,6 +429,7 @@ label episode002:
     c "Excuse me sir, after a long voyage, our ship needs some urgent repairs."
     c "I was wondering if there’s a shipyard or workshop nearby."
     $ man_name = "Alien"
+    $ man_portrait = "side_man"
     man "Try Thyia."
     "So yeah, that wasn’t very momentous..."
     scene ep002_vulpes_workshop with dissolve
@@ -652,7 +653,7 @@ label episode002:
     th "There are a couple of private quarters, for the captain and any officers."
     scene expression eye_blink("images/ep002/ep002_vulpes_bastard_engine_room") with dissolve
     th "Same deal on the lower level, except for the fact that the engine room and cargo bay are also located here."
-    th "The Bastard comes equipped with a regular SK-drive."
+    th "The Bastard comes equipped with a regular S-K drive."
     th "Nothing fancy, so I wouldn't recommend attempts to outrun pirates or do some stratospheric flight acrobatics on a regular basis."
     scene expression eye_blink("images/ep002/ep002_vulpes_bastard_cargo_bay") with dissolve
     th "The engine room also gives in-door access to the cargo bay."
@@ -680,7 +681,8 @@ label episode002:
             )
 
     scene ep002_vulpes_velox_landed with dissolve
-    "We headed back and informed the others, not everyone was as enthusiastic about the prospect of becoming cargo runners, but I managed to impress the necessity of the situation on all of them."
+    "We headed back and informed the others."
+    "Not everyone was as enthusiastic about the prospect of becoming cargo runners, but I managed to impress the necessity of the situation on all of them."
     "After collecting all of our belongings from the Enfield, we left a locator beacon for Thyia and headed out towards the settlement."
     scene expression eye_blink("images/ep002/ep002_vulpes_workshop_yard_kit") with dissolve
     ki "Wow, [p_name_short], what a piece of junk!"
@@ -734,10 +736,10 @@ label episode002:
     ki "This is all really fascinating guys, but who are you talking about?"
     scene ep002_iron_bastard_crew_lilly with dissolve
     if game.is_special:
-        l "[p_name_short] wants to visit our aunt Nadya, she's a xenologist."
+        l "[p_name_short] wants to visit our Aunt Nadya, she's a xenologist."
         c "Xenoanthropologist, to be exact."
         l "Right and she lived with us for several years, until she and her daughter suddenly left us."
-        l "Mom and dad had a falling out with her, is the official reason, but it could be anything."
+        l "Mom and Dad had a falling out with her, is the official reason, but it could be anything."
     else:
         l "[p_name_short] wants to visit an old friend of the family, Nadya."
         c "She's a xenologist."
@@ -826,7 +828,7 @@ label episode002:
         if game.is_special:
             th "Just so you know, your sister has been a great help these past few days."
         else:
-            th "Just so you know, Lily has been a great help these past few days."
+            th "Just so you know, Lilly has been a great help these past few days."
         scene ep002_vulpes_workshop_thyia_lilly_smile with dissolve
         l "I just helped you clean and stuff."
         th "Yeah, yeah, I finally had someone intelligent to talk to, that counts for a lot here in these parts."
@@ -1133,7 +1135,7 @@ label episode002:
         "After we punched in the coordinates we received from Thyia we were ready for anything."
         if not ep002_university_completed:
             "But the trip turned out to be uneventful, just a series of jump-gates."
-            "The S-K Drive worked, there were no space pirates, no shooting matches...{w} nothing."
+            "The S-K drive worked, there were no space pirates, no shooting matches...{w} nothing."
         else:
             "But the trip turned out to be uneventful, just a series of jump-gates, no space pirates, no shooting matches...{w} nothing."
 
@@ -1178,6 +1180,7 @@ label episode002:
         "Before one of the elders could speak, I saw their eyes grow extremely wide."
         "I've come to learn that this is never a good sign, regardless of which type of alien you're dealing with."
         $ man_name = "R'o Chieftain"
+        $ man_portrait = "side_man"
         man "Are those...{w} women..."
 
         menu:
@@ -1258,7 +1261,7 @@ label episode002:
             c "I have."
             dee "Come over here then and make yourself comfortable among us."
             scene expression eye_blink("images/ep002/ep002_nyiruan_cave_dee") with dissolve
-            dee "My name is D'ee"
+            dee "My name is D'ee."
             $ dee_name = "D'ee"
             c "Are there only women down here?"
             dee "Mostly, the children and the older ones caring for them are further down below."
@@ -1336,6 +1339,7 @@ label episode002:
                     "They approached me with caution as I began to shudder and convulse."
                     woman "Do something!"
                     $ man_name = "R'o Guard"
+                    $ man_portrait = "side_man"
                     scene ep002_nyiruan_cave_guards_panic_approach with dissolve
                     man "What can we do woman, we know nothing about humans?!"
                     "I continued my poor impression of an epileptic seizure until I was sure D'ee had enough time to sneak out of the cave and opened my eyes dramatically."
@@ -1473,6 +1477,7 @@ label episode002:
 
         scene ep002_nyiruan_cave_guards with dissolve
         $ man_name = "R'o Guard"
+        $ man_portrait = "side_man"
         man "It has begun."
         scene ep002_nyiruan_cave_guards_alt with dissolve
         man "Terrible..."
@@ -1505,7 +1510,7 @@ label episode002:
         "From the corner of my eye I saw several women lining themselves up, getting on all fours, asses in the air."
         "One R'o woman came up to D'ee and me and looked at us inquisitively."
         $ woman_name = "R'o Woman"
-        image side woman_portrait = "gui/side-images/side_woman.webp"
+        $ woman_portrait = "side_woman"
         woman "We know it's selfish, but we want you too, [p_name]..."
         "Something about that display of asses and the way she phrased the question made me forget all exhaustion."
         scene ep002_nyiruan_cave_line_kiss with dissolve
@@ -1524,7 +1529,7 @@ label episode002:
         "One of the women was even wetter than D'ee and I had a hard time keeping my cock inside her."
         "By that time I was so horny, I smeared her ejaculate all over her body and mine, so our skin glistened beautifully in the torchlight."
         scene ep002_nyiruan_cave_line_fuck_virgin with dissolve
-        "I felt I could fuck these glorious women for hours one end, even start at the beginning again, until I entered the last girl."
+        "I felt I could fuck these glorious women for hours on end, even start at the beginning again, until I entered the last girl."
         "She was the youngest woman in the row, with beautiful, perky breasts and a very sweet face."
         scene ep002_nyiruan_cave_line_fuck_virgin_dee with dissolve
         "D'ee came up to me and whispered something in my ear."
@@ -1590,12 +1595,12 @@ label episode002:
 
         if not ep002_cargo_completed:
             if game.is_special:
-                "Thyia didn't lie, the ship had a functioning SK-drive and after a series of tedious jump-gate crossings, we arrived as planned in orbit of Ryūjin Prime where aunt Nadya was supposed to live and work."
+                "Thyia didn't lie, the ship had a functioning S-K drive and after a series of tedious jump-gate crossings, we arrived as planned in orbit of Ryūjin Prime where Aunt Nadya was supposed to live and work."
             else:
-                "Thyia didn't lie, the ship had a functioning SK-drive and after a series of tedious jump-gate crossings, we arrived as planned in orbit of Ryūjin Prime where Nadya was supposed to live and work."
+                "Thyia didn't lie, the ship had a functioning S-K drive and after a series of tedious jump-gate crossings, we arrived as planned in orbit of Ryūjin Prime where Nadya was supposed to live and work."
         else:
             if game.is_special:
-                "After a series of tedious jump-gate crossings, we arrived as planned in orbit of Ryūjin Prime where aunt Nadya was supposed to live and work."
+                "After a series of tedious jump-gate crossings, we arrived as planned in orbit of Ryūjin Prime where Aunt Nadya was supposed to live and work."
             else:
                 "After a series of tedious jump-gate crossings, we arrived as planned in orbit of Ryūjin Prime where Nadya was supposed to live and work."
 
@@ -1612,7 +1617,7 @@ label episode002:
                         __("Location: Cat’s Eye Nebula"),
                         __("The majority of Ryūjin Prime is covered in a large metropolis, while the rest of the planet is virtually uninhabitable. The weather is artificially controlled and the climate is therefore very moderate, unless that control slips and the heavy rains start to fall."),
                         __("The most important feature of Ryūjin Prime is the university, home to an incredible amount of aliens, all devoted to the pursuit of science."),
-                        __("Ryūjin Prime is also the home of [p_name]'s aunt and cousin after they were forced to leave Tuolovi.")
+                        __("Ryūjin Prime is also the home of [p_name]'s aunt and cousin after they left Tuolovi.")
                     ]
                 )
             else:
@@ -1624,7 +1629,7 @@ label episode002:
                         __("Location: Cat’s Eye Nebula"),
                         __("The majority of Ryūjin Prime is covered in a large metropolis, while the rest of the planet is virtually uninhabitable. The weather is artificially controlled and the climate is therefore very moderate, unless that control slips and the heavy rains start to fall."),
                         __("The most important feature of Ryūjin Prime is the university, home to an incredible amount of aliens, all devoted to the pursuit of science."),
-                        __("Ryūjin Prime is also the home of Eva and Lily's mother after she was forced to leave Tuolovi.")
+                        __("Ryūjin Prime is also the home of Professor Nadya Grivans after she left Tuolovi.")
                     ]
                 )
         "Céline waded through all the offers about entertainment, ship repairs, jobs to find the address of the university."
@@ -1650,8 +1655,12 @@ label episode002:
         "Céline's locator signal provided us with the necessary directions and it didn't take us long to reach the campus of Ryūjin Prime University."
         scene ep002_ryujin_university with dissolve
         $ man_name = "Robot"
+        $ man_portrait = "side_man"
         man "Good day sir, how may I be of service?"
-        c "We're looking for Professor Nadya Valenmann de Lonval."
+        if game.is_special:
+            c "We're looking for Professor Nadya Valenmann de Lonval."
+        else:
+            c "We're looking for Professor Nadya Grivans."
         man "Residence 42-ZB."
         man "Shall I load the coordinates onto one of your devices?"
         c "Yes please."
@@ -1667,7 +1676,7 @@ label episode002:
         if game.is_special:
             c "Hi, we're looking for Professor Valenmann de Lonval."
         else:
-            c "Hi, we're looking for Professor Valenmann de Lonval."
+            c "Hi, we're looking for Professor Grivans."
         av "Are you her students?"
         c "No, we're not, we have a question for her."
         av "She isn't here, try again later."
@@ -1715,7 +1724,7 @@ label episode002:
             python:
                 codex_aven = update_codex_entry(codex_aven, None,
                     [
-                        __("Childhood friend of [p_name]. Was taken away from Tuolovi by Nadya as a child. A skilled fighter and diplomat, Aven often accompanies her mother on scientific expeditions.")
+                        __("Childhood friend of [p_name]. Was taken away from Tuolovi by Nadya as a child. A skilled fighter and diplomat, Aven often accompanies Nadya on scientific expeditions.")
                     ]
                 )
 
@@ -1728,14 +1737,14 @@ label episode002:
         av "Yeah, that was...{w} sudden..."
         c "How have you been all these years?"
         if game.is_special:
-            av "Good, mom quickly established herself as a teacher here at the academy, eventually obtaining a professorship."
+            av "Good, Mom quickly established herself as a teacher here at the academy, eventually obtaining a professorship."
         else:
             av "Good, Nadya quickly established herself as a teacher here at the academy, eventually obtaining a professorship."
         av "So I was raised here mostly."
         c "You're a xenologist too?"
         av "Hah, not really."
         if game.is_special:
-            av "I know a little about it, because of mom."
+            av "I know a little about it, because of Mom."
         else:
             av "I know a little about it, because of Nadya."
         av "I accompany her on her travels, to keep her safe."
@@ -1764,7 +1773,7 @@ label episode002:
         av "By whom?"
         c "Unclear."
         if game.is_special:
-            c "We hope aunt Nadya can identify the creatures that took Eva from us."
+            c "We hope Aunt Nadya can identify the creatures that took Eva from us."
         else:
             c "We hope Nadya can identify the creatures that took Eva from us."
         av "She just might, let's hope she comes back soon."
@@ -1776,7 +1785,7 @@ label episode002:
         "Disregarding the girls in the room, Nadya ran towards me and took me in her arms."
         na "Is it really you?"
         if game.is_special:
-            c "Yes, aunt Nadya, it's me."
+            c "Yes, Aunt Nadya, it's me."
         else:
             c "Yes, Nadya, it's me."
 
@@ -1787,7 +1796,7 @@ label episode002:
                     __("Characters"),
                     __("Nadya"),
                     [
-                        __("Mother of Aven and sister to Agust. After her unwilling departure from Tuolovi she settled as a professor in Xenoanthropology at the university on Ryūjin Prime, where she lives with her daughter.")
+                        __("Mother of Aven and sister to Agust. After her sudden departure from Tuolovi she settled as a professor in Xenoanthropology at the university on Ryūjin Prime, where she lives with her daughter.")
                     ],
                     "images/codex/Nadya.webp"
                 )
@@ -1815,7 +1824,7 @@ label episode002:
         na "Abducted...{w} Dreadful..."
         na "How's Lilly coping with all this?"
         if game.is_special:
-            c "She's a strong girl, aunt Nadya, you know that."
+            c "She's a strong girl, Aunt Nadya, you know that."
         else:
             c "She's a strong girl, Nadya, you know that."
         na "Yes, she was always feisty."
@@ -1834,9 +1843,11 @@ label episode002:
         c "And thank you, I know this is coming totally out of the blue and..."
         scene expression eye_blink("images/ep002/ep002_ryujin_university_apartment_nadya_smile") with dissolve
         if game.is_special:
-            na "Nonsense, you're family, of course I'm going to help you, no matter what."
+            na "Nonsense, you're family."
+            na "Of course I'm going to help you, no matter what."
         else:
-            na "Nonsense, it's Eva we're talking about, of course I'm going to help you, no matter what."
+            na "Nonsense, it's Eva we're talking about."
+            na "Of course I'm going to help you, no matter what."
         scene ep002_ryujin_docks with dissolve
         "We left the apartment and headed back to our ship where another round of waiting began."
         "Very late in the evening, after eating a quick dinner, we received a signal."
@@ -1864,7 +1875,7 @@ label episode002:
         c "Aven, you're looking a little doubtful."
         av "No, it's fine."
         if game.is_special:
-            av "I'm just a little overwhelmed by the suddenness of mom's decision."
+            av "I'm just a little overwhelmed by the suddenness of Mom's decision."
         else:
             av "I'm just a little overwhelmed by the suddenness of Nadya's decision."
         av "But I'm sticking with her, no matter what."
@@ -1911,7 +1922,8 @@ label episode002:
         na "Because you quickly deal with rumors, hearsay and outright conspiracy theories."
         na "And if you hit upon the truth, it could become very dangerous as the parties involved in the experimentation might take an interest in your research."
         c "So you have to be either very daring or mad to research those topics?"
-        na "Exactly and Karan Hreir is both."
+        na "Exactly."
+        na "And Karan Hreir is both."
         na "He’s the one we’re going to visit."
         na "The journey isn’t going to be easy, because his home is located inside an asteroid field and the man is notoriously paranoid."
         scene expression eye_blink("images/ep002/ep002_iron_bastard_cockpit") with dissolve

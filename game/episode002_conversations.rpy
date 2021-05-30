@@ -200,7 +200,7 @@ label ep002_conversations:
                             c "Hehe, we'll ask Thyia when we meet her again."
                             ki "Good, because I'm ready to sin, big time!"
                     else:
-                        c "No, it didn't feel right"
+                        c "No, it didn't feel right."
                         scene expression eye_blink("images/ep002/ep002_quarters_kit_serious") with dissolve
                         ki "Wow, I admire that self-restraint."
 
@@ -255,7 +255,7 @@ label ep002_conversations:
                 $ ep002_jade_empathize = True
                 c "Shit, I didn't mean to be insensitive."
                 j "Oh, you mean because of my past?"
-                j "If I'd still dwelt on the cards I've been dealt in life, I'd be a very bitter Tw'ill indeed."
+                j "If I'd still dwelt on the cards I've been dealt in life, I'd be a very bitter Twi'll indeed."
                 j "So don't worry about that, master."
             "Agree [JadeSubPath]":
                 c "I guess you're right..."
@@ -264,7 +264,7 @@ label ep002_conversations:
         j "I could get naked..."
 
         menu:
-            "Have sex":
+            "Have sex [JadePath]":
                 $ ep002_jade_sex = True
                 c "That's always a great idea."
                 j "I know, right?"
@@ -391,7 +391,10 @@ label ep002_conversations:
         $ ep002_nadya_talk = True
         scene expression eye_blink("images/ep002/ep002_quarters_nadya") with dissolve
         na "Hi [p_name]."
-        c "Hi aunt Nadya, just checking to see if you're okay."
+        if game.is_special:
+            c "Hi Aunt Nadya, just checking to see if you're okay."
+        else:
+            c "Hi Nadya, just checking to see if you're okay."
         na "It's an old ship, but not the worst vessel I've travelled on."
         c "Maybe we can improve some things on the Bastard as soon as we have the funds."
         na "That would be nice."
@@ -433,7 +436,7 @@ label ep002_conversations:
                 av "I'll manage."
                 av "I've slept under worse conditions."
                 if game.is_special:
-                    c "On those expeditions with aunt Nadya?"
+                    c "On those expeditions with Aunt Nadya?"
                 else:
                     c "On those expeditions with Nadya?"
                 av "Yup."
@@ -455,7 +458,10 @@ label ep002_conversations:
                     "Be nice":
                         c "I'm glad you came with us."
                         scene expression eye_blink("images/ep002/ep002_quarters_aven_smile") with dissolve
-                        av "I'd never leave mom alone."
+                        if game.is_special:
+                            av "I'd never leave Mom alone."
+                        else:
+                            av "I'd never leave Nadya alone."
                     "Say nothing":
                         "I just looked at her, trying to determine if she was acting all tough or if she was being genuine."
                 jump ep002_aven_dialogue
@@ -479,7 +485,7 @@ label ep002_conversations:
                     av "No...{w} Mom never talks about it."
                 else:
                     av "No...{w} Nadya never talks about it."
-                av "I'm pretty sure it's something between her and your mom and dad."
+                av "I'm pretty sure it's something between her and your Mom and Dad."
                 if game.is_special:
                     av "She obviously still loves you and your sisters."
                 else:
@@ -497,12 +503,12 @@ label ep002_conversations:
                 if game.is_special:
                     av "If there's anybody she hates, it's her brother, or should I say uncle Agust..."
                 else:
-                    av "If there's anybody she hates, your father, or should I say uncle Agust..."
+                    av "If there's anybody she hates, your father..."
                 c "It doesn't take a lot of effort to hate him."
-                av "Well, mom was very close to him once, or so she told me."
+                av "Well, Mom was very close to him once, or so she told me."
                 if game.is_special:
                     c "You don't get to choose your brothers and sisters."
-                    av "True, but you can also just ignore them, that wasn't the case with Agust and mom."
+                    av "True, but you can also just ignore them, that wasn't the case with Agust and Mom."
                 c "Maybe he changed for the worse over time."
                 av "Could be."
                 jump ep002_aven_dialogue
@@ -516,7 +522,7 @@ label ep002_conversations:
         th "I sure as shit am."
         if game.is_special:
             th "You went to Ryūjin Prime for a family reunion?!"
-            c "We need my aunt's knowledge if we are to save my sister Eva."
+            c "We need my Aunt's knowledge if we are to save my sister Eva."
         else:
             th "You went to Ryūjin Prime to hook up with some old pals?!"
             c "We need Nadya's knowledge if we are to save Eva."
@@ -630,7 +636,7 @@ label ep002_jade_sex:
     "I'm not sure how it works, but her body language always did a number on me."
     "For some reason, it made Jade an even more sensual being than she already was."
     scene ep002_jade_undress with dissolve
-    "My Tw'ill girl proceeded to undress me, her cool fingers caressing my skin wherever she uncovered it."
+    "My Twi'll girl proceeded to undress me, her cool fingers caressing my skin wherever she uncovered it."
     "I shivered."
     scene ep002_jade_naked with dissolve
     "Grinning she slipped out of her remaining clothes and sat on top of me, her powerful thighs straddling my body."

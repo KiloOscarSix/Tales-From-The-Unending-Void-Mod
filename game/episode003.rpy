@@ -94,7 +94,8 @@ label episode003:
     "The journey appeared to go smoothly, until possible collision alerts suddenly started clogging the flight interface."
 
     scene ep003_asteroid_flight_01 with dissolve
-    "A debris field loomed before us, several large rocks were hurtling towards us."
+    "A debris field loomed before us."
+    "Several large rocks were hurtling towards us."
 
     menu:
         "Evade":
@@ -108,7 +109,7 @@ label episode003:
             $ ep003_bastard_damage += 2
             "On my command, Céline increased thrust in order to ram through the debris field ahead of us."
             scene ep003_asteroid_flight_01_thrust with vpunch
-            "Several large rocks buried itself into the hull."
+            "Several large rocks buried themselves into the hull."
             with vpunch
             "Terrible sounds of tearing metal screamed throughout the ship."
         "[gr]Shoot":
@@ -122,7 +123,7 @@ label episode003:
     menu:
         "Evade":
             $ ep003_bastard_damage += 1
-            "Céline steered the ship carefully through the narrow passage, trying to avoid the spinning rocks"
+            "Céline steered the ship carefully through the narrow passage, trying to avoid the spinning rocks."
             scene ep003_asteroid_flight_02_evade with vpunch
             "We moved too slow and several of the asteroids grazed the hull, causing deep lacerations in our outer shields."
         "[gr]Full thrust":
@@ -194,13 +195,17 @@ label episode003:
     "As we approached the far end of the docking bay, a set of large doors opened, revealing two security bots."
     "Blocking the way, they pointed their rifles at us and we were subjected to a weapons scan."
     $ man_name = "Bot"
+    $ man_portrait = "side_man"
     man "Please follow."
     scene ep003_asteroid_base_bots_escort with dissolve
     "The bots led us through a system of corridors, deep into the heart of the base."
     "We passed several closed doors, a lot of empty rooms and an occasional patrol of sentry bots, much like our armed escort."
     "The base seemed utterly devoid of sentient life."
     scene expression eye_blink("images/ep003/ep003_asteroid_base_bots_escort_aven") with dissolve
-    av "You're sure Karan is still alive, mother?"
+    if game.is_special:
+        av "You're sure Karan is still alive, mother?"
+    else:
+        av "You're sure Karan is still alive, Nadya?"
     scene expression eye_blink("images/ep003/ep003_asteroid_base_bots_escort_nadya") with dissolve
     na "I haven't received any information that told me otherwise."
     c "Not very reassuring..."
@@ -226,7 +231,7 @@ label episode003:
     "The room beyond was dimly lit and occupied by two more sentry bots, guarding a solitary man at a computer console."
     ka "Enter."
     scene ep003_hreir_lab_closeup with dissolve
-    "Large containers containing alien creatures suspended in clear liquid, dominated the room."
+    "Large containers containing alien creatures suspended in clear liquid dominated the room."
     "It didn't take a genius to realize we had entered the laboratory of Karan Hreir."
 
     python:
@@ -293,7 +298,7 @@ label episode003:
     ka "If you want my help I'd like you to find me a healthy specimen of boverine."
     c "We are to transport some unknown alien creature aboard our ship?"
     c "We're not equipped for that."
-    ka "Don't worry, I just need a larvae."
+    ka "Don't worry, I just need a larva."
     ka "I'll provide you with a storage container for safe transport."
     if game.is_special:
         c "Aunt?"
@@ -313,7 +318,7 @@ label episode003:
             __("Species"),
             __("Boverine"),
             [
-                __("Boverine are native to the planet Sagueliath and extremely dangerous predators. The crew was tasked with retrieving an larvae of a boverin for Karan Hreir.")
+                __("Boverine are native to the planet Sagueliath and extremely dangerous predators. The crew was tasked with retrieving an larva of a boverin for Karan Hreir.")
             ]
         )
 
@@ -574,7 +579,7 @@ label episode003:
         "Despite the fact that guns would be largely useless against the boverine and their thick skins, we took a few firearms from the Bastard’s armory, just in case."
         "Nadya agreed to stay in radio contact if we needed any information on the boverine."
         scene ep003_sagueliath_av_l with dissolve
-        "After making the descent from the plateau, large trees towered all around and I became aware of the eery quiet."
+        "After making the descent from the plateau, large trees towered all around and I became aware of the eerie quiet."
         c "Shouldn’t there be more sounds of wildlife?"
         scene expression eye_blink("images/ep003/ep003_sagueliath_av") with dissolve
         av "Landing spacecraft is generally noisy business, so my guess is we scared away a lot of the critters."
@@ -616,7 +621,7 @@ label episode003:
         l "I think it is."
         c "Damn..."
         c "And that..."
-        l "U-huh..."
+        l "Uh-huh..."
         scene ep003_sagueliath_search_av with dissolve
         av "Are you kids done pointing at all those entrails?"
         av "I think I know where the creature went."
@@ -651,7 +656,7 @@ label episode003:
         if not ep002_pit_thim:
             "I was pretty sure the things inside were much less pleasurable than what had awaited me in the cave on Nyiruan."
         av "Try not to make any loud noises."
-        av "A boverin always sleeps deeply for some time after eating, so we should be careful not to wake it."
+        av "A boverin always sleeps for some time after eating, so we should be careful not to wake it."
         scene ep003_sagueliath_cave_av with dissolve
         av "When we reach the creature, we should sneak up on it and steal one of the larvae."
         l "Larvae?"
@@ -662,7 +667,7 @@ label episode003:
         l "[p_name_short], I really could do without that mental image."
         c "Sorry!"
         scene ep003_sagueliath_cave_av with dissolve
-        av "So we put a larvae in the canister Hreir gave us and get the hell out of here."
+        av "So we put a larva in the canister Hreir gave us and get the hell out of here."
         c "You make it sound far too simple."
         "Taking the lead again, Aven led us further into the cave."
         scene ep003_sagueliath_cave_alt with dissolve
@@ -691,13 +696,13 @@ label episode003:
         scene ep003_sagueliath_cave_boverin_approach with dissolve
         "Carefully, Aven and I made our way to the sleeping monster and the writhing larvae at its feet."
         "When we came closer the predatory physique of the boverin became even more apparent."
-        "Every feature of its sinewy body exhumed a kind of bold aggressiveness and made me glad it was still sleeping safe and sound."
+        "Every feature of its sinewy body exuded a kind of bold aggression and made me glad it was still sleeping safe and sound."
         scene ep003_sagueliath_cave_boverin_closeup with dissolve
         "I held the canister at the ready, while Aven tried to scoop up one of the larvae."
         "She had to make multiple attempts, as she didn’t want to touch any of the other young boverine."
         "At last she managed to take hold of one of the slimy creatures and tried to deposit into the receptacle I was holding."
         scene ep003_sagueliath_cave_boverin_worm with dissolve
-        "The larvae wriggled in her hands and opened its fanged beak to bite Aven, or so I assumed."
+        "The larva wriggled in her hands and opened its fanged beak to bite Aven, or so I assumed."
 
         play music "music/pursuit.ogg" fadein 1.0 fadeout 4
 
@@ -723,7 +728,7 @@ label episode003:
         scene ep003_sagueliath_cave_run_l with vpunch
         "Only when Aven shone her flashlight at the edges of the rift did we see her barely hanging on the edge."
         c "I’ll help her, you go across."
-        "After passing her the canister containing the very unhappy larvae, Aven made a hurried pass to the other side, jumping the remaining distance."
+        "After passing her the canister containing the very unhappy larva, Aven made a hurried pass to the other side, jumping the remaining distance."
         scene ep003_sagueliath_cave_run_l_c with dissolve
         c "Hold on, Lilly."
         l "[p_name_short]!"
@@ -732,7 +737,7 @@ label episode003:
         l "I don’t know, I can’t hold out much longer!"
         scene ep003_sagueliath_cave_run_hand with dissolve
         c "Grab it on three."
-        "Another roar and the scratching of nails on stone, signified the boverin was close by."
+        "Another roar and the scratching of nails on stone signified the boverin was close by."
         c "Two!"
         c "Three!"
         "The creature was extremely close, its scrambling movements clearly audible and interpuncted by enraged screams."
@@ -743,14 +748,14 @@ label episode003:
         "Hurriedly, we crossed the chasm, wary of the slippery stone."
         scene ep003_sagueliath_cave_run_boverin with dissolve
         "When we were about halfway, the boverin entered the cavern and roared triumphantly at us."
-        "Lilly nearly slipped again, but I held her upright and we made it across the crevasse as the Boverin set foot on the ledge."
+        "Lilly nearly slipped again, but I held her upright and we made it across the crevasse as the boverin set foot on the ledge."
         "The sharp claws of the beast allowed it to cross at much greater speed than us and within seconds the monster was halfway."
         l "We can’t outrun it!"
         scene ep003_sagueliath_cave_run_boverin_shot with vpunch
         "Lilly was right and in a split second I pointed my gun towards the stalactite-covered ceiling."
         "Dust and pebbles showered on the boverin which distracted it for a moment."
         l "What are you doing, [p_name_short]?"
-        "After shooting multiple rounds into the ceiling nothing seemed to happen, until a smaller stalactite fell downward."
+        "After shooting multiple rounds into the ceiling nothing seemed to happen, until a smaller stalactite fell with a thundering crash."
         "The boverin’s hide deflected most of the rock, merely annoying the animal."
         scene ep003_sagueliath_cave_run_boverin_shot_alt with dissolve
         "I kept shooting, despite Lilly’s attempts to pull me away towards the exit."
@@ -762,7 +767,7 @@ label episode003:
         "Still, the distraction didn’t prove large enough and the boverin resumed its jump towards us."
         scene ep003_sagueliath_cave_run_boverin_jump with dissolve
         "As it set off and lifted itself into the air, I fired several shots into the ceiling and a gigantic pointy rock fell down."
-        "The stalactie landed squarely on the beasts back and slammed it down towards the ledge."
+        "The stalactite landed squarely on the beast's back and slammed it down towards the ledge."
         scene ep003_sagueliath_cave_run_boverin_fall with vpunch
         "Mowing frantically with its front claws the boverin tried to hold onto the ledge, its nails creating deep grooves in the stone."
         "Failing to achieve any grip, the boverin fell backwards into the chasm, bawling with impotent rage."
@@ -847,7 +852,7 @@ label episode003:
             else:
                 scene ep003_verdant_bar with dissolve
             "The music of the bar was inescapable, but didn’t drown out conversations completely."
-            "Other than that it wasn’t what you’d call an upscale place, the scantly clad squirming alien near the entrance being a first hint."
+            "Other than that it wasn’t what you’d call an upscale place, the scantily clad squirming alien near the entrance being a first hint."
             "Still, everyone seemed to have found a place at one of the many tables."
 
         label ep003_verdant_bar_conversations:
@@ -889,7 +894,7 @@ label episode003:
                             scene expression eye_blink("images/ep003/ep003_verdant_bar_thyia_closeup_concern") with dissolve
                             th "That’s not enough."
                             c "What?!"
-                            th "The head mechanic just messaged me and the repairs are more extensive than originally budgetted."
+                            th "The head mechanic just messaged me and the repairs are more extensive than originally budgeted."
                             if ep003_verdant_con_vitae_accepted:
                                 c "Well fuck."
                                 th "Yup, I managed to haggle a discount, but still..."
@@ -902,7 +907,7 @@ label episode003:
                             c "What do the others think?"
                             th "About a taxi job?"
                             th "Everyone is fine with it."
-                            c "Well Ziv, I guess you have a deal."
+                            c "Well, Ziv, I guess you have a deal."
                             scene expression eye_blink("images/ep003/ep003_verdant_bar_ziv_closeup") with dissolve
                             zi "Your enthusiasm is heartwarming."
                             scene expression eye_blink("images/ep003/ep003_verdant_bar_thyia_closeup_annoyed") with dissolve
@@ -926,7 +931,7 @@ label episode003:
                             scene ep003_verdant_bar_thyia_ziv_doubt with dissolve
                             th "You found an alternate source of income?"
                             c "I have, it should cover our expenses."
-                            th "Well, the head mechanic just messaged me and the repairs are more extensive than originally budgetted."
+                            th "Well, the head mechanic just messaged me and the repairs are more extensive than originally budgeted."
                             th "So I hope you earned a lot with that one job."
                             c "Well fuck."
                             th "Yup, I managed to haggle a discount, but still..."
@@ -976,7 +981,7 @@ label episode003:
                                 c "What do the others think?"
                                 th "They’re all fine with it."
                                 c "Fuck it then."
-                                zi "Well Ziv, I guess you have a deal."
+                                zi "Well, Ziv, I guess you have a deal."
                                 scene expression eye_blink("images/ep003/ep003_verdant_bar_ziv_closeup_smile") with dissolve
                                 zi "Your enthusiasm is heartwarming."
 
@@ -1079,7 +1084,7 @@ label episode003:
                     ce "Well, at least Kit seems to be having a good time."
                     c "Yeah, he’s a great devotee of the noble art of dancing at the pole."
                     l "Yeah sure..."
-                    ce "Did you find already find some means to pay for the repairs?"
+                    ce "You already found some means to pay for the repairs?"
                     if ep003_ziv_mission or ep003_verdant_con_vitae_accepted:
                         c "I did."
                         if ep003_ziv_mission and not ep003_ziv_mission_completed:
@@ -1253,7 +1258,7 @@ label episode003:
         c "I thought this was a simple taxi job."
         c "What’s with all the cloak and dagger?"
         zi "It’s necessary."
-        zi "After we collect her things will be more simple."
+        zi "After we collect her, things will be more simple."
         c "My confidence is increasing by the minute..."
         c "Lead the way."
         scene expression eye_blink("images/ep003/ep003_port_zi") with dissolve
@@ -1269,7 +1274,7 @@ label episode003:
         "As they came closer, I noticed that one of them was of the same species as Ziv, whereas the other one looked decidedly human."
         scene ep003_port_wo_ra with dissolve
         $ woman_name = "Woman"
-        image side woman_portrait = "gui/side-images/side_woman.webp"
+        $ woman_portrait = "side_woman"
         woman "This is the transport you arranged, Ziv?"
         zi "It is."
         zi "This is [p_name], the captain of the vessel."
@@ -1327,7 +1332,7 @@ label episode003:
 
     label ep003_verdant_con_vitae:
         $ woman_name = "Receptionist"
-        image side woman_portrait = "gui/side-images/side_secretary.webp"
+        $ woman_portrait = "side_secretary"
 
         scene ep003_verdant_corridor with dissolve
         "The offices turned out to be located in a perfectly nondescript corridor, its presence only denoted by an equally nondescript sign bearing the company’s logo."
@@ -1370,7 +1375,7 @@ label episode003:
                 woman "Please wait here, I will be with you shortly."
                 scene ep003_verdant_convitae_room with dissolve
                 "Most of these simulation rooms look the same, white walls and nothing else to bump into, this one was no different."
-                "A few minutes after I left the receptionist, she reappeared"
+                "A few minutes after I left the receptionist, she reappeared."
                 scene expression eye_blink("images/ep003/ep003_verdant_convitae_scan_pre") with dissolve
                 woman "Are you ready?"
                 c "I think so."
@@ -1417,7 +1422,7 @@ label episode003:
 
         scene ep003_sim_farm with pixellate
         "The shift between reality and the virtual is always a little disorientating, this time even more so because I was suddenly standing on a moss floor wearing unfamiliar clothes."
-        "I was standing in a forest, a blue sky over my head and birds chirped happily all around me."
+        "I was standing in a forest, a blue sky over my head and birds chirping happily all around me."
         "While some part of me wanted to explore the wilderness instead of taking the obvious path, I decided to play along with the rules of the simulation."
         scene ep003_sim_farm_closeup with dissolve
         "A small farm completed the pastoral scene and it was pretty obvious what my destination was."
@@ -1498,7 +1503,7 @@ label episode003:
                         le "Why don’t you rest for a while?"
 
                         menu:
-                            "Accept [ThreesomeSoft]":
+                            "Accept [gr]\[Threesome Soft\]":
                                 $ ep003_sim_farm_sex_threesome_soft = True
                                 "I had a feeling I was going to be treated to some wholesome and very special rural hospitality, so I accepted the woman’s invitation."
                                 "When I entered the farm again, my suspicions were confirmed."
@@ -1511,7 +1516,7 @@ label episode003:
                                 le "I understand, sir, bless you."
                                 scene expression eye_blink("images/ep003/ep003_sim_farm_leaving_le_wave") with dissolve
                                 "After crossing the fence again the simulation suddenly ended."
-                    "Come to a deal [ThreesomeSoft]":
+                    "Come to a deal [gr]\[Threesome Soft\]":
                         $ ep003_sim_farm_sex_deal = True
                         c "I’m not an unreasonable man, so if there’s anything you can think of to pay me with?"
                         c "I might be able to give you a few months respite, if we can reach an agreement."
@@ -1568,7 +1573,7 @@ label episode003:
                             be "What’s the alternative, mistress?"
                             "The young servant stood fully naked before me, the other woman still wracked by indecision."
                         "When she finally started to unlace her clothing my heart skipped a beat."
-                        scene ep003_sim_farm_leaving_le_be_naked with dissolve
+                        scene ep003_sim_farm_leaving_le_be_naked_alt with dissolve
                         "The prospect of having power over those two women aroused me, even if it was in a simulation."
                         "I knew all the pleasures, up to my own orgasm, would only exist in my mind, carefully orchestrated by whatever current was hooked up to my neural pathways."
                         if game.is_special:
@@ -1646,7 +1651,7 @@ label episode003:
                         le "Sir!"
 
                 menu:
-                    "Fuck them [ThreesomeHard]":
+                    "Fuck them [gr]\[Threesome Hard\]":
                         scene ep003_sim_farm_interior_le_hold with dissolve
                         if game.is_special:
                             c "You and your daughter could undress before me and let me have my way with you both."
@@ -1660,9 +1665,9 @@ label episode003:
                         le "Berit!"
                         $ be_name = "Berit"
                         if game.is_special:
-                            be "But mother, this outrageous."
+                            be "But mother, this is outrageous."
                         else:
-                            be "But mistress, this outrageous."
+                            be "But mistress, this is outrageous."
                         be "What are you doing?!"
                         scene ep003_sim_farm_leaving_le_naked with dissolve:
                             yalign 1.0
@@ -1712,7 +1717,7 @@ label episode003:
                             "When her eyes shifted towards her daughter, I knew I’d won."
                         else:
                             "When her eyes shifted towards her maid, I knew I’d won."
-                        "The prospect of having power the woman aroused me, even if it was in a simulation."
+                        "The prospect of having power over the woman aroused me, even if it was in a simulation."
                         "I knew all the pleasures, up to my own orgasm, would only exist in my mind, carefully orchestrated by whatever current was hooked up to my neural pathways."
                         "I just didn’t care, the desire to fuck the young girl became too overwhelming."
                         scene expression eye_blink("images/ep003/ep003_sim_farm_interior_be_fear") with dissolve
@@ -1814,17 +1819,19 @@ label episode003:
             $ ep003_le_sex_last = False
             $ ep003_be_sex_last = False
 
-        scene ep003_sim_farm_leaving_be_naked with dissolve:
-            yalign 1.0
-            ease 8 yalign 0.01
-        $ renpy.pause()
+        if not ep003_sim_farm_sex_deal:                               
+            scene ep003_sim_farm_leaving_be_naked with dissolve:
+                yalign 1.0
+                ease 8 yalign 0.01
+            $ renpy.pause()
 
-        if game.is_special:
-            le "Forgive us for being forward, but my daughter and I would like to thank you properly."
-        else:
-            le "Forgive us for being forward, but my maid and I would like to thank you properly."
-        "While the woman closed the door, I lusted over Berit’s supple young body."
-        scene ep003_sim_farm_le_smile with dissolve
+            if game.is_special:
+                le "Forgive us for being forward, but my daughter and I would like to thank you properly."
+            else:
+                le "Forgive us for being forward, but my maid and I would like to thank you properly."
+            "While the woman closed the door, I lusted over Berit’s supple young body."
+            scene ep003_sim_farm_le_smile with dissolve
+            
         c "Tell me your name."
         le "Leda, milord."
         $ le_name = "Leda"
@@ -1959,7 +1966,7 @@ label episode003:
                 "I took hold of her shoulders and applied pressure, attacking her cunt with short aggressive thrusts."
                 be "Oh god!"
                 scene ep003_sim_farm_be_fuck_doggy_alt with dissolve
-                "My balls slapped against her cunt as it buried itself to the root inside her slit, coming back wetter with every probe."
+                "My balls slapped against her cunt as my cock buried itself to the root inside her slit, coming back wetter with every probe."
                 "The girl’s moans turned ever hoarser as the fucking grew more intense."
                 "I knew I was close...{w} So close..."
                 jump ep003_sim_farm_sex_soft
@@ -1971,7 +1978,7 @@ label episode003:
                     else:
                         "I wanted to give the maidservant something to remember me by, so I pulled out of Leda and re-entered Berit."
                 else:
-                    "I wanted Berit so badly I just kept on fucking her until erupted inside of her."
+                    "I wanted Berit so badly I just kept on fucking her until I erupted inside of her."
                 scene ep003_sim_farm_be_fuck_shock with dissolve
                 be "No!"
                 be "He came inside me!"
@@ -1984,7 +1991,7 @@ label episode003:
                 "I came inside her so deep that when I pulled out it took a while for some cum to spill out of her."
             "Creampie Leda":
                 if ep003_be_sex_last:
-                    "I wanted to give the farmer’s wive something to remember me by, so I pulled out of Berit and re-entered Leda. "
+                    "I wanted to give the farmer’s wive something to remember me by, so I pulled out of Berit and re-entered Leda."
                 else:
                     "I wanted to give Leda something to remember me by, so I kept fucking her hard."
                 scene ep003_sim_farm_le_fuck_doggy_alt with dissolve
@@ -2013,11 +2020,11 @@ label episode003:
                 scene ep003_sim_farm_be_le_fuck_facial with flash
                 with flash
                 if ep003_le_sex_last:
-                    "At the last moment, I pulled out of her and brought Leda’s towards my cock, Berit joining her quickly."
+                    "At the last moment, I pulled out of her and brought Leda’s head towards my cock, Berit joining her quickly."
                     "Leda was about to say something when my cock spurted warm cum all over her face and in her open mouth."
                     "Berit took a hit of warm cum square in the face too."
                 else:
-                    "At the last moment, I pulled out of her and brought Berit’s towards my cock, Leda joining her quickly."
+                    "At the last moment, I pulled out of her and brought Berit’s head towards my cock, Leda joining her quickly."
                     "Berit was about to say something when my cock spurted warm cum all over her face and in her open mouth."
                     "Leda took a hit of warm cum square in the face too."
         scene ep003_sim_farm_be_le_fuck_post with dissolve
@@ -2139,7 +2146,7 @@ label episode003:
                 scene ep003_sim_farm_le_fuck with dissolve
                 "The bed creaked as I fucked the woman hard, her moans filling the small living room."
                 scene ep003_sim_farm_le_breasts with dissolve
-                "I grabbed at her large breasts, luxuriating in the feeling as my hands kneaded its luscious flesh."
+                "I grabbed at her large breasts, luxuriating in the feeling as my hands kneaded her luscious flesh."
                 show ep003_sim_farm_le_penetrate_closeup_pleasure with dissolve
                 c "Do you enjoy getting fucked, Leda?"
                 le "Oh, don’t ask me that, sir!"
@@ -2148,7 +2155,7 @@ label episode003:
                 scene ep003_sim_farm_le_fuck_alt with dissolve
                 le "No sir, no I don’t!"
                 c "Say it!"
-                le "I enjoying being your whore, sir!"
+                le "I enjoy being your whore, sir!"
                 jump ep003_sim_farm_sex
             "Fuck Berit" if not ep003_sim_farm_sex_be:
                 $ ep003_sim_farm_sex_be = True
@@ -2183,7 +2190,7 @@ label episode003:
                 c "Do you enjoy being my little slut?"
                 be "Sir, please!"
                 c "Say it!"
-                be "I enjoying being your little slut, sir!"
+                be "I enjoy being your little slut, sir!"
                 c "Good girl, now turn over."
                 show ep003_sim_farm_be_fuck_doggy with dissolve
                 "The girl got up on all fours and I pulled her ass towards me."
@@ -2192,7 +2199,7 @@ label episode003:
                 "I took hold of her shoulders and applied pressure, attacking her cunt with short aggressive thrusts."
                 be "Oh god!"
                 scene ep003_sim_farm_be_fuck_doggy_alt with dissolve
-                "My balls slapped against her cunt as it buried itself to the root inside her slit, coming back wetter with every probe."
+                "My balls slapped against her cunt as my cock buried itself to the root inside her slit, coming back wetter with every probe."
                 "The girl’s moans turned ever hoarser as the fucking grew more intense."
                 "I knew I was close...{w} So close..."
                 jump ep003_sim_farm_sex
@@ -2202,9 +2209,9 @@ label episode003:
                     if game.is_special:
                         "I wanted to give the farmer’s daughter something to remember me by, so I pulled out of Leda and re-entered Berit."
                     else:
-                        "I wanted to give the maidservant something to remember me by, so I pulled out of Leda and re-entered Berit. "
+                        "I wanted to give the maidservant something to remember me by, so I pulled out of Leda and re-entered Berit."
                 else:
-                    "I wanted Berit so badly I just kept on fucking her until erupted inside of her."
+                    "I wanted Berit so badly I just kept on fucking her until I erupted inside of her."
                 scene ep003_sim_farm_be_fuck_shock with dissolve
                 be "No!"
                 be "He came inside me!"
@@ -2219,7 +2226,7 @@ label episode003:
                 "I came inside her so deep that when I pulled out it took a while for some cum to spill out of her."
             "Creampie Leda":
                 if ep003_be_sex_last:
-                    "I wanted to give the farmer’s wive something to remember me by, so I pulled out of Berit and re-entered Leda. "
+                    "I wanted to give the farmer’s wive something to remember me by, so I pulled out of Berit and re-entered Leda."
                 else:
                     "I wanted to give Leda something to remember me by, so I kept fucking her hard."
                 scene ep003_sim_farm_le_fuck_doggy_alt with dissolve
@@ -2251,11 +2258,11 @@ label episode003:
                 scene ep003_sim_farm_be_le_fuck_facial with flash
                 with flash
                 if ep003_le_sex_last:
-                    "At the last moment, I pulled out of her and brought Leda’s towards my cock, Berit joining her quickly."
+                    "At the last moment, I pulled out of her and brought Leda’s head towards my cock, Berit joining her quickly."
                     "Leda was about to say something when my cock spurted warm cum all over her face and in her open mouth."
                     "Berit took a hit of warm cum square in the face too."
                 else:
-                    "At the last moment, I pulled out of her and brought Berit’s towards my cock, Leda joining her quickly."
+                    "At the last moment, I pulled out of her and brought Berit’s head towards my cock, Leda joining her quickly."
                     "Berit was about to say something when my cock spurted warm cum all over her face and in her open mouth."
                     "Leda took a hit of warm cum square in the face too."
         scene ep003_sim_farm_be_le_fuck_post with dissolve
@@ -2313,7 +2320,7 @@ label episode003:
         c "You enjoy playing my whore."
         le "No sir, no I don’t!"
         c "Say it!"
-        le "I enjoying being your whore, sir!"
+        le "I enjoy being your whore, sir!"
         c "Good girl, now turn over."
         show ep003_sim_farm_le_fuck_doggy with dissolve
         "The farmer’s wife got up on all fours and I pulled her ass towards me."
@@ -2321,7 +2328,7 @@ label episode003:
         "I took hold of her shoulders and applied pressure, attacking her cunt with short aggressive thrusts."
         le "Oh god!"
         scene ep003_sim_farm_le_fuck_doggy_alt with dissolve
-        "My balls slapped against her cunt as it buried itself to the root inside her slit, coming back wetter with every probe."
+        "My balls slapped against her cunt as my cock buried itself to the root inside her slit, coming back wetter with every probe."
         "The woman’s moans turned ever hoarser as the fucking grew more intense."
         "I knew I was close...{w} So close..."
         c "Oh Leda!"
@@ -2349,7 +2356,7 @@ label episode003:
         scene expression eye_blink("images/ep003/ep003_sim_farm_le_fuck_post") with dissolve
         c "Consider your debt paid."
         le "Thank you, milord."
-        c "Leaving the naked woman behind, I walked through the door."
+        "Leaving the naked woman behind, I walked through the door."
         scene black with pixellate
         "All went black and the simulation ended."
         $ renpy.end_replay()
@@ -2435,14 +2442,14 @@ label episode003:
         scene ep003_sim_farm_be_fuck_doggy_alt with dissolve
         "I took hold of her shoulders and applied pressure, attacking her cunt with short aggressive thrusts."
         be "Oh god!"
-        "My balls slapped against her cunt as it buried itself to the root inside her slit, coming back wetter with every probe."
+        "My balls slapped against her cunt as my cock buried itself to the root inside her slit, coming back wetter with every probe."
         "The girl’s moans turned ever hoarser as the fucking grew more intense."
         "I knew I was close...{w} So close..."
         c "Oh Berit!"
         c "Oh Berit, yes!"
         menu:
             "Creampie":
-                "I wanted Berit so badly I just kept on fucking her until erupted inside of her."
+                "I wanted Berit so badly I just kept on fucking her until I erupted inside of her."
                 scene ep003_sim_farm_be_fuck_shock with dissolve
                 be "No!"
                 be "Not inside me!"
@@ -2505,7 +2512,7 @@ label episode003:
                 if is_patreon() and renpy.has_label("extra_scene_04") and not _in_replay:
                     call extra_scene_04 from _call_extra_scene_04
                     "Part of me wanted to admire them a little longer, but the girl I was with tugged at my arm."
-                    "She lead me past several alcoves, some empty, some filled with people socializing."
+                    "She led me past several alcoves, some empty, some filled with people socializing."
 
                 if is_patreon() and renpy.has_label("extra_scene_05") and not _in_replay:
                     "Something in the corner of my eye made me stop."
@@ -2632,6 +2639,7 @@ label episode003:
         scene ep003_bastard_av_th_alt with dissolve
         "A short sound signified that Céline had done what I asked and before I could speak a gravelly voice sounded through the cargo bay."
         $ man_name = "Man"
+        $ man_portrait = "side_man"
         man "Unidentified vessel, by the order of His Holiness, Hierophant Sacleus, you will release that shuttle to us immediately."
         man "You have five minutes to comply, otherwise we’ll be forced to disable the drive of your ship like we did with the shuttle you illegally obtained."
         python:

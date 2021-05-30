@@ -237,7 +237,7 @@ label ep006_conversations:
                         scene expression eye_blink("images/ep006/ep006_ra_serious") with dissolve
                         ra "On our world women are mostly regarded as a necessary evil, because of their ability to bear children."
                         ra "Other than that they live their lives in seclusion and don't participate in daily life."
-                        ra "They serve at the pleasure of the men who rule Verdigris, my father at the head of it all. "
+                        ra "They serve at the pleasure of the men who rule Verdigris, my father at the head of it all."
                         ra "I had a different name when I was born, one that my father still uses when he addresses me."
                         ra "He was so happy my mother bore him a son, because an heir would secure our bloodline."
                         scene expression eye_blink("images/ep006/ep006_ra_sad") with dissolve
@@ -324,7 +324,7 @@ label ep006_conversations:
                                         ra "It is."
                                         scene expression eye_blink("images/ep006/ep006_ra_sad") with dissolve
                                         ra "At the age of five I would have lost my mother anyway, because the upbringing is left solely to the fathers at that age."
-                                        ra "My mother fell ill weeks after my fourth birthday and died not long after."
+                                        ra "My mother fell ill weeks after my fourth birthday and died within a year."
                                         scene expression eye_blink("images/ep006/ep006_ra") with dissolve
                                         ra "My father, or rather the staff he hired, cared for me ever since."
                                         c "I don't know what to say..."
@@ -421,7 +421,7 @@ label ep006_conversations:
             l "You told her you'd meet her at the house, instead you're gone for months."
             l "How could you leave her like that?"
             "Seeing Lilly so hostile like this rattled me severely."
-            "I'd come to know her so differently after being so close together on the ConVitae research station."
+            "I'd come to know her so differently after being so close together on the ConVitæ research station."
             c "I...{w} I can explain."
             scene expression eye_blink("images/ep006/ep006_bastard_sim_upstairs_l") with dissolve
             l "Of course you can."
