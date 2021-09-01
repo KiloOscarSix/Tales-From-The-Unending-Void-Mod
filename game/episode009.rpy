@@ -163,7 +163,7 @@ label episode009:
     scene expression eye_blink("images/ep009/ep009_quarters_e_sit_smile") with dissolve
     e "Sounds like there’s more of a story behind it..."
     c "I’ll tell you one day."
-    c "Sufficed to say, we travelled the galaxy for a while in search for clues and picked up some familiar people and new faces."
+    c "Suffice to say, we travelled the galaxy for a while in search for clues and picked up some familiar people and new faces."
     scene expression eye_blink("images/ep009/ep009_quarters_e_sit") with dissolve
     if game.is_special:
         e "Did you go to Aunt Nadya straightaway?"
@@ -192,7 +192,10 @@ label episode009:
     c "Erylin, I take it?"
     $ er_name = "Erylin"
     scene expression eye_blink("images/ep009/ep009_quarters_er_closeup") with dissolve
-    er "You must be the brother."
+    if game.is_special:
+        er "You must be the brother."
+    elif True:
+        er "You must be the childhood friend."
     er "This meeting is over."
     scene expression eye_blink("images/ep009/ep009_quarters_e_sit_angry") with dissolve
     e "You forget your place, Head Priestess!"
@@ -204,7 +207,10 @@ label episode009:
     scene expression eye_blink("images/ep009/ep009_quarters_er_closeup_serious") with dissolve
     er "Besides, I have some very important business to discuss."
     scene expression eye_blink("images/ep009/ep009_quarters_er_closeup_smile") with dissolve
-    er "I’m sure your brother will be able to visit you another time."
+    if game.is_special:
+        er "I’m sure your brother will be able to visit you another time."
+    elif True:
+        er "I’m sure your friend will be able to visit you another time."
 
     python:
         if 'codex_erylin' not in locals():
@@ -401,7 +407,7 @@ label episode009:
     "A crowd had gathered in the courtyard."
     scene ep009_alarm_courtyard_av with dissolve
     "Aven noticed me and waved me over."
-    if aven_romance:
+    if aven_romance and game.is_special:
         "I did have some trouble containing the urge to kiss her right there in public."
     scene expression eye_blink("images/ep009/ep009_alarm_courtyard_av_closeup") with dissolve
     c "What’s all this about?"
@@ -478,7 +484,8 @@ label episode009:
     scene expression eye_blink("images/ep009/ep009_alarm_courtyard_empty_av_doubt") with dissolve
     av "There are rules?"
     c "There are always rules..."
-    call credits from _call_credits
+    scene black with fade
+    jump episode010
     return
 
 label ep009_thyia:
@@ -698,7 +705,7 @@ label ep009_lilly:
         "Relieved, I swept her up in my arms and kissed her passionately."
         scene expression eye_blink("images/ep009/ep009_lilly_morning_balcony_alt") with dissolve
         l "That’s much better."
-        l "Now I think you’d better sneak out, in case people start wondering where we are."
+        l "Now I think you’d better sneak out, in case people start wondering where you are."
         c "Right."
         l "See you soon?"
         c "Real soon."
@@ -945,7 +952,7 @@ label ep009_vess:
                 "I left her there, looking out wistfully across the treetops of the jungle stretching out underneath the tower."
     elif True:
         c "Are you comfortable enough in your quarters?"
-        scene expression eye_blink("images/ep009/ep009_vess_kiss_closeup_smile") with dissolve
+        scene expression eye_blink("images/ep009/ep009_vess_closeup") with dissolve
         ve "Yes, it’s nice to have a room of my own."
         c "I can imagine, the cramped spaces of the Bastard get to you after a while."
         ve "That has its charm as well."
@@ -985,7 +992,7 @@ label ep009_na_expedition:
         )
 
     scene expression eye_blink("images/ep009/ep009_morning_door_na_doubt") with dissolve
-    na "Do you still want to come with, I know it's early?"
+    na "Do you still want to accompany us?{w} I know it's early?"
     c "No, I want to go with you, just give me a minute."
     scene expression eye_blink("images/ep009/ep009_morning_door_na_smile") with dissolve
     na "Alright, come find us in the courtyard once you're ready."
@@ -1004,7 +1011,7 @@ label ep009_na_expedition:
     play music "music/river-fire.ogg" fadeout 4 fadein 1.0
 
     scene ep009_jungle with dissolve
-    "The young Acarhyn scientist let us out of the gates of the Citadel into the jungle."
+    "The young Acarhyn scientist led us out of the gates of the Citadel into the jungle."
     scene expression eye_blink("images/ep009/ep009_jungle_na") with dissolve
     na "How come you seem to prefer these simple melee weapons?"
     na "I've seen swords, warhammers, spears."
@@ -1034,7 +1041,7 @@ label ep009_na_expedition:
     "The humidity, something that wasn’t too noticeable back inside the Citadel, became rather oppressive."
     scene expression eye_blink("images/ep009/ep009_jungle_alt_cae_closeup") with dissolve
     cae "Don’t make any sudden noises, we’re nearly at the Eetu breeding grounds."
-    "Carefully threading our way through the underbush, we eventually reached a clearing."
+    "Carefully threading our way through the underbrush, we eventually reached a clearing."
     scene ep009_jungle_clearing with dissolve
     "It took a moment to register, but the breeding grounds were a massacre."
     "Broken egg shells and hunks of bloodied flesh were strewn everywhere."
@@ -1285,7 +1292,8 @@ label ep009_na_expedition:
     "I couldn't sleep at all and watched her for a while."
     "My erection hadn't completely subsided and watching her curvaceous body in the dim light of the cavern didn't help to abate it."
     scene ep009_cave_sleep_alt with dissolve
-    "I still relished the feeling of her soft breasts in my cupped hands."
+    if ep009_na_breasts:
+        "I still relished the feeling of her soft breasts in my cupped hands."
     "The thought of masturbating crossed my mind, but I really didn't want to get caught."
     scene ep009_cave_sleep_cae with dissolve
     "At that point I heard Caese get up."
@@ -1317,7 +1325,7 @@ label ep009_na_expedition:
             cae "Fine, be that way."
             "The girl stood up and went to put on her clothes."
             "She curled up on the ground at the far end of the cavern."
-            "After several minutes, her breathing became gradually more steady and she seemed asleep."
+            "After several minutes, her breathing became gradually slower and she seemed asleep."
             "Sleep eventually came to me as well."
         "Answer her [CaesePath]" if True:
             $ ep009_cae_fuck = True
@@ -1350,7 +1358,7 @@ label ep009_na_expedition:
     c "I feel terrible."
     scene expression eye_blink("images/ep009/ep009_cave_morning_na") with dissolve
     na "Me too."
-    na "The gas, it must have had some...{w} effect."
+    na "The spores, they must have had some...{w} effect."
     scene expression eye_blink("images/ep009/ep009_cave_morning_ca") with dissolve
     cae "I felt so agitated yesterday, but that’s gone now."
     scene ep009_cave_morning with dissolve
@@ -1477,7 +1485,7 @@ label ep009_av_talk:
         av "She shouldn’t go out alone like that."
         av "Normally I’d go with her, but Caese got her all excited and she got carried away."
         av "She could have died out there."
-        if av_romance:
+        if aven_romance:
             "Not really knowing what to say, I took Aven in my arms and held her close."
             av "She shouldn’t take risks like that."
         elif True:
@@ -1491,7 +1499,7 @@ label ep009_av_talk:
         scene expression eye_blink("images/ep009/ep009_av_closeup_serious") with dissolve
         av "Next time I’ll be right beside her again."
         c "Even better."
-        if av_romance:
+        if aven_romance:
             scene ep009_av_kiss with dissolve
             "We lingered on the balcony a while longer, stealing kisses ever so often."
     return
@@ -1714,7 +1722,7 @@ label ep009_zi_grove:
             c "I found this flower, it seems to have been freshly picked today."
             scene expression eye_blink("images/ep009/ep009_mess_cae_closeup_serious") with dissolve
             cae "This seems to be a Iophite flower, they grow in the grove just outside the Citadel."
-            cae "Is the grove open to the public?"
+            c "Is the grove open to the public?"
             scene expression eye_blink("images/ep009/ep009_mess_cae_closeup") with dissolve
             cae "Yes, you can visit the grove at your leisure, I believe."
             if ep008_na_expedition and ep009_cae_fuck:
@@ -1740,7 +1748,7 @@ label ep009_zi_grove:
             zi "If you accept this bond, disrobe and we will meet each other as equals."
             "As was evident from her formal words, Ziv seemed absolutely serious."
             c "This isn’t some elaborate prank you’re playing, right?"
-            c "Kit isn’t back with you there, jumping out of the bushes as soon as I strip naked?"
+            c "Kit isn't with you back there, ready to jump out of the bushes as soon as I strip naked?"
             "Silence."
             menu:
                 "Undress [ZivPath]" if True:
@@ -1839,6 +1847,7 @@ label ep009_zi_grove:
                                 menu:
                                     "[gr]Step out of the bushes" if True:
                                         $ ep009_priestess_bj = True
+                                        "I sincerely hoped Ziv wasn't hiding somewhere else in the grove, because I'm sure she wouldn't approve of what I was about to do."
                                         scene ep009_grove_priestesses_expose with dissolve
                                         c "You’re looking for me, I presume?"
                                         woman2 "We sure are."
@@ -2324,7 +2333,7 @@ label ep009_cae_fuck:
     "She kept repeating that phrase in between contended sighs until she regained her composure."
     scene ep009_cae_penetrate with dissolve
     "Caese made me lie down on the ground and squatted on top of me."
-    cae "Now it time to really fuck our brains out."
+    cae "Now it's time to really fuck our brains out."
     "My hard cock rested against her abdomen and I wanted nothing more than to invade her wet slit."
     "Maintaining eye-contact she lowered herself slowly onto my cock."
     scene ep009_cae_penetrate_alt with dissolve

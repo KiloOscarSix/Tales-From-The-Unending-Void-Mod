@@ -118,7 +118,7 @@ label episode002:
         "Ignoring the life support systems, I checked on Céline and Kit first."
         scene ep002_ship_celine_unconscious with dissolve
         "Kit was still out, so was Lilly, Céline stirred as soon as I touched her shoulder."
-    else:
+    elif True:
         scene ep002_ship_lilly_kit with dissolve
         "Ignoring the life support systems, I checked on Lilly and Kit first."
         scene ep002_ship_celine_unconscious with dissolve
@@ -168,7 +168,7 @@ label episode002:
         scene ep002_ship_celine_kit_lilly_conscious with dissolve
         ce "How are Thim and the girls doing?"
         c "They're all fine."
-    else:
+    elif True:
         "I found Jade huddled over Thim's body."
         "The ship's systems had already told me he was alive, but he might have received further injuries when we performed the Burst."
         c "Are you okay?"
@@ -227,14 +227,14 @@ label episode002:
     "Not sure what to do, I held her tight while sobs wracked her body."
 
     menu:
-        "Comfort her [LillyPath]":
+        "Comfort her [LillyPath]" if True:
             $ ep002_lilly_comfort = True
             c "I'm sorry, Lilly."
             c "I didn't mean for this to happen."
             c "All I wanted..."
             l "You wanted what?!"
             scene ep002_ship_lilly_hug_angry with dissolve
-        "Stay silent":
+        "Stay silent" if True:
             scene ep002_ship_lilly_hug_angry with dissolve
             l "Why don't you say something?!"
 
@@ -272,17 +272,17 @@ label episode002:
     l "Now we're just going to fucking float to the nearest planet and just see where we go from there?"
 
     menu:
-        "Be understanding [LillyPath]":
+        "Be understanding [LillyPath]" if True:
             $ ep002_lilly_understanding = True
             c "I get why you're angry, but that's exactly what we're going to do, because it's the only thing we can do right now."
             if game.is_special:
                 l "Not good enough, brother."
-            else:
+            elif True:
                 l "Not good enough, [p_name_short]."
             l "Fuck it, I'm going to check on that bloody stowaway you've saddled us with."
             scene ep002_ship_lilly_exit with dissolve
             "Lilly walked out, slamming the entry hatch behind her."
-        "Get angry":
+        "Get angry" if True:
             c "Fuck Lilly, lay off it."
             c "It's the only thing we can do right now."
             c "I suggest you accept the status quo for the time being or fuck off on the next transport you can catch on that nearby planet."
@@ -325,7 +325,7 @@ label episode002:
     ki "It’s either that or hiking with the Great Duke Von Skandersfelt..."
 
     menu:
-        "Ask Lilly":
+        "Ask Lilly" if True:
             "The Enfield was a very small vessel, so finding Lilly didn’t pose too much of a problem."
             scene ep002_ship_lilly_jade_vess with dissolve
             "I found her with the others in the cargo bay."
@@ -334,12 +334,12 @@ label episode002:
             l "Please leave me alone."
             if ep002_lilly_comfort and ep002_lilly_understanding:
                 l "At least for a while."
-            else:
+            elif True:
                 l "Preferably forever."
             scene expression eye_blink("images/ep002/ep002_ship_thim") with dissolve
             "So Thim went with me, something we both enjoyed so very much."
             "At least he kept silent about the head injury he got from Jade..."
-        "Ask Thim [ThimPath]":
+        "Ask Thim [ThimPath]" if True:
             scene expression eye_blink("images/ep002/ep002_ship_thim") with dissolve
             c "Thim, are you feeling well enough to come with me?"
             t "Your attendant hit me on the fucking head with a wrench."
@@ -350,21 +350,21 @@ label episode002:
 
             if ep001_thim_talk and ep001_medbay_thim_talk:
                 t "I guess, why?"
-            else:
+            elif True:
                 t "Why?"
             c "We’re going to land soon near a town and I want to check it out."
             c "Get supplies and we need to do something about this ship."
             if ep001_thim_talk and ep001_medbay_thim_talk:
                 t "Do something about the ship, you mean sell it?"
                 c "Maybe."
-            else:
+            elif True:
                 t "Why?"
                 c "Is that the only question you can ask?"
             c "I sure as hell don’t want to keep flying in a TGN-tagged ship, so we’ll have to figure something out."
             c "I’ll let the others know what the plan is."
             if ep001_thim_talk and ep001_medbay_thim_talk:
                 t "Okay, I’ll get ready."
-            else:
+            elif True:
                 t "Suit yourself."
 
     scene ep002_ship_celine_steering with dissolve
@@ -395,7 +395,7 @@ label episode002:
         t "There’s supposed to be a lot of hostility against the Sovereignty."
         c "Yeah and if that’s really true I think it’s a little unhealthy to fly a broken TGN gunship inside alien territory."
         t "Agreed."
-    else:
+    elif True:
         t "Great..."
 
     scene ep002_vulpes with dissolve
@@ -476,7 +476,7 @@ label episode002:
     c "All right, we commandeered it."
     if game.is_special:
         c "We’re mounting an expedition to rescue my sister, who was abducted, along with many others, during a training mission."
-    else:
+    elif True:
         c "We’re mounting an expedition to rescue one of my best friends, who was abducted, along with many others, during a training mission."
     th "Training mission?"
     th "What are you, mercenaries?"
@@ -492,7 +492,7 @@ label episode002:
     scene expression eye_blink("images/ep002/ep002_vulpes_workshop_thyia_skeptical") with dissolve
     if game.is_special:
         c "That’s when I decided to steal a ship and go look for Eva, my sister."
-    else:
+    elif True:
         c "That’s when I decided to steal a ship and go look for Eva, my friend."
     c "When they noticed we were leaving, our command cruiser fired several missiles which we evaded by bursting our drive."
     c "And we ended up here."

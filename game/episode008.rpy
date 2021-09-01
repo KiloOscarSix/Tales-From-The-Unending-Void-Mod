@@ -213,7 +213,7 @@ label episode008:
             elif True:
                 scene expression eye_blink("images/ep008/ep008_medbay_j_serious") with dissolve
             j "I’m not sure, my knowledge of human religions is a little hazy, to be honest."
-            c "Show this to Nadya and Aven, but to no-one else."
+            c "Show this to Nadya and Aven, but to no one else."
             j "Right, I will."
             jump ep008_footage
         "Watch night snippet" if not ep008_footage_night:
@@ -672,7 +672,7 @@ label episode008:
             call ep008_raene_baths from _call_ep008_raene_baths
             scene ep008_erigone_quarters with dissolve
             jump ep008_citadel_conversations
-        "Visit Jade" if ep008_j_talk and ep008_raene_talk and not ep008_j_baths and not ep008_raene_baths:
+        "Visit Jade" if ep008_j_talk and not ep008_j_baths and (ep008_raene_talk or not ep006_raene_accept) and not ep008_raene_baths:
             $ ep008_j_baths = True
             call ep008_j_baths from _call_ep008_j_baths
             scene ep008_erigone_quarters with dissolve
@@ -708,7 +708,7 @@ label ep008_lilly_talk:
     c "Yes, I met her."
     l "Well, how did she seem?"
     l "Have they treated her well?"
-    c "Hard to say, but as far a I could tell, they haven't done anything bad to her."
+    c "Hard to say, but as far as I could tell, they haven't done anything bad to her."
     c "The opposite probably, because they revere her as a queen."
     scene expression eye_blink("images/ep008/ep008_erigone_quarters_l_doubt") with dissolve
     l "A queen...{w} Eva?"
@@ -766,7 +766,7 @@ label ep008_nadya_talk:
     na "Okay, okay, she might have been a little impressed by my work."
 
     $ cae_name = "Caese"
-    
+
     python:
         codex_caese = add_codex_entry(
             Codex,

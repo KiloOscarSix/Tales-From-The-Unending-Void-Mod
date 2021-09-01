@@ -57,7 +57,7 @@ label episode001:
     "I come from a long line of galactic nobility. Not that it's worth a damn, but having a title always impresses the ladies."
     if game.is_special:
         "Until the tender age of sixteen I lived with my parents and my twin sisters in a mansion on Tuolovi, a small green planet orbiting Typhon - once poetically called HD 10180 b."
-    else:
+    elif True:
         "Until the tender age of sixteen I lived with my parents in a mansion on Tuolovi, a small green planet orbiting Typhon - once poetically called HD 10180 b."
     python:
         codex_tuolovi = add_codex_entry(
@@ -147,7 +147,7 @@ label episode001:
         "But my sisters and I were the product of it, so I guess it wasn't all bad."
         "I was Mom and Dad’s first child and my twin sisters soon followed."
         "They’re twins, but Eva and Lilly couldn’t be more different."
-    else:
+    elif True:
         "But I was the product of it, so I guess it wasn't all bad."
         "I was Mom and Dad’s only child, but that’s not to say I was lonely or anything."
         "Our family made use of an extensive staff, some of whom had families of their own living on the grounds of the estate."
@@ -206,7 +206,7 @@ label episode001:
     if game.is_special:
         "The fact that mother and father mostly doted on her, the youngest of us three, while ignoring us mostly, didn't help at all."
         "All the positive attention Lilly got from Agust and Yve didn’t change the fact that she, like me and Eva, was sent to the Terran Galactic Naval Academy in Alpha Centauri at the age of sixteen."
-    else:
+    elif True:
         "The fact that her father mostly doted on her didn’t help at all."
         "All the positive attention Lilly got from her father didn’t change the fact that she, like me and Eva, was sent to the Terran Galactic Naval Academy near Alpha Centauri at the age of sixteen."
     python:
@@ -235,7 +235,7 @@ label episode001:
     "Due to some unfortunate circumstances, which might have involved insulting a senior officer, I was forced to repeat the first year."
     if game.is_special:
         "I actually didn’t mind, because I got to be with my sisters again."
-    else:
+    elif True:
         "I actually didn’t mind, because I got to be with my friends again."
     "We were still the youngest at the academy, as most students enroll at age eighteen."
     "But Agust and Yve made it very clear to us that they were very eager to see us gone as soon as legally possible."
@@ -243,7 +243,7 @@ label episode001:
     "At any rate, we all weren’t very happy at the academy."
     if game.is_special:
         "Eva originally dreamed of going to university to become a scientist and Lilly probably just wanted to stay on Tuolovi with Mummy and Daddy and annoy the living hell out of people."
-    else:
+    elif True:
         "Eva originally dreamed of going to university to become a scientist and Lilly probably just wanted to stay on Tuolovi with her daddy and annoy the living hell out of people."
     python:
         codex_tgn = add_codex_entry(
@@ -296,11 +296,12 @@ label episode001:
         )
     if game.is_special:
         ca "Group Kappa: Valenmann de Lonval, E. Valenmann de Lonval, L. Valen..."
-    else:
+    elif True:
         ca "Group Kappa: Arderne, E. Elyot, L. Valen..."
     scene ep001_calista_angry with vpunch
     ca "What the?!"
-    ca "...Valenmann de Lonval, C. Szuzume, K. Szuzume C. and Von Skandersfelt."
+    $ p_initial = p_name[0:1]
+    ca "...Valenmann de Lonval, [p_initial]. Szuzume, K. Szuzume, C. and Von Skandersfelt, T."
     ca "Get your asses to that shuttle. "
     ca "We’ll talk about this organizational fuckup later, whomever is responsible..."
     scene ep001_lilly_kit_hangar with dissolve
@@ -344,7 +345,7 @@ label episode001:
                 ce "Hey [p_name]."
                 ce "I understood from Kit you got us all together on this mission?"
                 menu:
-                    "I did it for you [CelinePath]":
+                    "I did it for you [CelinePath]" if True:
                         $ celine_romance = True
                         c "I wanted a nice holiday on a romantic moon, together with you."
                         scene expression eye_blink("images/ep001/ep001_tents_celine_happy") with dissolve
@@ -360,7 +361,7 @@ label episode001:
                         c "He makes more noise than a Farixillic heavy jet engine."
                         c "Point taken. See you tonight!"
                         "So yeah, there was definitely something going on with me and her."
-                    "I wanted everyone together":
+                    "I wanted everyone together" if True:
                         c "I just wanted to do this with my friends."
                         ce "That doesn’t explain Thim being here."
                         c "He sure wasn’t on my wish list."
@@ -379,7 +380,7 @@ label episode001:
                 c "Graduation is right around the corner, after that Szuzume won’t have any hold over us anymore."
                 if game.is_special:
                     e "Not so fast, brother, we need to accomplish this mission first."
-                else:
+                elif True:
                     e "Not so fast, [p_name_short], we need to accomplish this mission first."
                 e "And there’s always the possibility of us serving under the commander as ensigns after graduation."
                 c "The horror..."
@@ -399,7 +400,7 @@ label episode001:
                 c "Can’t a guy just have a friendly chat with a girl?"
                 if game.is_special:
                     l "Yes, but you’re my brother and I know the shit you’re up to mostly."
-                else:
+                elif True:
                     l "Yes, but I know you [p_name_short] and I know the kind of shit you’re up to mostly."
                 l "Read the mission brief for yourself and don’t bother me, I’ve got things to do."
                 c "Okay then..."
@@ -425,7 +426,7 @@ label episode001:
                 "He even fucked up his exams on purpose in our first year so that we could stay in the same class together."
                 if game.is_special:
                     "A really stupid move, of course, but it all worked out in the end as we were joined by our sisters."
-                else:
+                elif True:
                     "A really stupid move, of course, but it all worked out in the end as we were joined by our friends."
                 "Kit’s interests veered towards the more extreme sports, like mountaineering, paragliding and martial arts."
                 "So much he was even considered for advanced training as a specialist, instead of the officer track we were all preparing for."
@@ -471,7 +472,7 @@ label episode001:
                 "Truth is, he was popular in some circles and he sure wasn’t a bad student."
                 if game.is_special:
                     "But for some reason he was always hovering around my sisters."
-                else:
+                elif True:
                     "But for some reason he was always hovering around my friends."
                 "Especially Eva, and even Céline for a while, who all ignored him mostly."
                 "I guess that made him extra bitter."
@@ -523,7 +524,7 @@ label episode001:
                 ce "We should do this another time."
 
                 menu:
-                    "Certainly [CelinePath]":
+                    "Certainly [CelinePath]" if True:
                         c "That sounds like a great idea."
                         scene ep001_tents_celine_camran_fucking_post_closeup with dissolve
                         ce "Okay, when we’re back on the Ypotryll I’ll show you something."
@@ -531,7 +532,7 @@ label episode001:
                         ce "I can scream too, be warned!"
                         "I kissed Céline goodnight and hurried back to my tent."
                         "Lucky for me, Thim was still asleep."
-                    "Better not [red]\[End Relationship\]":
+                    "Better not [red]\[End Relationship\] if True":
                         $ celine_romance = False
                         $ celine_rejected = True
                         c "This was a one-time only deal for me."
@@ -557,21 +558,21 @@ label episode001:
                 "In preparation for the busy day ahead, Lilly and Eva must have gone to bed early, as they were already sleeping when I came by their tent."
                 if game.is_special:
                     "After being separated for over a year from my sisters I was struck by their beauty when they finally joined me at the academy."
-                else:
+                elif True:
                     "After being separated for over a year from my friends I was struck by their beauty when they finally joined me at the academy."
                 "When I left, both girls were typical lanky teenagers, but the Eva and Lilly that greeted me on the first day of the new school year were powerful gorgeous young women."
                 scene ep001_tents_lilly_eva_sleeping_closeup with dissolve
                 if game.is_special:
                     "Sure, Mom and Dad got the best gene treatments for their fetuses, but the well-toned bodies of my sisters were only in part due to modern-day genetics."
-                else:
+                elif True:
                     "Sure, Mom and Dad got the best gene treatments, even for their servants, but the well-toned bodies of my friends were only in part due to modern-day genetics."
                 scene ep001_tents_lilly_eva_sleeping_closeup_alt with dissolve
                 if game.is_special:
                     "I could have admired the exquisite curves of Lilly’s ass or the perky magnificence of Eva’s breasts all night, but spying on family members in the middle of the night is still considered ‘not done’ in human society..."
-                else:
+                elif True:
                     "I could have admired the exquisite curves of Lilly’s ass or the perky magnificence of Eva’s breasts all night, but spying on people in the middle of the night is still considered ‘not done’ in human society..."
                 jump ep001_basecamp_night
-            "Go to sleep":
+            "Go to sleep" if True:
                 scene black with fade
                 "As soon as my body hit the bedroll I fell into a deep, dreamless sleep."
 
@@ -662,7 +663,7 @@ label episode001:
     woman "I’ll let this one go, if you behave."
     if game.is_special:
         "I stood helpless as the woman disappeared with my sister in the wilderness, my gaze alternating from Lilly to Kit bleeding on the ground."
-    else:
+    elif True:
         "I stood helpless as the woman disappeared with my friend in the wilderness, my gaze alternating from Lilly to Kit bleeding on the ground."
     scene ep001_warrior_closeup_alt with dissolve
     woman "I’ll take my leave now."
@@ -786,7 +787,7 @@ label episode001:
     j "Who is?"
     if game.is_special:
         c "My sister."
-    else:
+    elif True:
         c "Eva..."
     j "Mistress Eva?"
     if not game.is_special:
@@ -806,7 +807,7 @@ label episode001:
     j "Can I do something to make it easier?"
 
     menu:
-        "Massage me [JadePath]":
+        "Massage me [JadePath]" if True:
             c "I’d like a massage, to alleviate the tension a little."
             j "Certainly."
             scene ep001_camran_barracks_jade_massage with dissolve
@@ -816,7 +817,7 @@ label episode001:
             j "Do you want me to go further?"
 
             menu:
-                "Yes [JadePath]":
+                "Yes [JadePath]" if True:
                     $ ep001_j_hj = True
 
                     scene ep001_camran_barracks_jade_massage_naked with dissolve
@@ -824,7 +825,7 @@ label episode001:
                     call ep001_jade_hj from _call_ep001_jade_hj
 
                     menu:
-                        "Tease her [JadeLovePath]":
+                        "Tease her [JadeLovePath]" if True:
                             c "You can be very arrogant, you know that?"
                             scene ep001_camran_barracks_jade_hj_post_smile with dissolve
                             j "I know where my strengths lie and the proof of it coats my chest in abundance."
@@ -838,7 +839,7 @@ label episode001:
                             c "Go clean yourself up, I have some things to take care of."
                             j "Thank you, master."
                             c "Thank you, Jade."
-                        "Scold her [JadeSubPath]":
+                        "Scold her [JadeSubPath]" if True:
                             $ ep001_jade_scold = True
                             scene ep001_camran_barracks_jade_hj_post_fear with dissolve
                             c "Don’t take that tone with me, Jade. I’m not in the mood."
@@ -846,7 +847,7 @@ label episode001:
                             "I fell into a deep slumber after Jade left, waking up hours later."
                             "Immediately I felt the distinct hum of a starship at full throttle."
                             "The Ypotryll was still in orbit of Lanan when I went to sleep, but now we were moving at a brisk speed."
-                "Not now":
+                "Not now" if True:
                     c "Just lie with me, I just want someone to hold close."
                     scene ep001_camran_barracks_jade_laying_alt with dissolve
                     "So we just lay there, my face buried in her soft, cool skin."
@@ -856,7 +857,7 @@ label episode001:
                     c "I have to take care of some things, Jade."
                     j "I understand, thank you, master."
                     c "Thank you, Jade."
-        "Just lie with me":
+        "Just lie with me" if True:
             c "Just lie with me, I just want someone to hold close."
             scene ep001_camran_barracks_jade_laying_alt with dissolve
             "So we just lay there, my face buried in her soft, cool skin."
@@ -866,7 +867,7 @@ label episode001:
             c "I have to take care of some things, Jade."
             j "I understand, thank you, master."
             c "Thank you, Jade."
-        "No thank you":
+        "No thank you" if True:
             c "I’m not really in the mood."
             c "I’m going to rest for a while."
             j "I understand, you know where to find me."
@@ -891,7 +892,7 @@ label episode001:
     ca "I will not comment on the orders we received from Central Command."
     if game.is_special:
         c "But they have my sister, we have to do something!"
-    else:
+    elif True:
         c "But they have my friend Eva, we have to do something!"
     scene expression eye_blink("images/ep001/ep001_kit_calista_angry") with dissolve
     ca "Don’t take that tone with me, boy or I’ll have you thrown into the brig."
@@ -985,7 +986,7 @@ label episode001:
                 c "Fuck, that’s harsh."
                 if game.is_special:
                     c "They got my sister."
-                else:
+                elif True:
                     c "They got one of my best friends."
                 scene expression eye_blink("images/ep001/ep001_medbay_girl_fear") with dissolve
                 ve "What's going to happen to them, [p_name]?"
@@ -1106,7 +1107,7 @@ label episode001:
     ve "It isn't fair!"
 
     menu:
-        "Tell her about your plan [VessPath]":
+        "Tell her about your plan [VessPath]" if True:
             $ ep001_vess_truth = True
             "When she burst into tears like that, I just couldn't leave her there."
             "Some say that women are a man's greatest weakness, I was no exception in that regard."
@@ -1119,15 +1120,15 @@ label episode001:
             c "Come with me, we're meeting some of my friends."
             if game.is_special:
                 "Together with Vess, I headed to the hangar to find my friends and sister already there."
-            else:
+            elif True:
                 "Together with Vess, I headed to the hangar to find my friends already there."
-        "Don't tell her":
+        "Don't tell her" if True:
             c "I'm sorry, Vess, I wish there was more I could do."
             scene expression eye_blink("images/ep001/ep001_hallway_vess_sad_alt") with dissolve
             "Giving me one last wistful look, the girl turned and fled out of the hallway."
             if game.is_special:
                 "I continued to the hangar bay to find my friends and sister already there."
-            else:
+            elif True:
                 "I continued to the hangar bay to find my friends already there."
     if ep001_vess_truth:
         scene ep001_hangar_camran_vess with dissolve
@@ -1136,7 +1137,7 @@ label episode001:
         ve "I want to help."
         scene ep001_hangar_jade_lilly_celine_kit with dissolve
         l "Help with what?"
-    else:
+    elif True:
         scene ep001_hangar_jade_lilly_celine_kit with dissolve
     l "Are you going to tell us what all this cloak and dagger is all about?"
     c "Yes. We've lost someone today."
@@ -1178,7 +1179,7 @@ label episode001:
     ce "You're asking a lot."
     if celine_romance:
         ce "But if you and Kit are going..."
-    else:
+    elif True:
         ce "But if Kit is going..."
     ce "Yes I'm in."
     if ep001_vess_truth:
@@ -1388,7 +1389,7 @@ label episode001:
             call extra_scene_01 from _call_extra_scene_01
             ce "We’re not done yet, are we?"
             "The girl had me erect in seconds and guided my penis towards her pussy."
-        else:
+        elif True:
             "Our sigh of relief, when he turned his back on us, transformed into soft moans as Céline guided my penis towards her pussy."
         scene ep001_tents_celine_camran_penetrate with dissolve
         "My dick pushed against Céline’s entrance, slick with her moisture. She gasped as I pressed the top of my shaft past her labia. I paused."
@@ -1405,13 +1406,13 @@ label episode001:
         "I licked Céline’s hard nipples and fingered her, while my cock was still inside her. The stimulation of so many erogenous zones at once finally sent her over the edge."
 
         menu:
-            "Cover her body":
+            "Cover her body" if True:
                 scene ep001_tents_celine_camran_fucking_belly with flash
                 with flash
                 "The girl shuddered and bit on my hand to suppress her orgastic moans, which in turn ushered my orgasm."
                 scene ep001_tents_celine_camran_fucking_belly_alt with dissolve
                 "I tried to muffle my delirious cry in the musk of her hair as I shot my seed onto her belly."
-            "Creampie [gr]\[Celine Creampie\]":
+            "Creampie [gr]\[Celine Creampie\]" if True:
                 $ ep001_celine_creampie = True
                 scene ep001_tents_celine_camran_fucking_creampie with flash
                 with flash

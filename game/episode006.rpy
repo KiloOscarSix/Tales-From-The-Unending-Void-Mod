@@ -853,7 +853,7 @@ label episode006:
 
     scene ep006_new_cell_shower with dissolve
     "After a while I heard Aven turn off the water and I expected her to emerge from the shower after a couple of minutes, but she didn’t."
-    "Above Lilly's heavy breathing I could eventually hear distinct sighs coming from the shower cubicle."
+    "Above Lilly's light snoring I could eventually hear distinct sighs coming from the shower cubicle."
     "When the sighing turned into frequent moans, I had a pretty clear idea what was happening."
     menu:
         "[gr]Have a look":
@@ -1248,7 +1248,7 @@ label episode006:
                 chrone "It's all talk though..."
                 c "Send away your guards and find out how much of it is true."
                 scene expression eye_blink("images/ep006/ep006_office_chair_woman_closeup_smile") with dissolve
-                chrone "I'm afraid that won't happen, as it would be far to easy for you to overpower me and use me as a hostage."
+                chrone "I'm afraid that won't happen, as it would be far too easy for you to overpower me and use me as a hostage."
                 scene expression eye_blink("images/ep006/ep006_office_chair_woman_stand") with dissolve
                 chrone "Follow me to the examination table."
                 "Expecting a physical exam, I followed her hesitantly."
@@ -1656,7 +1656,7 @@ label episode006:
                         ra "Yes, they did."
                         ra "And I hate that it affects me so much, especially considering our circumstances."
                         ra "But it was just too much all at once."
-                        ra "As as I said, I'll be fine in a moment."
+                        ra "As I said, I'll be fine in a moment."
                         c "Right, take whatever time you need."
                         c "But promise me we'll talk further once we're safe?"
                         scene expression eye_blink("images/ep006/ep006_escape_lockers_ra_closeup_smile") with dissolve

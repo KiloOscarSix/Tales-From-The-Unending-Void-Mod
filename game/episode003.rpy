@@ -1819,7 +1819,7 @@ label episode003:
             $ ep003_le_sex_last = False
             $ ep003_be_sex_last = False
 
-        if not ep003_sim_farm_sex_deal:                               
+        if not ep003_sim_farm_sex_deal:
             scene ep003_sim_farm_leaving_be_naked with dissolve:
                 yalign 1.0
                 ease 8 yalign 0.01
@@ -1831,7 +1831,7 @@ label episode003:
                 le "Forgive us for being forward, but my maid and I would like to thank you properly."
             "While the woman closed the door, I lusted over Berit’s supple young body."
             scene ep003_sim_farm_le_smile with dissolve
-            
+
         c "Tell me your name."
         le "Leda, milord."
         $ le_name = "Leda"

@@ -400,7 +400,7 @@ label ep005_lilly:
                 l "But they only attended my recitals when there was press involved or when there was an event with important people afterwards."
             else:
                 l "I started with music lessons because I thought it would please my mom."
-                l "But never attend my recitals, because they were too busy."
+                l "But they never attended my recitals, because they were too busy."
             l "You and Eva may not have noticed, but I stopped trying to be little miss perfect well before you went to the academy."
             menu:
                 "Apologize [LillyPath]":
@@ -1155,7 +1155,7 @@ label ep005_workshop_visit:
             scene ep005_workshop_bricks_throw with dissolve
             "I lobbed one of the bricks in the direction of the window and was treated by the crashing sounds of splintering glass moments later."
             with vpunch
-            "As I heard the shouting inside I ran away from the scene back towards the front of the workshop."
+            "As I heard the shouting inside, I ran away from the scene back towards the front of the workshop."
             "Again, after a couple of minutes, I headed towards the entrance of the building."
             "The door wasn't locked and I silently opened it."
             scene ep005_workshop_interior_empty with dissolve
@@ -1998,6 +1998,7 @@ label ep005_workshop_sex:
     if _in_replay:
         $ woman_name = "Mechanic"
         $ woman_portrait = "side_mechanic"
+
     scene ep005_workshop_interior_woman_naked with dissolve:
         yalign 1.0
         ease 8 yalign 0.01

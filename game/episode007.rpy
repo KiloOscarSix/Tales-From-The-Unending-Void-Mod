@@ -1530,9 +1530,9 @@ label ep007_av_talk:
                 c "Nothing has changed."
                 c "Regaining my memories has actually put everything into perspective, to be honest."
                 if game.is_special:
-                    c "The bond we shared as children, the way we just hit it off after picking up you and Aunt Nadya on Ryūjin Prime..."
+                    c "The bond we shared as children, the way we just hit off after picking up you and Aunt Nadya on Ryūjin Prime..."
                 else:
-                    c "The bond we shared as children, the way we just hit it off after picking up you and Nadya on Ryūjin Prime..."
+                    c "The bond we shared as children, the way we just hit off after picking up you and Nadya on Ryūjin Prime..."
                 c "I looked up to you as a child, admired you."
                 c "I still admire you now."
                 scene expression eye_blink("images/ep007/ep007_av_garden_bench_surprise") with dissolve
